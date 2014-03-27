@@ -40,19 +40,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.exchange', {
+      url: '/exchange',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'tab-exchange': {
+          templateUrl: 'templates/tab-exchange.html',
+          controller: 'ExchangeCtrl'
         }
       }
     })
     .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+      url: '/exchange/:friendId',
       views: {
-        'tab-friends': {
+        'tab-exchange': {
           templateUrl: 'templates/friend-detail.html',
           controller: 'FriendDetailCtrl'
         }
