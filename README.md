@@ -1,2 +1,2 @@
-coffee-web
-==========
+Coffee Scoreboard Ionic Project
+===============================
