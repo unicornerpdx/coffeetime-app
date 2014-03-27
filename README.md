@@ -1,56 +1,60 @@
-Ionic App Base
+Coffee Scoreboard Ionic App
 =====================
 
-A starting project for Ionic that optionally supports
-using custom SCSS, and makes it easy to update Ionic through
-bower.
+[Ionic](http://ionicframework.com/) app for keeping score of coffee debt in an organization.
 
-## Using this project
+## Install Dependencies
 
-We recommend using the `ionic` utility to create new Ionic projects that are based on this project but use a ready-made starter template.
-
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+First, you should probably have ionic:
 
 ```bash
 $ sudo npm install -g ionic
 ```
 
-Then run:
+Then install bower, if you don't already have it:
 
-```bash
-$ sudo npm install -g ionic
-$ ionic start myProject tabs
 ```
-
-More info on this can be found on the Ionic [Getting Started](ionicframework.com/getting-started) page.
-
-## Installation
-
-While we recommend using the `ionic` utility to create new Ionic projects, you can use this repo as a barebones starting point to your next Ionic app.
-
-To use this project as is, first clone the repo from GitHub, then run:
-
-```bash
-$ cd ionic-app-base
 $ sudo npm install -g bower
+```
+
+Next, you'll need gulp for compiling sass:
+
+```
+$ npm install -g gulp
+```
+
+## Setup Project
+
+Run:
+
+```
 $ npm install
+```
+
+and
+
+```
 $ gulp init
 ```
 
-This will download the most recent Ionic release from bower, and copy over the SCSS files into `./sass` for future editing.
+This will download the most recent Ionic release from bower, and copy over the SCSS files into `./sass` for future editing..
 
-## Using Sass (optional)
+## Development
 
-This project makes it easy to use Sass (the SCSS syntax) in your projects. This enables you to override styles from Ionic, and benefit from
-Sass's great features.
+There are several ways to develop an Ionic project. The most familiar to front-end web developers will be to use a web browser to preview your work. To do that, you need to do the following:
 
-Just update the `./scss/ionic.app.scss` file, and run `gulp` or `gulp watch` to rebuild the CSS files for Ionic.
+1. Run ```gulp watch``` from the project directory to start watching your sass files.
 
-Note: if you choose to use the Sass method, make sure to remove the included `ionic.css` file in `index.html`, and then uncomment
-the include to your `ionic.app.css` file which now contains all your Sass code and Ionic itself:
+2. Go into the `www` directory of the project and startup a simple web server. You can use whatever you're most comfortable with to do this, but we recommend either [Anvil](http://anvilformac.com/) or [http-server](https://github.com/nodeapps/http-server).
 
-```html
-<!-- IF using Sass (run gulp sass first), then remove the CSS include above
-<link href="css/ionic.app.css" rel="stylesheet">
--->
+## Mobile
+
+You can also run the project in the ios simulator or on an actual android device. A simple way to do the ios simulator is to go into the project directory and type:
+
 ```
+$ ionic emulate
+```
+
+If that fails, try running ```ionic platform ios``` and running the above command again.
+
+
