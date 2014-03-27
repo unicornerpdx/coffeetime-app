@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('MeCtrl', function($scope) {
+  console.log("Me Page");
 })
 
 .controller('FriendsCtrl', function($scope, Friends) {
