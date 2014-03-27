@@ -13,5 +13,11 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('ActivityCtrl', function($scope, Activity) {
+  $scope.activities = Activity.all();
+  console.log("Activity Page");
+})
+
+.controller('ActivityDetailCtrl', function($scope, $stateParams, Activity) {
+  $scope.activity = Activity.get($stateParams.activityId);
 });
