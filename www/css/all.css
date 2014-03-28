@@ -6320,17 +6320,9 @@ a.button {
   background: transparent; }
 
 .me-status-screen {
-<<<<<<< HEAD
-=======
   top: 0;
-  background-color: #5acf61;
->>>>>>> 4cbdfe6a725b1b6b45943b6d6d2ad075e781164d
   color: #fff;
   text-align: center; }
-  .me-status-screen.green {
-    background-color: #5acf61; }
-  .me-status-screen.red {
-    background-color: #e66244; }
 
 .me-debt-number {
   font-size: 50vh;
