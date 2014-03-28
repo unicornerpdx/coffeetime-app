@@ -1,27 +1,52 @@
 angular.module('starter.services', [])
 
+.factory('Session', function($http, $stateProvider){
+  var userId = localStorage.userId;
+  var groupId = localStorage.currentGroup;
+  var accessToken = localStorage.accessToken;
+
+  if(!userId || !accessToken){
+    $stateProvider.go("auth");
+  }
+
+  if(userId && accessToken && !groupId){
+    $stateProvider.go("groups");
+  }
+
+  return {
+    userId: function () {
+      return localStorage.userId;
+    },
+    token: function() {
+      return localStorage.accessToken;
+    },
+    group: function(){
+      return localStorage.currentGroup;
+    },
+    switchGroup: function (newGroup) {
+      if (newGroup) {
+        localStorage.currentGroup = newGroup();
+      }
+
+      $stateProvider.go('tab.me');
+    },
+    authenticate: function() {
+      $stateProvider.go("auth");
+    },
+    signOut: function() {
+      localStorage.clear();
+      this.authenticate();
+    }
+  };
+})
+
 /**
  * Get the Users Information
  */
-.factory('Me', function($http) {
+.factory('Me', function($http, Session) {
   return {
     fetch: function ( ) {
-      var user_id = localStorage["user_id"];
-
-      return $http.get("http://localhost:8080/user/info?user_id=" + user_id);
-    },
-    ok: function ( ) {
-      var user_id = localStorage["user_id"];
-
-      if (Number.isNaN(user_id)) {
-        return false;
-      }
-
-      return true;
-    },
-    get: function(user_id) {
-      // Simple index lookup
-      return $http.get("http://localhost:8080/user/info?user_id=" + user_id);
+      return $http.get("http://localhost:8080/user/info?userId=" + Session.userId());
     }
   };
 
@@ -30,24 +55,10 @@ angular.module('starter.services', [])
 /**
  * Get all the users in the organization
  */
-.factory('Group', function($http) {
+.factory('Group', function($http, Session) {
   return {
-    ok: function ( ) {
-      var group_id = localStorage["current_group"];
-      var access_token = localStorage["access_token"];
-
-      if (Number.isNaN(group_id) || !access_token) {
-        return false;
-      }
-
-      return true;
-    },
     fetch: function ( ) {
-      var group_id = localStorage["group_id"];
-      var access_token = localStorage["access_token"];
-
-      return $http.get("http://localhost:8080/user/info?group_id=" + group_id + "&access_token=" + access_token);
+      return $http.get("http://localhost:8080/user/info?groupId=" + Session.group() + "&accessToken=" + Session.token());
     }
   };
 });
-
