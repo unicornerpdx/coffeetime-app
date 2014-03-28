@@ -6,13 +6,13 @@ angular.module('starter.controllers', [])
   $scope.Math = window.Math;
 })
 
-.controller('ExchangeCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
+.controller('ExchangeCtrl', function($scope, Group) {
+  $scope.group = Group.all();
   console.log("Exchange Page");
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
+.controller('GroupDetailCtrl', function($scope, $stateParams, Group) {
+  $scope.user = Group.get($stateParams.userID);
 })
 
 .controller('ActivityCtrl', function($scope, Activity) {

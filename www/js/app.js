@@ -49,12 +49,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/exchange/:friendId',
+    .state('tab.coffee-transaction', {
+      url: '/exchange/:userID',
       views: {
         'tab-exchange': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+          templateUrl: 'templates/coffee-transaction.html',
+          controller: 'GroupDetailCtrl'
         }
       }
     })
