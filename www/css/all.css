@@ -6320,17 +6320,19 @@ a.button {
   background: transparent;
   border: none; }
 
+.white-text {
+  color: #fff; }
+
 .user-icon {
   width: 40px;
   height: 40px;
   margin-right: 1em;
-  border: 1px solid #efefef;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); }
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
 
 .me-status-screen {
   top: 0;
@@ -6338,6 +6340,9 @@ a.button {
   text-align: center; }
 
 .me-debt-number {
-  font-size: 50vh;
+  font-size: 40vh;
   color: #fff;
+  padding-top: 10vh; }
+
+.me-debt-description {
   padding-top: 10vh; }
