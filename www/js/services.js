@@ -3,7 +3,7 @@ angular.module('starter.services', [])
 /**
  * Get the Users Information
  */
-.factory('Me', function(Friends) {
+.factory('Me', function(Group) {
 
   // Some fake testing data
   var user = {
@@ -20,10 +20,15 @@ angular.module('starter.services', [])
   //   $('.variable-color').css('background-color', you);
   // }
 
-  var userCount = Group.all().length;
+  var group = Group.all();
+  var userCount = group.length;
+  console.log(group);
+  console.log(userCount);
 
   // Figure out what place the user is in
   var place = user.amount < 0 ? '#E66244' : '#5acf61';
+
+
   user.place = place;
 
   return {
@@ -53,7 +58,7 @@ angular.module('starter.services', [])
     },
     get: function(userId) {
       // Simple index lookup
-      return user[userId];
+      return users[userId];
     }
   };
 })
