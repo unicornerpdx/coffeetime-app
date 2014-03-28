@@ -1,11 +1,17 @@
 .me-status-screen {
-  background-color: $green;
   color: $white;
   text-align: center;
+  &.green {
+    background-color: $green;
+  }
+  &.red {
+    background-color: $red;
+  }
 }
 
 .me-debt-number {
-  font-size: 30vh;
+  font-size: 50vh;
   color: $white;
-  padding-top: 20vh;
+  padding-top: 10vh;
+  @extend %knockout;
 }
