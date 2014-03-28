@@ -9,10 +9,24 @@
 }
 
 // Gravatar images
-.user-icon {
+%user-icon {
   width: 40px;
   height: 40px;
   margin-right: 1em;
   @include border-radius(50%);
   @include box-shadow(0 0 6px rgba(0,0,0,.1));
+}
+
+.user-icon {
+  @extend %user-icon;
+}
+
+.user-icon-left {
+  @extend %user-icon;
+  float: left;
+}
+
+.user-name {
+  display: inline-block;
+  margin-top: 12px;
 }
