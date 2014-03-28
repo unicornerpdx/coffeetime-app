@@ -30,7 +30,7 @@ angular.module('starter.services', [])
 /**
  * Get all the users in the organization
  */
-.factory('Grup', function() {
+.factory('Friends', function() {
 
   // Some fake testing data
   var friends = [
