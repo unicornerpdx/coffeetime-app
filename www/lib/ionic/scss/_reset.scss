@@ -31,6 +31,7 @@ time, mark, audio, video {
   border: 0;
   vertical-align: baseline;
   font: inherit;
+  font-weight: 300;
   font-size: 100%;
 }
 
@@ -135,7 +136,7 @@ a {
 
 b,
 strong {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /**
