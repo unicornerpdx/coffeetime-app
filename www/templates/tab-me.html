@@ -1,22 +1,21 @@
 <!-- Me tab shows overall debt/credit to organization -->
 <ion-view>
 
-    <ion-content class="padding me-status-screen" style="background-color:{{ user.place }}">
-      <img class="user-icon" src="{{ user.photo }}" alt="{{ user.name }}" width="40" height="40">
-      <h1 class="me-debt-number white-text">{{ user.amount | absolute }}</h1>
+  <ion-content class="padding me-status-screen" user-color>
+    <img class="user-icon" src="{{ user.photo }}" alt="{{ user.name }}" width="40" height="40">
+    <h1 class="me-debt-number white-text">{{ user.amount | absolute }}</h1>
 
-      <h4 class="white-text me-debt-description">
-        <div ng-if="user.amount < 0">
-          You owe {{ user.amount | absolute }} {{ user.amount | pluralizer }} to {{ user.org }}
-        </div>
-        <div ng-if="user.amount > 0">
-          {{ user.org }} owes you {{ user.amount }} {{ user.amount | pluralizer }}.
-        </div>
-        <div ng-if="user.amount == 0">
-          You're all even!
-        </span>
-      </h4>
-
-    </ion-content>
+    <h4 class="white-text me-debt-description">
+      <div ng-if="user.amount < 0">
+        You owe {{ user.amount | absolute }} {{ user.amount | pluralizer }} to {{ user.org }}
+      </div>
+      <div ng-if="user.amount > 0">
+        {{ user.org }} owes you {{ user.amount }} {{ user.amount | pluralizer }}.
+      </div>
+      <div ng-if="user.amount == 0">
+        You're all even!
+      </span>
+    </h4>
+  </ion-content>
 
 </ion-view>

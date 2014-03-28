@@ -14,23 +14,6 @@ angular.module('starter.services', [])
     photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
   };
 
-  // colorize: function() {
-  //   var scale = chroma.scale(['$red', '#$green']).domain([amount.lowest, amount.highest]);
-  //   var you = scale.mode('lab')(user.amount);
-  //   $('.variable-color').css('background-color', you);
-  // }
-
-  var group = Group.all();
-  var userCount = group.length;
-  console.log(group);
-  console.log(userCount);
-
-  // Figure out what place the user is in
-  var place = user.amount < 0 ? '#E66244' : '#5acf61';
-
-
-  user.place = place;
-
   return {
     fetch: function() {
       return user;
@@ -59,6 +42,12 @@ angular.module('starter.services', [])
     get: function(userId) {
       // Simple index lookup
       return users[userId];
+    },
+    getMinDebt: function () {
+      return -10;
+    },
+    getMaxDebt: function () {
+      return 30;
     }
   };
 })

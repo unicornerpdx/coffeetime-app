@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'app.filters'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'app.filters', 'app.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -74,6 +74,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         'tab-activity': {
           templateUrl: 'templates/activity-detail.html',
           controller: 'ActivityDetailCtrl'
+        }
+      }
+    })
+
+    .state('auth', {
+      url: '/auth',
+      views: {
+        'auth-screen': {
+          templateUrl: 'templates/auth.html',
+          controller: 'AuthCtrl'
         }
       }
     });
