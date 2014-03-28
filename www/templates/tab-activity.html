@@ -1,8 +1,20 @@
 <ion-view title="Activity">
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="activity in activities" type="item-text-wrap" href="#/tab/activity/{{activity.id}}">
-        <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" class="user-icon-left">You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date }}.
+      <ion-item ng-repeat="activity in activities"
+                class="item-text-wrap"
+                href="#/tab/activity/{{activity.id}}">
+
+        <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" class="user-icon-left">
+
+        <p>
+          <span ng-if="activity.amount > 0">
+            You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date | date.relative }}.
+          </span>
+          <span ng-if="activity.amount < 0">
+            {{ activity.user.name }} bought you {{ activity.amount | absolute }} coffees on {{ activity.date | date:'dd-MM-yy' }}.
+          </span>
+        </p>
       </ion-item>
     </ion-list>
   </ion-content>
