@@ -1678,7 +1678,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   vertical-align: baseline;
   font: inherit;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 100%; }
 
 ol, ul {
@@ -1974,7 +1974,7 @@ body, .ionic-body {
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
+  font-family: 'Clear Sans', monospace;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -2248,7 +2248,7 @@ cite {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
+  font-family: 'Clear Sans', monospace;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
@@ -2300,14 +2300,14 @@ dt, dd {
   line-height: 1.42857; }
 
 dt {
-  font-weight: 300; }
+  font-weight: 400; }
 
 blockquote {
   margin: 0 0 20px;
   padding: 10px 20px;
   border-left: 5px solid gray; }
   blockquote p {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 17.5px;
     line-height: 1.25; }
   blockquote p:last-child {
@@ -2957,7 +2957,7 @@ a.subdued {
   white-space: nowrap;
   font-weight: 400;
   font-size: 14px;
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
+  font-family: 'Clear Sans', monospace;
   opacity: 0.7; }
   .tab-item:hover {
     cursor: pointer; }
@@ -3417,12 +3417,12 @@ a.item-content {
   text-decoration: none; }
 
 .item-text-wrap .item, .item-text-wrap, .item-text-wrap h1, .item-text-wrap h2, .item-text-wrap h3, .item-text-wrap h4, .item-text-wrap h5, .item-text-wrap h6, .item-text-wrap p, .item-complex.item-text-wrap .item-content, .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
-  overflow: hidden;
+  overflow: visible;
   white-space: normal; }
 
 .item-complex.item-text-wrap, .item-complex.item-text-wrap h1, .item-complex.item-text-wrap h2, .item-complex.item-text-wrap h3, .item-complex.item-text-wrap h4, .item-complex.item-text-wrap h5, .item-complex.item-text-wrap h6, .item-complex.item-text-wrap p {
-  overflow: hidden;
-  white-space: nowrap; }
+  overflow: visible;
+  white-space: normal; }
 
 /**
  * Item Icons
@@ -4043,7 +4043,7 @@ label, input, button, select, textarea {
   line-height: 1.42857; }
 
 input, button, select, textarea {
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace; }
+  font-family: 'Clear Sans', monospace; }
 
 .item-input {
   display: -webkit-box;
@@ -6317,7 +6317,30 @@ a.button {
   line-height: 48px; }
 
 .bar-transparent {
-  background: transparent; }
+  background: transparent;
+  border: none; }
+
+.white-text {
+  color: #fff; }
+
+.user-icon, .user-icon-left {
+  width: 40px;
+  height: 40px;
+  margin-right: 1em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+
+
+.user-icon-left {
+  float: left; }
+
+.user-name {
+  display: inline-block;
+  margin-top: 10px; }
 
 .me-status-screen {
   top: 0;
@@ -6325,6 +6348,12 @@ a.button {
   text-align: center; }
 
 .me-debt-number {
-  font-size: 50vh;
+  font-size: 40vh;
   color: #fff;
   padding-top: 10vh; }
+
+.me-debt-description {
+  padding-top: 10vh; }
+
+.item-input-inset {
+  margin-top: 1px; }

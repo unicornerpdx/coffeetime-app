@@ -1,23 +1,19 @@
 angular.module('starter.controllers', [])
 
 .controller('MeCtrl', function($scope, Me) {
-  console.log("Me Page");
   $scope.user = Me.fetch();
-  $scope.Math = window.Math;
 })
 
-.controller('ExchangeCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-  console.log("Exchange Page");
+.controller('ExchangeCtrl', function($scope, Group) {
+  $scope.group = Group.all();
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
+.controller('GroupDetailCtrl', function($scope, $stateParams, Group) {
+  $scope.user = Group.get($stateParams.userID);
 })
 
 .controller('ActivityCtrl', function($scope, Activity) {
   $scope.activities = Activity.all();
-  console.log(Activity);
 })
 
 .controller('ActivityDetailCtrl', function($scope, $stateParams, Activity) {

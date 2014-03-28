@@ -1,9 +1,23 @@
 <ion-view title="Exchange">
   <ion-content class="has-header">
+
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Search" ng-model="query">
+      </label>
+    </div>
+
     <ion-list>
-      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/exchange/{{friend.id}}">
-        {{friend.name}}
+      <ion-item ng-repeat="user in group | filter:query | orderBy:'name'"
+                class="item"
+                href="#/tab/exchange/{{user.id}}">
+
+        <img src="{{ user.photo }}" alt="{{ user.username }}" class="user-icon-left">
+        <span class="user-name"> {{user.name}} </span>
+
       </ion-item>
     </ion-list>
+
   </ion-content>
 </ion-view>
+

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'app.filters'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -49,12 +49,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/exchange/:friendId',
+    .state('tab.coffee-transaction', {
+      url: '/exchange/:userID',
       views: {
         'tab-exchange': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+          templateUrl: 'templates/coffee-transaction.html',
+          controller: 'GroupDetailCtrl'
         }
       }
     })

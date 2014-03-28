@@ -3,20 +3,32 @@ angular.module('starter.services', [])
 /**
  * Get the Users Information
  */
-.factory('Me', function() {
+.factory('Me', function(Group) {
 
   // Some fake testing data
   var user = {
     name: 'Paul Pederson',
     username: 'paulcpederson',
-    amount: 3,
+    amount: -12,
     org: 'Esri PDX',
     photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
   };
 
+  // colorize: function() {
+  //   var scale = chroma.scale(['$red', '#$green']).domain([amount.lowest, amount.highest]);
+  //   var you = scale.mode('lab')(user.amount);
+  //   $('.variable-color').css('background-color', you);
+  // }
+
+  var group = Group.all();
+  var userCount = group.length;
+  console.log(group);
+  console.log(userCount);
+
   // Figure out what place the user is in
-  var place;
-  place = user.amount < 0 ? '#E66244' : '#5acf61';
+  var place = user.amount < 0 ? '#E66244' : '#5acf61';
+
+
   user.place = place;
 
   return {
@@ -30,23 +42,23 @@ angular.module('starter.services', [])
 /**
  * Get all the users in the organization
  */
-.factory('Friends', function() {
+.factory('Group', function() {
 
   // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
+  var users = [
+    { id: 0, name: 'Paul Pederson', username: 'paulcpederson', photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'},
+    { id: 1, name: 'Nate Goldman', username: 'ngoldman', photo: 'https://avatars1.githubusercontent.com/u/427322?s=460'},
+    { id: 2, name: 'Nikolas Wise', username: 'nikolaswise', photo: 'https://avatars2.githubusercontent.com/u/1987772?s=460'},
+    { id: 3, name: 'Patrick Arlt', username: 'patrickarlt', photo: 'https://avatars1.githubusercontent.com/u/378557?s=460'},
   ];
 
   return {
     all: function() {
-      return friends;
+      return users;
     },
-    get: function(friendId) {
+    get: function(userId) {
       // Simple index lookup
-      return friends[friendId];
+      return users[userId];
     }
   };
 })

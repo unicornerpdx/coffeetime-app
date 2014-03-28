@@ -1,9 +1,22 @@
 <!-- Me tab shows overall debt/credit to organization -->
-<ion-view title="">
+<ion-view>
 
     <ion-content class="padding me-status-screen" style="background-color:{{ user.place }}">
-      <img class="profile-photo" src="{{ user.photo }}" alt="{{ user.name }}" width="40" height="40">
-      <h1 class="me-debt-number">{{ user.amount > 0 ? user.amount : Math.abs(user.amount) }}</h1>
+      <img class="user-icon" src="{{ user.photo }}" alt="{{ user.name }}" width="40" height="40">
+      <h1 class="me-debt-number white-text">{{ user.amount | absolute }}</h1>
+
+      <h4 class="white-text me-debt-description">
+        <div ng-if="user.amount < 0">
+          You owe {{ user.amount | absolute }} coffees to {{ user.org }}
+        </div>
+        <div ng-if="user.amount > 0">
+          {{ user.org }} owes you {{ user.amount }} coffees.
+        </div>
+        <div ng-if="user.amount == 0">
+          You're all even!
+        </span>
+      </h4>
+
     </ion-content>
 
 </ion-view>
