@@ -76,6 +76,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           controller: 'ActivityDetailCtrl'
         }
       }
+    })
+
+    .state('auth', {
+      url: '/auth',
+      views: {
+        'auth-screen': {
+          templateUrl: 'templates/auth.html',
+          controller: 'AuthCtrl'
+        }
+      }
     });
 
   // if none of the above states are matched, use this as the fallback
