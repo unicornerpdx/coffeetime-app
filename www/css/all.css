@@ -6310,7 +6310,11 @@ a.button {
 .platform-android.platform-cordova .title {
   line-height: 48px; }
 
+.bar-transparent {
+  background: transparent; }
+
 .me-status-screen {
+  top: 0;
   background-color: #5acf61;
   color: #fff;
   text-align: center; }
