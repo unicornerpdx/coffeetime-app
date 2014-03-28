@@ -2,7 +2,7 @@
   <ion-content class="has-header">
     <ion-list>
       <ion-item ng-repeat="activity in activities" type="item-text-wrap" href="#/tab/activity/{{activity.id}}">
-        <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" width="24" height="24">You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date }}.
+        <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" class="user-icon">You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date }}.
       </ion-item>
     </ion-list>
   </ion-content>

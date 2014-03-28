@@ -4,6 +4,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Color
 $green:                           #5acf61 !default;
 $red:                             #e66244 !default;
+$lightest-gray:                   #efefef !default;
 $white:                           #fff    !default;
 
 // Ionic colors
@@ -44,10 +45,6 @@ $headings-line-height:            1.2 !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-// Import App Styles
-.bar-transparent {
-  background: transparent;
-  border: none;
-}
-
+// App Specific Styles
+@import "global";
 @import "me";
