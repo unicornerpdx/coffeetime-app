@@ -34,10 +34,10 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
+    { id: 0, name: 'Paul Pederson', username: 'paulcpederson', photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'},
+    { id: 1, name: 'Nate Goldman', username: 'ngoldman', photo: 'https://avatars1.githubusercontent.com/u/427322?s=460'},
+    { id: 2, name: 'Nikolas Wise', username: 'nikolaswise', photo: 'https://avatars2.githubusercontent.com/u/1987772?s=460'},
+    { id: 3, name: 'Patrick Arlt', username: 'patrickarlt', photo: 'https://avatars1.githubusercontent.com/u/378557?s=460'},
   ];
 
   return {
