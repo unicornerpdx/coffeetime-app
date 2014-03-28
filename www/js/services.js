@@ -9,27 +9,10 @@ angular.module('starter.services', [])
   var user = {
     name: 'Paul Pederson',
     username: 'paulcpederson',
-    amount: -12,
+    amount: 10,
     org: 'Esri PDX',
     photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
   };
-
-  // colorize: function() {
-  //   var scale = chroma.scale(['$red', '#$green']).domain([amount.lowest, amount.highest]);
-  //   var you = scale.mode('lab')(user.amount);
-  //   $('.variable-color').css('background-color', you);
-  // }
-
-  var group = Group.all();
-  var userCount = group.length;
-  console.log(group);
-  console.log(userCount);
-
-  // Figure out what place the user is in
-  var place = user.amount < 0 ? '#E66244' : '#5acf61';
-
-
-  user.place = place;
 
   return {
     fetch: function() {
@@ -59,6 +42,12 @@ angular.module('starter.services', [])
     get: function(userId) {
       // Simple index lookup
       return users[userId];
+    },
+    getMinDebt: function () {
+      return -10;
+    },
+    getMaxDebt: function () {
+      return 30;
     }
   };
 })
