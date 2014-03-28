@@ -1974,7 +1974,7 @@ body, .ionic-body {
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
+  font-family: 'Clear Sans', monospace;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -2248,7 +2248,7 @@ cite {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
+  font-family: 'Clear Sans', monospace;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
@@ -2957,7 +2957,7 @@ a.subdued {
   white-space: nowrap;
   font-weight: 400;
   font-size: 14px;
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
+  font-family: 'Clear Sans', monospace;
   opacity: 0.7; }
   .tab-item:hover {
     cursor: pointer; }
@@ -4043,7 +4043,7 @@ label, input, button, select, textarea {
   line-height: 1.42857; }
 
 input, button, select, textarea {
-  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace; }
+  font-family: 'Clear Sans', monospace; }
 
 .item-input {
   display: -webkit-box;
@@ -6319,10 +6319,8 @@ a.button {
 .bar-transparent {
   background: transparent;
   border: none; }
-<<<<<<< HEAD
-=======
 
-.user-icon {
+.user-icon, .user-icon-left {
   width: 40px;
   height: 40px;
   margin-right: 1em;
@@ -6333,7 +6331,14 @@ a.button {
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); }
->>>>>>> 78173bb4266bab0013bdc4929465d31ff635aeca
+
+
+.user-icon-left {
+  float: left; }
+
+.user-name {
+  display: inline-block;
+  margin-top: 12px; }
 
 .me-status-screen {
   top: 0;
@@ -6344,3 +6349,6 @@ a.button {
   font-size: 50vh;
   color: #fff;
   padding-top: 10vh; }
+
+.item-input-inset {
+  margin-top: 1px; }
