@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
 
 .controller('ActivityCtrl', function($scope, Activity) {
   $scope.activities = Activity.all();
-  console.log("Activity Page");
+  console.log(Activity);
 })
 
 .controller('ActivityDetailCtrl', function($scope, $stateParams, Activity) {
