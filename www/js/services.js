@@ -9,7 +9,7 @@ angular.module('starter.services', [])
   var user = {
     name: 'Paul Pederson',
     username: 'paulcpederson',
-    amount: 0,
+    amount: -12,
     org: 'Esri PDX',
     photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
   };
