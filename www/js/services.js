@@ -9,7 +9,7 @@ angular.module('starter.services', [])
   var user = {
     name: 'Paul Pederson',
     username: 'paulcpederson',
-    amount: -12,
+    amount: 10,
     org: 'Esri PDX',
     photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
   };
@@ -59,6 +59,12 @@ angular.module('starter.services', [])
     get: function(userId) {
       // Simple index lookup
       return users[userId];
+    },
+    getMinDebt: function () {
+      return -10;
+    },
+    getMaxDebt: function () {
+      return 30;
     }
   };
 })
