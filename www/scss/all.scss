@@ -45,4 +45,8 @@ $headings-line-height:            1.2 !default;
 @import "www/lib/ionic/scss/ionic";
 
 // Import App Styles
+.bar-transparent {
+  background: transparent;
+}
+
 @import "me";

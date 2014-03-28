@@ -1,6 +1,8 @@
-<ion-view title="<img class='profile-photo' src='{{ user.photo }}' alt='{{ user.name }}' width='20' height='20'>">
+<!-- Me tab shows overall debt/credit to organization -->
+<ion-view title="">
 
     <ion-content class="padding me-status-screen" style="background-color:{{ user.place }}">
+      <img class="profile-photo" src="{{ user.photo }}" alt="{{ user.name }}" width="40" height="40">
       <h1 class="me-debt-number">{{ user.amount > 0 ? user.amount : Math.abs(user.amount) }}</h1>
     </ion-content>
 

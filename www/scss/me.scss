@@ -1,12 +1,7 @@
 .me-status-screen {
+  top: 0;
   color: $white;
   text-align: center;
-  &.green {
-    background-color: $green;
-  }
-  &.red {
-    background-color: $red;
-  }
 }
 
 .me-debt-number {
