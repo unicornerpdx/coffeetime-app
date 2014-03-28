@@ -1,10 +1,36 @@
 angular.module('starter.services', [])
 
 /**
- * A simple example service that returns some data.
+ * Get the Users Information
+ */
+.factory('Me', function() {
+
+  // Some fake testing data
+  var user = {
+    name: 'Paul Pederson',
+    username: 'paulcpederson',
+    amount: 3,
+    org: 'Esri PDX',
+    photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
+  };
+
+  // Figure out what place the user is in
+  var place;
+  place = user.amount < 0 ? '#E66244' : '#5acf61';
+  user.place = place;
+
+  return {
+    fetch: function() {
+      return user;
+    }
+  };
+
+})
+
+/**
+ * Get all the users in the organization
  */
 .factory('Friends', function() {
-
 
   // Some fake testing data
   var friends = [
@@ -26,7 +52,7 @@ angular.module('starter.services', [])
 })
 
 /**
- * Activities Stream
+ * Get all the activities related to the user
  */
 .factory('Activity', function() {
 

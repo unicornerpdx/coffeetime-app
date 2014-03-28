@@ -1,7 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('MeCtrl', function($scope) {
+.controller('MeCtrl', function($scope, Me) {
   console.log("Me Page");
+  $scope.user = Me.fetch();
+  $scope.Math = window.Math;
 })
 
 .controller('ExchangeCtrl', function($scope, Friends) {

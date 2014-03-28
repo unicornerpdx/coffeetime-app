@@ -18,10 +18,14 @@ $royal:                           #8a6de9 !default;
 $dark:                            #444 !default;
 
 // Fonts
-$font-family-sans-serif:          "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif !default;
-$font-family-light-sans-serif:    "Open Sans", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-family-sans-serif:          'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace !default;
+$font-family-light-sans-serif:    'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace !default;
 $font-family-serif:               Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$font-family-condensed:           'Knockout 26 A', 'Knockout 26 B';
+
+// Knockout
+%knockout { font-family: 'Knockout 26 A', 'Knockout 26 B'; font-weight: 400; font-style: normal; }
 
 $font-family-base:                $font-family-sans-serif !default;
 $font-size-base:                  14px !default;
