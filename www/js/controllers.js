@@ -1,7 +1,29 @@
 angular.module('starter.controllers', [])
 
-.controller('MeCtrl', function($scope, Me) {
+.controller('MeCtrl', function($scope, Me, $timeout) {
   $scope.user = Me.fetch();
+
+  // User Debt/Credit Switcher
+  //
+  // $timeout(function(){
+  //   $scope.user.amount = 20;
+  // }, 100);
+
+  // $timeout(function(){
+  //   $scope.user.amount = 0;
+  // }, 2000);
+
+  // $timeout(function(){
+  //   $scope.user.amount = -10;
+  // }, 3000);
+
+  // $timeout(function(){
+  //   $scope.user.amount = -5;
+  // }, 4000);
+
+  // $timeout(function(){
+  //   $scope.user.amount = 8;
+  // }, 5000);
 })
 
 .controller('ExchangeCtrl', function($scope, Group) {
