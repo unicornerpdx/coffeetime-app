@@ -9,11 +9,11 @@ angular.module('app.directives', [])
       var $red   = '#e66244';
       var $green = '#5acf61';
       var $cream = '#e6e4e1';
-      var scale = chroma.scale([$cream, $green]);
-      var negascale = chroma.scale([$red, $cream]);
       var amount;
       var min;
       var max;
+      var scale = chroma.scale([$cream, $green], max, 'k-means');
+      var negascale = chroma.scale([$red, $cream], min, 'k-means');
 
       function recolor() {
         if(amount > 0) {
