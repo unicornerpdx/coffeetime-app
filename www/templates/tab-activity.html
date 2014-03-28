@@ -9,7 +9,7 @@
 
         <p>
           <span ng-if="activity.amount > 0">
-            You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date | date.relative }}.
+            You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date | date:'dd-MM-yy' }}.
           </span>
           <span ng-if="activity.amount < 0">
             {{ activity.user.name }} bought you {{ activity.amount | absolute }} coffees on {{ activity.date | date:'dd-MM-yy' }}.

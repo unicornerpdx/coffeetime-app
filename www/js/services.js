@@ -20,7 +20,7 @@ angular.module('starter.services', [])
   //   $('.variable-color').css('background-color', you);
   // }
 
-  var friendCount = Friends.all().length;
+  var userCount = Group.all().length;
 
   // Figure out what place the user is in
   var place = user.amount < 0 ? '#E66244' : '#5acf61';
@@ -37,10 +37,10 @@ angular.module('starter.services', [])
 /**
  * Get all the users in the organization
  */
-.factory('Friends', function() {
+.factory('Group', function() {
 
   // Some fake testing data
-  var friends = [
+  var users = [
     { id: 0, name: 'Paul Pederson', username: 'paulcpederson', photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'},
     { id: 1, name: 'Nate Goldman', username: 'ngoldman', photo: 'https://avatars1.githubusercontent.com/u/427322?s=460'},
     { id: 2, name: 'Nikolas Wise', username: 'nikolaswise', photo: 'https://avatars2.githubusercontent.com/u/1987772?s=460'},
@@ -49,11 +49,11 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return friends;
+      return users;
     },
-    get: function(friendId) {
+    get: function(userId) {
       // Simple index lookup
-      return friends[friendId];
+      return user[userId];
     }
   };
 })
