@@ -6323,6 +6323,12 @@ a.button {
 .white-text {
   color: #fff; }
 
+p.light-text {
+  color: #afafaf; }
+
+.trailer-0 {
+  margin-bottom: 0; }
+
 .user-icon, .user-icon-left {
   width: 40px;
   height: 40px;
