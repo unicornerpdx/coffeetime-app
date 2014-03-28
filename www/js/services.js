@@ -9,14 +9,13 @@ angular.module('starter.services', [])
   var user = {
     name: 'Paul Pederson',
     username: 'paulcpederson',
-    amount: 3,
+    amount: 0,
     org: 'Esri PDX',
     photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
   };
 
   // Figure out what place the user is in
-  var place;
-  place = user.amount < 0 ? '#E66244' : '#5acf61';
+  var place = user.amount < 0 ? '#E66244' : '#5acf61';
   user.place = place;
 
   return {

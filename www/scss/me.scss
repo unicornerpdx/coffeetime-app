@@ -5,8 +5,12 @@
 }
 
 .me-debt-number {
-  font-size: 50vh;
+  font-size: 40vh;
   color: $white;
   padding-top: 10vh;
   @extend %knockout;
+}
+
+.me-debt-description {
+  padding-top: 10vh;
 }

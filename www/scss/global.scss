@@ -4,14 +4,17 @@
   border: none;
 }
 
+.white-text {
+  color: $white;
+}
+
 // Gravatar images
 %user-icon {
   width: 40px;
   height: 40px;
   margin-right: 1em;
-  border: 1px solid $lightest-gray;
   @include border-radius(50%);
-  @include box-shadow(0 0 12px rgba(0,0,0,.2));
+  @include box-shadow(0 0 6px rgba(0,0,0,.1));
 }
 
 .user-icon {
