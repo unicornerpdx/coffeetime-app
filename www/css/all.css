@@ -3417,12 +3417,12 @@ a.item-content {
   text-decoration: none; }
 
 .item-text-wrap .item, .item-text-wrap, .item-text-wrap h1, .item-text-wrap h2, .item-text-wrap h3, .item-text-wrap h4, .item-text-wrap h5, .item-text-wrap h6, .item-text-wrap p, .item-complex.item-text-wrap .item-content, .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
-  overflow: hidden;
+  overflow: visible;
   white-space: normal; }
 
 .item-complex.item-text-wrap, .item-complex.item-text-wrap h1, .item-complex.item-text-wrap h2, .item-complex.item-text-wrap h3, .item-complex.item-text-wrap h4, .item-complex.item-text-wrap h5, .item-complex.item-text-wrap h6, .item-complex.item-text-wrap p {
-  overflow: hidden;
-  white-space: nowrap; }
+  overflow: visible;
+  white-space: normal; }
 
 /**
  * Item Icons
