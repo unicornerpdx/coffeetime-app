@@ -1,3 +1,8 @@
+.me-debt-number {
+  font-family: 'Knockout 26 A', 'Knockout 26 B';
+  font-weight: 400;
+  font-style: normal; }
+
 /*!
   Ionicons, v1.4.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -1673,6 +1678,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   vertical-align: baseline;
   font: inherit;
+  font-weight: 300;
   font-size: 100%; }
 
 ol, ul {
@@ -1753,7 +1759,7 @@ a {
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
 b, strong {
-  font-weight: bold; }
+  font-weight: 500; }
 
 /**
  * Address styling not present in Safari 5 and Chrome.
@@ -1968,7 +1974,7 @@ body, .ionic-body {
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -2242,7 +2248,7 @@ cite {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
@@ -2294,7 +2300,7 @@ dt, dd {
   line-height: 1.42857; }
 
 dt {
-  font-weight: bold; }
+  font-weight: 300; }
 
 blockquote {
   margin: 0 0 20px;
@@ -2951,7 +2957,7 @@ a.subdued {
   white-space: nowrap;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Open Sans", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace;
   opacity: 0.7; }
   .tab-item:hover {
     cursor: pointer; }
@@ -4037,7 +4043,7 @@ label, input, button, select, textarea {
   line-height: 1.42857; }
 
 input, button, select, textarea {
-  font-family: "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  font-family: 'Ideal Sans SSm A', 'Ideal Sans SSm B', monospace; }
 
 .item-input {
   display: -webkit-box;
@@ -6311,11 +6317,14 @@ a.button {
   line-height: 48px; }
 
 .me-status-screen {
-  background-color: #5acf61;
   color: #fff;
   text-align: center; }
+  .me-status-screen.green {
+    background-color: #5acf61; }
+  .me-status-screen.red {
+    background-color: #e66244; }
 
 .me-debt-number {
-  font-size: 30vh;
+  font-size: 50vh;
   color: #fff;
-  padding-top: 20vh; }
+  padding-top: 10vh; }
