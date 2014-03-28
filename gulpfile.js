@@ -6,11 +6,11 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./www/scss/**/*.scss']
 };
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/all.scss')
+  gulp.src('./www/scss/all.scss')
     .pipe(sass())
     .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
