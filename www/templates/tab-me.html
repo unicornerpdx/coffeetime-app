@@ -7,10 +7,10 @@
 
       <h4 class="white-text me-debt-description">
         <div ng-if="user.amount < 0">
-          You owe {{ user.amount | absolute }} coffees to {{ user.org }}
+          You owe {{ user.amount | absolute }} {{ user.amount | pluralizer }} to {{ user.org }}
         </div>
         <div ng-if="user.amount > 0">
-          {{ user.org }} owes you {{ user.amount }} coffees.
+          {{ user.org }} owes you {{ user.amount }} {{ user.amount | pluralizer }}.
         </div>
         <div ng-if="user.amount == 0">
           You're all even!
