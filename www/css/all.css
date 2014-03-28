@@ -6317,7 +6317,8 @@ a.button {
   line-height: 48px; }
 
 .bar-transparent {
-  background: transparent; }
+  background: transparent;
+  border: none; }
 
 .me-status-screen {
   top: 0;
