@@ -3,17 +3,17 @@
 
     <div class="item item-input-inset">
       <label class="item-input-wrapper">
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" ng-model="query">
       </label>
     </div>
 
     <ion-list>
-      <ion-item ng-repeat="user in group"
-                class="item-avatar"
+      <ion-item ng-repeat="user in group | filter:query | orderBy:'name'"
+                class="item"
                 href="#/tab/exchange/{{user.id}}">
 
-        <img src="{{ user.photo }}" alt="{{ user.username }}">
-        <span class=""> {{user.name}}</span>
+        <img src="{{ user.photo }}" alt="{{ user.username }}" class="user-icon-left">
+        <span class="user-name"> {{user.name}} </span>
 
       </ion-item>
     </ion-list>
