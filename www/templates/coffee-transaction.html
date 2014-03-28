@@ -6,6 +6,24 @@
 -->
 <ion-view title="{{user.name}}">
   <ion-content has-header="true" padding="true">
-    <h1>COFFEE TIEM</h1>
+
+    <form ng-submit="add()" >
+
+
+      <input type="number" placeholder="0" ng-model="number">
+      <button ng-click='deincrement()'>-</button>
+      <button ng-click='increment()'>+</button>
+
+      <p>{{user.name}} owes you <span class="highlight">{{ number }}</span> coffee.</p>
+
+      <div class="list">
+        <label class="item item-input">
+          <textarea placeholder="Leave a message"></textarea>
+        </label>
+      </div>
+
+      <input class="button button-block button-positive" type="submit" value="Confirm" />
+
+    </form>
   </ion-content>
 </ion-view>
