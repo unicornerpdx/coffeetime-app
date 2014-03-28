@@ -3,37 +3,25 @@ angular.module('starter.services', [])
 /**
  * Get the Users Information
  */
-.factory('Me', function(Group) {
-
-  // Some fake testing data
-  var user = {
-    name: 'Paul Pederson',
-    username: 'paulcpederson',
-    amount: -12,
-    org: 'Esri PDX',
-    photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
-  };
-
-  // colorize: function() {
-  //   var scale = chroma.scale(['$red', '#$green']).domain([amount.lowest, amount.highest]);
-  //   var you = scale.mode('lab')(user.amount);
-  //   $('.variable-color').css('background-color', you);
-  // }
-
-  var group = Group.all();
-  var userCount = group.length;
-  console.log(group);
-  console.log(userCount);
-
-  // Figure out what place the user is in
-  var place = user.amount < 0 ? '#E66244' : '#5acf61';
-
-
-  user.place = place;
-
+.factory('Me', function($http) {
   return {
-    fetch: function() {
-      return user;
+    fetch: function ( ) {
+      var user_id = localStorage["user_id"];
+
+      return $http.get("http://localhost:8080/user/info?user_id=" + user_id);
+    },
+    ok: function ( ) {
+      var user_id = localStorage["user_id"];
+
+      if (Number.isNaN(user_id)) {
+        return false;
+      }
+
+      return true;
+    },
+    get: function(user_id) {
+      // Simple index lookup
+      return $http.get("http://localhost:8080/user/info?user_id=" + user_id);
     }
   };
 
@@ -42,48 +30,24 @@ angular.module('starter.services', [])
 /**
  * Get all the users in the organization
  */
-.factory('Group', function() {
-
-  // Some fake testing data
-  var users = [
-    { id: 0, name: 'Paul Pederson', username: 'paulcpederson', photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'},
-    { id: 1, name: 'Nate Goldman', username: 'ngoldman', photo: 'https://avatars1.githubusercontent.com/u/427322?s=460'},
-    { id: 2, name: 'Nikolas Wise', username: 'nikolaswise', photo: 'https://avatars2.githubusercontent.com/u/1987772?s=460'},
-    { id: 3, name: 'Patrick Arlt', username: 'patrickarlt', photo: 'https://avatars1.githubusercontent.com/u/378557?s=460'},
-  ];
-
+.factory('Group', function($http) {
   return {
-    all: function() {
-      return users;
+    ok: function ( ) {
+      var group_id = localStorage["current_group"];
+      var access_token = localStorage["access_token"];
+
+      if (Number.isNaN(group_id) || !access_token) {
+        return false;
+      }
+
+      return true;
     },
-    get: function(userId) {
-      // Simple index lookup
-      return users[userId];
+    fetch: function ( ) {
+      var group_id = localStorage["group_id"];
+      var access_token = localStorage["access_token"];
+
+      return $http.get("http://localhost:8080/user/info?group_id=" + group_id + "&access_token=" + access_token);
     }
   };
-})
-
-/**
- * Get all the activities related to the user
- */
-.factory('Activity', function() {
-
-  // Some fake testing data
-  var activities = [
-    { id: 0, user: { name: 'Paul Pederson', username: 'paulcpederson', photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'}, amount: 2, date: '2014-03-27T18:00:00-0800', message: 'Hey man, cool stuff', latlng: [-120.277, 45.235]  },
-    { id: 1, user: { name: 'Nate Goldman', username: 'ngoldman', photo: 'https://avatars1.githubusercontent.com/u/427322?s=460'}, amount: -2, date: '2014-02-27T18:00:00-0800', message: 'better pay me back, yo', latlng: [-120.277, 45.235]  },
-    { id: 2, user: { name: 'Nikolas Wise', username: 'nikolaswise', photo: 'https://avatars2.githubusercontent.com/u/1987772?s=460'}, amount: 1, date: '2014-01-27T18:00:00-0800', message: 'thanks for the coffee', latlng: [-120.277, 45.235]  },
-    { id: 3, user: { name: 'Patrick Arlt', username: 'patrickarlt', photo: 'https://avatars1.githubusercontent.com/u/378557?s=460'}, amount: 2, date: '2013-12-14T18:00:00-0800', message: '', latlng: [-120.277, 45.235]  },
-  ];
-
-  return {
-    all: function() {
-      return activities;
-    },
-    get: function(activityId) {
-      // Simple index lookup
-      return activities[activityId];
-    }
-  };
-
 });
+
