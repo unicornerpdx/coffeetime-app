@@ -1,0 +1,15 @@
+// Project Wide SCSS
+.bar-transparent {
+  background: transparent;
+  border: none;
+}
+
+// Gravatar images
+.user-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1em;
+  border: 1px solid $lightest-gray;
+  @include border-radius(50%);
+  @include box-shadow(0 0 12px rgba(0,0,0,.2));
+}

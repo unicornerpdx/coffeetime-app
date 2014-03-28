@@ -6317,7 +6317,20 @@ a.button {
   line-height: 48px; }
 
 .bar-transparent {
-  background: transparent; }
+  background: transparent;
+  border: none; }
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1em;
+  border: 1px solid #efefef;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); }
 
 .me-status-screen {
   top: 0;
