@@ -3,16 +3,24 @@ angular.module('starter.services', [])
 /**
  * Get the Users Information
  */
-.factory('Me', function() {
+.factory('Me', function(Friends) {
 
   // Some fake testing data
   var user = {
     name: 'Paul Pederson',
     username: 'paulcpederson',
-    amount: 0,
+    amount: 3,
     org: 'Esri PDX',
     photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'
   };
+
+  // colorize: function() {
+  //   var scale = chroma.scale(['$red', '#$green']).domain([amount.lowest, amount.highest]);
+  //   var you = scale.mode('lab')(user.amount);
+  //   $('.variable-color').css('background-color', you);
+  // }
+
+  var friendCount = Friends.all().length;
 
   // Figure out what place the user is in
   var place = user.amount < 0 ? '#E66244' : '#5acf61';
@@ -29,10 +37,10 @@ angular.module('starter.services', [])
 /**
  * Get all the users in the organization
  */
-.factory('Group', function() {
+.factory('Friends', function() {
 
   // Some fake testing data
-  var users = [
+  var friends = [
     { id: 0, name: 'Paul Pederson', username: 'paulcpederson', photo: 'https://avatars3.githubusercontent.com/u/1031758?s=460'},
     { id: 1, name: 'Nate Goldman', username: 'ngoldman', photo: 'https://avatars1.githubusercontent.com/u/427322?s=460'},
     { id: 2, name: 'Nikolas Wise', username: 'nikolaswise', photo: 'https://avatars2.githubusercontent.com/u/1987772?s=460'},
@@ -41,11 +49,11 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return users;
+      return friends;
     },
-    get: function(userID) {
+    get: function(friendId) {
       // Simple index lookup
-      return users[userID];
+      return friends[friendId];
     }
   };
 })

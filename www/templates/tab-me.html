@@ -6,15 +6,15 @@
       <h1 class="me-debt-number white-text">{{ user.amount > 0 ? user.amount : Math.abs(user.amount) }}</h1>
 
       <h4 class="white-text me-debt-description">
-        <div ng-if="user.amount > 0">
+        <span ng-if="user.amount < 0">
           You owe {{ user.amount }} coffees to {{ user.org }}
-        </div>
-        <div ng-if="user.amount < 0">
+        </span>
+        <span ng-if="user.amount > 0">
           {{ user.org }} owes you {{ user.amount > 0 ? user.amount : Math.abs(user.amount) }} coffees.
-        </div>
-        <div ng-if="user.amount == 0">
+        </span>
+        <span ng-if="user.amount == 0">
           You're all even!
-        </div>
+        </span>
       </h4>
 
     </ion-content>
