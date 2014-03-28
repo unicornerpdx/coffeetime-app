@@ -6,7 +6,7 @@ angular.module('app.directives', [])
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
-      var $red = '#e66244';
+      var $red   = '#e66244';
       var $green = '#5acf61';
       var $cream = '#e6e4e1';
       var scale = chroma.scale([$cream, $green]);
