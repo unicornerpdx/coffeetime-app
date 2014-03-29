@@ -1,5 +1,13 @@
 angular.module('starter.controllers', [])
 
+.controller('ColorCtrl', function($scope, Me, $timeout) {
+  $scope.me = Me.fetch();
+})
+
+.controller('TabCtrl', function($scope, Me, $timeout) {
+  $scope.me = Me.fetch();
+})
+
 .controller('MeCtrl', function($scope, Me, $timeout) {
   $scope.user = Me.fetch();
 })

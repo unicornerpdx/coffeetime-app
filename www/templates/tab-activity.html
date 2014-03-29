@@ -9,14 +9,14 @@
 
         <div ng-if="activity.amount > 0">
           <p class="trailer-0">
-            You bought {{ activity.user.name }} {{ activity.amount }} {{activity.amount | pluralizer}}.
+            You bought {{ activity.user.name }} {{ activity.amount }} coffee{{activity.amount | pluralizer}}.
           </p>
           <p class="light-text">{{ activity.date | relativeDate }}</p>
         </div>
 
         <div ng-if="activity.amount < 0">
           <p class="trailer-0">
-            {{ activity.user.name }} bought you {{ activity.amount | absolute }} {{activity.amount | pluralizer}}.
+            {{ activity.user.name }} bought you {{ activity.amount | absolute }} coffee{{activity.amount | pluralizer}}.
           </p>
           <p class="light-text">{{ activity.date | relativeDate }}</p>
         </div>
