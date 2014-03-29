@@ -1,3 +1,36 @@
 .item-input-inset {
   margin-top: 1px;
 }
+
+.transaction-view {
+  top: 128px;
+}
+
+%transaction-button {
+  position: absolute;
+  top: 0;
+  @extend %knockout;
+  font-size: 64px;
+  padding: 16px 64px;
+  background: transparent;
+  border: none;
+}
+
+.transaction-button-left {
+  @extend %transaction-button;
+  left: 0
+}
+
+.transaction-button-right {
+  @extend %transaction-button;
+  right: 0;
+}
+
+input[type="number"].transaction-number {
+  $size: 128px;
+  @extend %knockout;
+  margin-top: -24px;
+  font-size: $size;
+  height: $size;
+  text-align: center;
+}
