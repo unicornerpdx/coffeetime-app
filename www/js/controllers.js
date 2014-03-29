@@ -11,11 +11,8 @@ angular.module('starter.controllers', [])
 .controller('TransactionCtrl', function($scope, $stateParams, Group) {
   $scope.user = Group.get($stateParams.userID);
   $scope.number = 0;
-  $scope.increment = function(){
-    $scope.number++;
-  };
-  $scope.deincrement = function(){
-    $scope.number--;
+  $scope.increment = function(number){
+    $scope.number = $scope.number + number;
   };
 })
 
