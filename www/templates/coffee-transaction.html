@@ -4,20 +4,33 @@
   The GroupCtrl pulls data from the Group service (service.js)
   The Group service returns an array of user data
 -->
-<ion-view title="{{user.name}}">
-  <ion-content has-header="true" padding="true">
-
-    <form ng-submit="add()" >
+<ion-view>
 
 
-      <input type="number" placeholder="0" ng-model="number">
-      <button ng-click='deincrement()'>-</button>
-      <button ng-click='increment()'>+</button>
+  <form ng-submit="add()" >
 
-      <p>{{user.name}} owes you <span class="highlight">{{ number }}</span> coffee.</p>
+    <div>
+      <input class="transaction-number" type="number" placeholder="0" ng-model="number">
+      <button ng-click='number=number-1' class="transaction-button-left">-</button>
+      <button ng-click='number=number+1' class="transaction-button-right">+</button>
+    </div>
+
+    <ion-content has-header="true" padding="true" class="transaction-view">
+      <p ng-if="number > 0">
+        {{user.name}} owes you {{ number}} coffee{{number| pluralizer}}
+      </p>
+
+      <p ng-if="number < 0">
+        You owe {{user.name}} {{ number | absolute }} coffee{{number| pluralizer}}
+      </p>
+
+      <p ng-if="number == 0">
+        You don't owe nobody nothin'.
+      </p>
+
       <textarea class="blockquote" placeholder="Leave a message"></textarea>
       <input class="button button-block button-positive" type="submit" value="Confirm" />
 
-    </form>
-  </ion-content>
+    </ion-content>
+  </form>
 </ion-view>

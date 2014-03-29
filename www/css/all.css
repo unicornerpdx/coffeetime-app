@@ -1,4 +1,4 @@
-.me-debt-number {
+.me-debt-number, .transaction-button-left, .transaction-button-right, input[type="number"].transaction-number {
   font-family: 'Knockout 26 A', 'Knockout 26 B';
   font-weight: 400;
   font-style: normal; }
@@ -6320,6 +6320,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-appearance: none;
   margin: 0; }
 
+
 body, .pane {
   background: #f9f6f3; }
 
@@ -6371,6 +6372,28 @@ p.light-text {
 .item-input-inset {
   margin-top: 1px; }
 
+.transaction-view {
+  top: 128px; }
+
+.transaction-button-left, .transaction-button-right {
+  position: absolute;
+  top: 0;
+  font-size: 64px;
+  padding: 16px 64px;
+  background: transparent;
+  border: none; }
+
+.transaction-button-left {
+  left: 0; }
+
+.transaction-button-right {
+  right: 0; }
+
+input[type="number"].transaction-number {
+  margin-top: -24px;
+  font-size: 128px;
+  height: 128px;
+  text-align: center; }
 
 textarea.blockquote {
   width: 100%;
@@ -6388,10 +6411,3 @@ textarea.blockquote {
   background-size: contain;
   resize: none;
   overflow-y: hidden; }
-
-p.citation {
-  margin: 2em 0;
-  font-size: 1.5em;
-  color: #afafaf;
-  font-style: italic;
-  text-align: right; }

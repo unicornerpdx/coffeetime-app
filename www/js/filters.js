@@ -9,9 +9,9 @@ angular.module('app.filters', [])
 .filter('pluralizer', function() {
   return function(value) {
     if ( value == 1 || value == -1 ){
-      return 'coffee';
+      return '';
     } else {
-      return 'coffees';
+      return 's';
     }
   };
 })
