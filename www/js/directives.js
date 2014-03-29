@@ -1,14 +1,15 @@
+var $red   = '#e66244';
+var $green = '#5acf61';
+var $cream = '#e6e4e1';
+var $dark  = '#333333';
+
 // Chroma Colorizer Directive
 angular.module('app.directives', [])
 
 .directive('userColor', function(Me, Group){
-  console.log(Me.fetch(), Group);
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
-      var $red   = '#e66244';
-      var $green = '#5acf61';
-      var $cream = '#e6e4e1';
       var amount;
       var min;
       var max;
@@ -38,6 +39,48 @@ angular.module('app.directives', [])
       scope.$watch(Group.getMinDebt, function(newValue, oldValue){
         min = newValue;
         recolor();
+      });
+    }
+  };
+})
+
+.directive('transactionBg', function(){
+  return {
+    restrict: 'A',
+    link: function postLink(scope, iElement, iAttrs) {
+      function setBackground() {
+        if (number > 0) {
+          iElement.css('background-color', $green);
+        } else if (number < 0) {
+          iElement.css('background-color', $red);
+        } else {
+          iElement.css('background-color', $dark);
+        }
+      }
+      scope.$watch('number', function(newValue, oldValue){
+        number = newValue;
+        setBackground();
+      });
+    }
+  };
+})
+
+.directive('transactionColor', function(){
+  return {
+    restrict: 'A',
+    link: function postLink(scope, iElement, iAttrs) {
+      function setBackground() {
+        if (number > 0) {
+          iElement.css('color', $green);
+        } else if (number < 0) {
+          iElement.css('color', $red);
+        } else {
+          iElement.css('color', $dark);
+        }
+      }
+      scope.$watch('number', function(newValue, oldValue){
+        number = newValue;
+        setBackground();
       });
     }
   };

@@ -9,27 +9,27 @@
 
   <form ng-submit="add()" >
 
-    <div>
+    <div transaction-bg>
       <input class="transaction-number" type="number" placeholder="0" ng-model="number">
       <button ng-click='number=number-1' class="transaction-button-left">-</button>
       <button ng-click='number=number+1' class="transaction-button-right">+</button>
     </div>
 
     <ion-content has-header="true" padding="true" class="transaction-view">
-      <p ng-if="number > 0">
-        {{user.name}} owes you {{ number}} coffee{{number| pluralizer}}
+      <p class="transaction-statement" ng-if="number > 0">
+        {{user.name}} owes you <span transaction-color>{{ number}}</span> coffee{{number| pluralizer}}
       </p>
 
-      <p ng-if="number < 0">
-        You owe {{user.name}} {{ number | absolute }} coffee{{number| pluralizer}}
+      <p class="transaction-statement" ng-if="number < 0">
+        You owe {{user.name}} <span transaction-color>{{ number | absolute }}</span> coffee{{number| pluralizer}}
       </p>
 
-      <p ng-if="number == 0">
-        You don't owe nobody nothin'.
+      <p class="transaction-statement" ng-if="number == 0">
+        You and {{user.name}} are even stevens.
       </p>
 
       <textarea class="blockquote" placeholder="Leave a message"></textarea>
-      <input class="button button-block button-positive" type="submit" value="Confirm" />
+      <input class="button button-block transaction-submit" type="submit" value="Confirm" ng-disabled="number == 0" transaction-bg/>
 
     </ion-content>
   </form>
