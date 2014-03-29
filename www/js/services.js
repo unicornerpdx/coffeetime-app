@@ -1,16 +1,16 @@
 angular.module('starter.services', [])
 
-.factory('Session', function($http, $stateProvider){
+.factory('Session', function($http, $state){
   var userId = localStorage.userId;
   var groupId = localStorage.currentGroup;
   var accessToken = localStorage.accessToken;
 
   if(!userId || !accessToken){
-    $stateProvider.go("auth");
+    $state.go("auth");
   }
 
   if(userId && accessToken && !groupId){
-    $stateProvider.go("groups");
+    $state.go("groups");
   }
 
   return {
@@ -28,10 +28,10 @@ angular.module('starter.services', [])
         localStorage.currentGroup = newGroup();
       }
 
-      $stateProvider.go('tab.me');
+      $state.go('tab.me');
     },
     authenticate: function() {
-      $stateProvider.go("auth");
+      $state.go("auth");
     },
     signOut: function() {
       localStorage.clear();

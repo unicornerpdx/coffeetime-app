@@ -2,7 +2,6 @@
 angular.module('app.directives', [])
 
 .directive('userColor', function(Me, Group){
-  console.log(Me.fetch(), Group);
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {

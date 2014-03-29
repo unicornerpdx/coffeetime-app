@@ -16,4 +16,8 @@ angular.module('starter.controllers', [])
   Group.fetch().success(function(data) {
     $scope.group = data;
   });
+})
+
+.controller('AuthCtrl', function($scope, $ionicNavBarDelegate) {
+  $ionicNavBarDelegate.setTitle("Auth");
 });
