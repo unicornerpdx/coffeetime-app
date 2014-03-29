@@ -1,5 +1,4 @@
 // Our Reset Stuff
-
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -11,6 +10,10 @@ input.no-style {
 }
 
 // Project Wide SCSS
+body, .pane {
+  background: $cream;
+}
+
 .bar-transparent {
   background: transparent;
   border: none;

@@ -9,9 +9,10 @@
 %transaction-button {
   position: absolute;
   top: 0;
+  padding: 25px 64px;
   @extend %knockout;
   font-size: 64px;
-  padding: 16px 64px;
+  color: $white;
   background: transparent;
   border: none;
 }
@@ -27,10 +28,48 @@
 }
 
 input[type="number"].transaction-number {
-  $size: 128px;
-  @extend %knockout;
+  height: auto;
   margin-top: -24px;
-  font-size: $size;
-  height: $size;
+  @extend %knockout;
+  font-size: 124px;
   text-align: center;
+  color: $white;
+  background-color: transparent;
+  padding: 0.125em 0 0;
 }
+
+.transaction-statement {
+  @include box-sizing(border-box);
+  width: 100%;
+  padding: 0 1em;
+  margin: 1em 0;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: $dark-gray;
+}
+
+textarea.blockquote {
+  width: 100%;
+  @include box-sizing(border-box);
+  height: 20vh;
+  padding: 1.25em 1em;
+  margin: 0 0 1em 0;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: $light-gray;
+  border: none;
+  background: url(../img/quotes-background.png) center center no-repeat transparent;
+  background-size: contain;
+  resize: none;
+  overflow-y: hidden;
+}
+
+.transaction-submit {
+  font-size: 1.5em;
+  color: $white;
+  border: none;
+  &[disabled]{
+    opacity: 0.1;
+  }
+}
+

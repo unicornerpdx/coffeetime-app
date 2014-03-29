@@ -6321,6 +6321,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   margin: 0; }
 
 
+body, .pane {
+  background: #f9f6f3; }
+
 .bar-transparent {
   background: transparent;
   border: none; }
@@ -6375,8 +6378,9 @@ p.light-text {
 .transaction-button-left, .transaction-button-right {
   position: absolute;
   top: 0;
+  padding: 25px 64px;
   font-size: 64px;
-  padding: 16px 64px;
+  color: #fff;
   background: transparent;
   border: none; }
 
@@ -6387,7 +6391,45 @@ p.light-text {
   right: 0; }
 
 input[type="number"].transaction-number {
+  height: auto;
   margin-top: -24px;
-  font-size: 128px;
-  height: 128px;
-  text-align: center; }
+  font-size: 124px;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  padding: 0.125em 0 0; }
+
+.transaction-statement {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 1em;
+  margin: 1em 0;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: #333333; }
+
+textarea.blockquote {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 20vh;
+  padding: 1.25em 1em;
+  margin: 0 0 1em 0;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: #afafaf;
+  border: none;
+  background: url(../img/quotes-background.png) center center no-repeat transparent;
+  background-size: contain;
+  resize: none;
+  overflow-y: hidden; }
+
+.transaction-submit {
+  font-size: 1.5em;
+  color: #fff;
+  border: none; }
+  .transaction-submit[disabled] {
+    opacity: 0.1; }
