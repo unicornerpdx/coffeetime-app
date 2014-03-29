@@ -1,4 +1,4 @@
-.me-debt-number {
+.me-debt-number, .transaction-button-left, .transaction-button-right, input[type="number"].transaction-number {
   font-family: 'Knockout 26 A', 'Knockout 26 B';
   font-weight: 400;
   font-style: normal; }
@@ -6316,6 +6316,14 @@ a.button {
 .platform-android.platform-cordova .title {
   line-height: 48px; }
 
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+
+body, .pane {
+  background: #f9f6f3; }
+
 .bar-transparent {
   background: transparent;
   border: none; }
@@ -6323,16 +6331,22 @@ a.button {
 .white-text {
   color: #fff; }
 
+p.light-text {
+  color: #afafaf; }
+
+.trailer-0 {
+  margin-bottom: 0; }
+
 .user-icon, .user-icon-left {
-  width: 40px;
-  height: 40px;
-  margin-right: 1em;
+  background: #fff;
+  width: 10vh;
+  height: 10vh;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
 
 
 .user-icon-left {
@@ -6342,18 +6356,88 @@ a.button {
   display: inline-block;
   margin-top: 10px; }
 
+.bar.bar-transparent {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #fff; }
+
 .me-status-screen {
   top: 0;
-  color: #fff;
   text-align: center; }
 
 .me-debt-number {
-  font-size: 40vh;
-  color: #fff;
-  padding-top: 10vh; }
+  font-size: 50vh;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
 
 .me-debt-description {
-  padding-top: 10vh; }
+  padding-top: 5vh;
+  font-weight: 700; }
+
+.user-icon {
+  margin-top: 2vh; }
 
 .item-input-inset {
   margin-top: 1px; }
+
+.transaction-view {
+  top: 128px; }
+
+.transaction-button-left, .transaction-button-right {
+  position: absolute;
+  top: 0;
+  padding: 25px 64px;
+  font-size: 64px;
+  color: #fff;
+  background: transparent;
+  border: none; }
+
+.transaction-button-left {
+  left: 0; }
+
+.transaction-button-right {
+  right: 0; }
+
+input[type="number"].transaction-number {
+  height: auto;
+  margin-top: -24px;
+  font-size: 124px;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  padding: 0.125em 0 0; }
+
+.transaction-statement {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 1em;
+  margin: 1em 0;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: #333333; }
+
+textarea.blockquote {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 20vh;
+  padding: 1.25em 1em;
+  margin: 0 0 1em 0;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: #afafaf;
+  border: none;
+  background: url(../img/quotes-background.png) center center no-repeat transparent;
+  background-size: contain;
+  resize: none;
+  overflow-y: hidden; }
+
+.transaction-submit {
+  font-size: 1.5em;
+  color: #fff;
+  border: none; }
+  .transaction-submit[disabled] {
+    opacity: 0.1; }

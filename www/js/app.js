@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       views: {
         'tab-exchange': {
           templateUrl: 'templates/coffee-transaction.html',
-          controller: 'GroupDetailCtrl'
+          controller: 'TransactionCtrl'
         }
       }
     })

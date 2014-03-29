@@ -1,4 +1,19 @@
+// Our Reset Stuff
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.no-style {
+
+}
+
 // Project Wide SCSS
+body, .pane {
+  background: $cream;
+}
+
 .bar-transparent {
   background: transparent;
   border: none;
@@ -8,19 +23,21 @@
   color: $white;
 }
 
+p.light-text {
+  color: $light-gray;
+}
 
-// .item-complex.item-text-wrap.item-content {
-//   overflow-x: auto;
-//   white-space: normal;
-// }
+.trailer-0 {
+  margin-bottom: 0;
+}
 
 // Gravatar images
 %user-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 1em;
+  background: $white;
+  width: 10vh;
+  height: 10vh;
   @include border-radius(50%);
-  @include box-shadow(0 0 6px rgba(0,0,0,.1));
+  @include box-shadow(0 0 10px rgba(0,0,0,.25));
 }
 
 .user-icon {
@@ -35,4 +52,12 @@
 .user-name {
   display: inline-block;
   margin-top: 10px;
+}
+
+// Transparent Bar
+.bar.bar-transparent {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #fff;
 }

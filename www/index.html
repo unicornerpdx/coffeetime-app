@@ -44,6 +44,47 @@
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
-    <ion-nav-view></ion-nav-view>
+    <ion-side-menus controller="GroupsController">
+      <!-- Center content -->
+      <ion-side-menu-content  class="padding me-status-screen" user-color>
+        <ion-nav-view></ion-nav-view>
+      </ion-side-menu-content>
+      <!-- Left menu -->
+      <ion-side-menu side="left">
+
+        <ion-header-bar class="bar-light">
+          <h1 class="title">Groups</h1>
+        </ion-header-bar>
+
+        <ion-content>
+          <ion-list class="list">
+            <label class="item item-radio">
+              <input type="radio" name="group">
+              <div class="item-content">
+              Go
+              </div>
+              <i class="radio-icon ion-checkmark"></i>
+            </label>
+
+            <label class="item item-radio">
+              <input type="radio" name="group">
+              <div class="item-content">
+              Go
+              </div>
+              <i class="radio-icon ion-checkmark"></i>
+            </label>
+
+          </ion-list>
+        </ion-content>
+
+        <ion-footer-bar align-title="left" class="bar-light">
+          <div class="buttons">
+            <button class="button icon-ion-log-out"><i class="icon ion-log-out"></i>Sign Out</button>
+          </div>
+        </ion-footer-bar>
+
+      </ion-side-menu>
+
+    </ion-side-menus>
   </body>
 </html>

@@ -1,22 +1,26 @@
 <!-- Me tab shows overall debt/credit to organization -->
 <ion-view>
+  <ion-header-bar class="bar bar-transparent">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon white-text"></button>
+  </ion-header-bar>
 
-    <ion-content class="padding me-status-screen" user-color>
-        <img class="user-icon" src="{{ user.photo }}" alt="{{ user.name }}" width="40" height="40">
-        <h1 class="me-debt-number white-text">{{ user.amount | absolute }}</h1>
+  <ion-pane user-color>
+    <img class="user-icon" ng-src="{{ user.avatar_url }}" alt="{{ user.display_name }}">
+    <!--<input type="number", ng-model="balance">-->
+    <h1 class="me-debt-number white-text">{{ balance | absolute }}</h1>
 
-        <h4 class="white-text me-debt-description">
-          <div ng-if="user.amount < 0">
-            You owe {{ user.amount | absolute }} coffees to {{ user.org }}
-          </div>
-          <div ng-if="user.amount > 0">
-            {{ user.org }} owes you {{ user.amount }} coffees.
-          </div>
-          <div ng-if="user.amount == 0">
-            You're all even!
-          </span>
-        </h4>
-      </div>
-    </ion-content>
+    <h4 class="white-text me-debt-description" >
+      <span ng-if="balance < 0">
+        You owe {{ balance | absolute }} coffee{{ balance | pluralizer }} to {{ group.organization_name }}
+      </span>
 
+      <span ng-if="balance > 0">
+        {{ group.organization_name }} owes you {{ balance }} coffee{{ balance | pluralizer }}.
+      </span>
+
+      <span ng-if="balance == 0">
+        You're all even!
+      </span>
+    </h4>
+  </ion-pane>
 </ion-view>

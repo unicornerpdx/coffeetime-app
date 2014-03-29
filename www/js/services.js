@@ -1,37 +1,39 @@
 angular.module('starter.services', [])
 
 .factory('Session', function($http, $state){
-  var userId = localStorage.userId;
-  var groupId = localStorage.currentGroup;
-  var accessToken = localStorage.accessToken;
+  var user_id = localStorage.user_id;
+  var group_id = localStorage.current_group;
+  var access_token = localStorage.access_token;
 
-  if(!userId || !accessToken){
+  if(!user_id || !access_token){
     $state.go("auth");
   }
 
-  if(userId && accessToken && !groupId){
-    $state.go("groups");
-  }
-
   return {
-    userId: function () {
-      return localStorage.userId;
+    user_id: function () {
+      return localStorage.user_id;
     },
     token: function() {
-      return localStorage.accessToken;
+      return localStorage.access_token;
     },
     group: function(){
-      return localStorage.currentGroup;
+      return localStorage.current_group;
     },
     switchGroup: function (newGroup) {
       if (newGroup) {
-        localStorage.currentGroup = newGroup();
+        localStorage.current_group = newGroup();
       }
 
       $state.go('tab.me');
     },
     authenticate: function() {
       $state.go("auth");
+    },
+    signIn: function () {
+      return $http.get("http://localhost:8080/auth").success(function(data, status, headers, config){
+        localStorage.access_token = data.access_token;
+        localStorage.user_id = data.user_id;
+      });
     },
     signOut: function() {
       localStorage.clear();
@@ -46,7 +48,7 @@ angular.module('starter.services', [])
 .factory('Me', function($http, Session) {
   return {
     fetch: function ( ) {
-      return $http.get("http://localhost:8080/user/info?userId=" + Session.userId());
+      return $http.get("http://localhost:8080/user/info?user_id=" + Session.user_id());
     }
   };
 
@@ -55,10 +57,11 @@ angular.module('starter.services', [])
 /**
  * Get all the users in the organization
  */
+
 .factory('Group', function($http, Session) {
   return {
     fetch: function ( ) {
-      return $http.get("http://localhost:8080/user/info?groupId=" + Session.group() + "&accessToken=" + Session.token());
+      return $http.get("http://localhost:8080/group/info");
     }
   };
 });

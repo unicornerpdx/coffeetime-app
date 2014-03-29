@@ -1,16 +1,21 @@
 .me-status-screen {
   top: 0;
-  color: $white;
+  //color: $white;
   text-align: center;
 }
 
 .me-debt-number {
-  font-size: 40vh;
-  color: $white;
-  padding-top: 10vh;
+  font-size: 50vh;
+  //color: $white;
   @extend %knockout;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .me-debt-description {
-  padding-top: 10vh;
+  padding-top: 5vh;
+  font-weight: 700;
+}
+
+.user-icon {
+  margin-top: 2vh;
 }

@@ -2,7 +2,11 @@ var http = require('http'),
     url = require('url');
 
 var server = http.createServer(function (request, response) {
-  response.writeHead(200, { "Content-Type": "application/json" });
+  response.writeHead(200, {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "X-Requested-With"
+  });
 
   var parsed = url.parse(request.url);
 
@@ -67,12 +71,12 @@ var server = http.createServer(function (request, response) {
     }));
   }
 
-  if (pathname === "/user/info") {
+  if (parsed.pathname === "/user/info") {
     response.write(JSON.stringify( {
         "user_id": 13,
         "username": "JohnSmith",
         "display_name": "John Smith",
-        "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/4943933?s=200",
         "user_balance": 10,
         "active": false
     }));
