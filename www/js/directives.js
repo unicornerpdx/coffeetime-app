@@ -48,18 +48,18 @@ angular.module('app.directives', [])
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
-      function setBackground() {
-        if (number > 0) {
-          iElement.addClass('green');
-        } else if (number < 0) {
-          iElement.addClass('red');
+      function setColorClass() {
+        if (amount > 0) {
+          iElement.addClass('green').removeClass('red neutral');
+        } else if (amount < 0) {
+          iElement.addClass('red').removeClass('green neutral');
         } else {
-          iElement.addClass('neutral');
+          iElement.addClass('neutral').removeClass('red green');
         }
       }
-      scope.$watch('number', function(newValue, oldValue){
-        number = newValue;
-        setBackground();
+      scope.$watch('me.amount', function(newValue, oldValue){
+        amount = newValue;
+        setColorClass();
       });
     }
   };

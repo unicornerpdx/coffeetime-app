@@ -19,6 +19,17 @@ body, .pane {
   border: none;
 }
 
+// Colored Nav Bar Links
+.red .tab-item.tab-item-active {
+  color: $red;
+}
+
+// Colored Nav Bar Links
+.green .tab-item.tab-item-active {
+  color: $green;
+}
+
+// Helpers
 .white-text {
   color: $white;
 }

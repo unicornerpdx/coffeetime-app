@@ -6328,6 +6328,12 @@ body, .pane {
   background: transparent;
   border: none; }
 
+.red .tab-item.tab-item-active {
+  color: #e66244; }
+
+.green .tab-item.tab-item-active {
+  color: #5acf61; }
+
 .white-text {
   color: #fff; }
 
