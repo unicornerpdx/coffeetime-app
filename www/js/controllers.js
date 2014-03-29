@@ -13,6 +13,14 @@ angular.module('starter.controllers', [])
   });
 })
 
+.controller('ColorCtrl', function($scope, Me, $timeout) {
+
+})
+
+.controller('TabCtrl', function($scope, Me, $timeout) {
+  $scope.me = Me.fetch();
+})
+
 .controller('ExchangeCtrl', function($scope, Group) {
   Group.fetch().success(function(data) {
     $scope.group = data;
@@ -41,6 +49,9 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('GroupsCtrl', function($scope, Session, Group){
-
+.controller('AppCtrl', function($scope, Session, Group, Me){
+  Me.fetch().success(function(data) {
+    $scope.user = data;
+    $scope.balance = data.user_balance;
+  });
 });

@@ -6328,6 +6328,12 @@ body, .pane {
   background: transparent;
   border: none; }
 
+.red .tab-item.tab-item-active {
+  color: #e66244; }
+
+.green .tab-item.tab-item-active {
+  color: #5acf61; }
+
 .white-text {
   color: #fff; }
 
@@ -6380,13 +6386,10 @@ p.light-text {
 .item-input-inset {
   margin-top: 1px; }
 
-.transaction-view {
-  top: 128px; }
-
 .transaction-button-left, .transaction-button-right {
   position: absolute;
   top: 0;
-  padding: 25px 64px;
+  padding: 36px 64px;
   font-size: 64px;
   color: #fff;
   background: transparent;
@@ -6400,12 +6403,11 @@ p.light-text {
 
 input[type="number"].transaction-number {
   height: auto;
-  margin-top: -24px;
+  padding-bottom: 12px;
   font-size: 124px;
   text-align: center;
   color: #fff;
-  background-color: transparent;
-  padding: 0.125em 0 0; }
+  background-color: transparent; }
 
 .transaction-statement {
   -webkit-box-sizing: border-box;
@@ -6435,9 +6437,12 @@ textarea.blockquote {
   resize: none;
   overflow-y: hidden; }
 
-.transaction-submit {
+input.transaction-submit {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
   font-size: 1.5em;
   color: #fff;
   border: none; }
-  .transaction-submit[disabled] {
+  input.transaction-submit[disabled] {
     opacity: 0.1; }

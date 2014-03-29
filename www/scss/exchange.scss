@@ -2,14 +2,10 @@
   margin-top: 1px;
 }
 
-.transaction-view {
-  top: 128px;
-}
-
 %transaction-button {
   position: absolute;
   top: 0;
-  padding: 25px 64px;
+  padding: 36px 64px;
   @extend %knockout;
   font-size: 64px;
   color: $white;
@@ -29,13 +25,12 @@
 
 input[type="number"].transaction-number {
   height: auto;
-  margin-top: -24px;
+  padding-bottom: 12px;
   @extend %knockout;
   font-size: 124px;
   text-align: center;
   color: $white;
   background-color: transparent;
-  padding: 0.125em 0 0;
 }
 
 .transaction-statement {
@@ -64,7 +59,10 @@ textarea.blockquote {
   overflow-y: hidden;
 }
 
-.transaction-submit {
+input.transaction-submit {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
   font-size: 1.5em;
   color: $white;
   border: none;
