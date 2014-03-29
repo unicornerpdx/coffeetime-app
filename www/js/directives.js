@@ -44,6 +44,27 @@ angular.module('app.directives', [])
   };
 })
 
+.directive('meColor', function(){
+  return {
+    restrict: 'A',
+    link: function postLink(scope, iElement, iAttrs) {
+      function setBackground() {
+        if (number > 0) {
+          iElement.addClass('green');
+        } else if (number < 0) {
+          iElement.addClass('red');
+        } else {
+          iElement.addClass('neutral');
+        }
+      }
+      scope.$watch('number', function(newValue, oldValue){
+        number = newValue;
+        setBackground();
+      });
+    }
+  };
+})
+
 .directive('transactionBg', function(){
   return {
     restrict: 'A',

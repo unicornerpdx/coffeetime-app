@@ -1,5 +1,10 @@
 angular.module('starter.controllers', [])
 
+
+.controller('TabCtrl', function($scope, Me, $timeout) {
+  $scope.me = Me.fetch();
+})
+
 .controller('MeCtrl', function($scope, Me, $timeout) {
   $scope.user = Me.fetch();
 })
