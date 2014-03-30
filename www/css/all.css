@@ -6335,6 +6335,25 @@ body, .pane {
   background: transparent;
   border: none; }
 
+.debt-badge {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 2px;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 18px;
+  background-color: #5acf61;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+
 .red .tab-item.tab-item-active {
   color: #e66244; }
 
@@ -6421,9 +6440,8 @@ input[type="number"].transaction-number {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 100%;
-  padding: 0 1em;
-  margin: 1em 0;
+  width: 90%;
+  margin: 1em auto;
   font-size: 2em;
   line-height: 1.25em;
   color: #333333; }

@@ -65,6 +65,27 @@ angular.module('app.directives', [])
   };
 })
 
+.directive('activityBg', function(){
+  return {
+    restrict: 'A',
+    link: function postLink(scope, iElement, iAttrs) {
+      function setBackground() {
+        if (number > 0) {
+          iElement.css('background-color', $green);
+        } else if (number < 0) {
+          iElement.css('background-color', $red);
+        } else {
+          iElement.css('background-color', $dark);
+        }
+      }
+      scope.$watch('activity.amount', function(newValue, oldValue){
+        number = newValue;
+        setBackground();
+      });
+    }
+  };
+})
+
 .directive('transactionBg', function(){
   return {
     restrict: 'A',

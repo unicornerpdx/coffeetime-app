@@ -11,10 +11,11 @@
 
       <div class="item item-avatar">
         <img src="{{activity.user.photo}}" class="user-icon">
-        <div ng-if="activity.amount > 0">
+        <span class="debt-badge" activity-bg>{{activity.amount | absolute}}</span>
+        <div ng-if="activity.amount < 0">
           <h2>{{activity.user.name}} bought you {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
         </div>
-        <div ng-if="activity.amount < 0">
+        <div ng-if="activity.amount > 0">
           <h2>You bought {{activity.user.name}} {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
         </div>
         <p>{{activity.date | date:"MMMM d, y 'at' h:mm a"}}</p>
