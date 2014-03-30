@@ -10,23 +10,23 @@
     <div class="list card">
 
       <div class="item item-avatar">
-        <img src="{{ activity.user.photo }}" class="user-icon">
+        <img src="{{activity.user.photo}}" class="user-icon">
         <div ng-if="activity.amount > 0">
-          <h2>{{ activity.user.name }} bought you {{ activity.amount | absolute }} coffee{{ activity.amount | pluralizer }}</h2>
+          <h2>{{activity.user.name}} bought you {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
         </div>
         <div ng-if="activity.amount < 0">
-          <h2>You bought {{ activity.user.name }} {{ activity.amount | absolute }} coffee{{ activity.amount | pluralizer }}</h2>
+          <h2>You bought {{activity.user.name}} {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
         </div>
-        <p>{{ activity.date | date:"MMMM d, y 'at' h:mm a" }}</p>
+        <p>{{activity.date | date:"MMMM d, y 'at' h:mm a"}}</p>
       </div>
 
       <div class="item item-body">
-        <img class="full-image" src="http://static-maps.pdx.esri.com/img.php?basemap=satellite&width=600&height=400&zoom=14&latitude={{ activity.latlng[1] }}&longitude={{ activity.latlng[0] }}">
+        <img class="full-image" src="http://static-maps.pdx.esri.com/img.php?basemap=satellite&width=600&height=400&zoom=14&latitude={{activity.latlng[1]}}&longitude={{activity.latlng[0]}}">
         <p class="padded trailer-0">
-          "{{ activity.message }}"
+          "{{activity.message}}"
         </p>
         <p class="padded subtle italic">
-          - {{ activity.user.name }}
+          - {{activity.user.name}}
         </p>
       </div>
 

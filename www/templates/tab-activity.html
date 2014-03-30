@@ -5,20 +5,20 @@
                 class="item-text-wrap"
                 href="#/tab/activity/{{activity.id}}">
 
-        <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" class="user-icon-left">
+        <img src="{{activity.user.photo}}" alt="{{activity.user.username}}" class="user-icon-left">
 
         <div ng-if="activity.amount > 0">
           <p class="trailer-0">
-            You bought {{ activity.user.name }} {{ activity.amount }} coffee{{activity.amount | pluralizer}}.
+            You bought {{activity.user.name}} {{activity.amount}} coffee{{activity.amount | pluralizer}}.
           </p>
-          <p class="light-text">{{ activity.date | relativeDate }}</p>
+          <p class="light-text">{{activity.date | relativeDate}}</p>
         </div>
 
         <div ng-if="activity.amount < 0">
           <p class="trailer-0">
-            {{ activity.user.name }} bought you {{ activity.amount | absolute }} coffee{{activity.amount | pluralizer}}.
+            {{activity.user.name}} bought you {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}.
           </p>
-          <p class="light-text">{{ activity.date | relativeDate }}</p>
+          <p class="light-text">{{activity.date | relativeDate}}</p>
         </div>
 
       </ion-item>

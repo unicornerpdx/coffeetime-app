@@ -4,7 +4,7 @@
   The GroupCtrl pulls data from the Group service (service.js)
   The Group service returns an array of user data
 -->
-<ion-view title="Exchange with {{ user.username }}">
+<ion-view title="Exchange with {{user.username}}">
 
     <ion-content has-header="true" padding="false" class="transaction-view">
 
@@ -17,18 +17,18 @@
         </div>
 
         <p class="transaction-statement" ng-if="number > 0">
-          {{user.name}} owes you <span transaction-color>{{ number}}</span> coffee{{number| pluralizer}}
+          {{user.name}} owes you <span transaction-color>{{number}}</span> coffee{{number | pluralizer}}
         </p>
 
         <p class="transaction-statement" ng-if="number < 0">
-          You owe {{user.name}} <span transaction-color>{{ number | absolute }}</span> coffee{{number| pluralizer}}
+          You owe {{user.name}} <span transaction-color>{{ number | absolute }}</span> coffee{{number | pluralizer}}
         </p>
 
         <p class="transaction-statement" ng-if="number == 0">
           You and {{user.name}} are even stevens.
         </p>
 
-        <textarea class="blockquote" placeholder="Leave a message"></textarea>
+        <textarea class="" placeholder="Leave a message"></textarea>
         <input class="button transaction-submit" type="submit" value="Confirm" ng-disabled="number == 0" transaction-bg/>
 
       </form>
