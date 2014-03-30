@@ -6428,6 +6428,21 @@ input[type="number"].transaction-number {
   line-height: 1.25em;
   color: #333333; }
 
+.transaction-message {
+  width: 90%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 20vh;
+  padding: 1.25em 1em;
+  margin: 1em auto 2em auto;
+  line-height: 1.25em;
+  color: #afafaf;
+  border: none;
+  background-size: contain;
+  resize: none;
+  overflow-y: hidden; }
+
 input.transaction-submit {
   display: block;
   width: 90%;

@@ -43,6 +43,20 @@ input[type="number"].transaction-number {
   color: $dark-gray;
 }
 
+.transaction-message {
+  width: 90%;
+  @include box-sizing(border-box);
+  height: 20vh;
+  padding: 1.25em 1em;
+  margin: 1em auto 2em auto;
+  line-height: 1.25em;
+  color: $light-gray;
+  border: none;
+  background-size: contain;
+  resize: none;
+  overflow-y: hidden;
+}
+
 input.transaction-submit {
   display: block;
   width: 90%;
