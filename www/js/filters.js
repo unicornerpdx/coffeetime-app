@@ -16,38 +16,6 @@ angular.module('app.filters', [])
   };
 })
 
-.filter('prettyDate', function() {
-  return function(date) {
-    var months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October ',
-      'November',
-      'December'
-    ];
-
-    date = new Date(date);
-
-    var min   = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-    var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours() ;
-    var ampm  = date.getHours() > 12 ? 'PM' : 'AM';
-    var day   = date.getDate();
-    var month = months[date.getMonth()];
-    var year  = date.getFullYear();
-
-    var string = month + ' ' + day + ', ' + year + ' at ' + hours + ':' + min + ' ' + ampm ;
-    return string;
-
-  };
-})
-
 .filter('relativeDate', function() {
   return function(date) {
 

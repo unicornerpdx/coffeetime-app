@@ -6320,6 +6320,13 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-appearance: none;
   margin: 0; }
 
+.item-avatar > img:first-child {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+
+.item-body {
+  padding: 0 0 15px 0; }
 
 body, .pane {
   background: #f9f6f3; }
@@ -6327,6 +6334,28 @@ body, .pane {
 .bar-transparent {
   background: transparent;
   border: none; }
+
+blockquote, textarea.blockquote {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 20vh;
+  padding: 1.25em 1em;
+  margin: 0 0 1em 0;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: #afafaf;
+  border: none;
+  background: url(../img/quotes-background.png) center center no-repeat transparent;
+  background-size: contain;
+  resize: none;
+  overflow-y: hidden; }
+
+cite {
+  font-size: 0.5em;
+  font-style: italic;
+  text-align: right; }
 
 .red .tab-item.tab-item-active {
   color: #e66244; }
@@ -6340,8 +6369,17 @@ body, .pane {
 p.light-text {
   color: #afafaf; }
 
-.trailer-0 {
+p.large {
+  font-size: 1.25em; }
+
+p.padded {
+  padding: 0 15px; }
+
+p.trailer-0 {
   margin-bottom: 0; }
+
+p.leader-0 {
+  margin-top: 0; }
 
 .user-icon, .user-icon-left {
   width: 40px;
@@ -6411,23 +6449,6 @@ input[type="number"].transaction-number {
   font-size: 2em;
   line-height: 1.25em;
   color: #333333; }
-
-textarea.blockquote {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 20vh;
-  padding: 1.25em 1em;
-  margin: 0 0 1em 0;
-  font-size: 2em;
-  line-height: 1.25em;
-  color: #afafaf;
-  border: none;
-  background: url(../img/quotes-background.png) center center no-repeat transparent;
-  background-size: contain;
-  resize: none;
-  overflow-y: hidden; }
 
 input.transaction-submit {
   display: block;

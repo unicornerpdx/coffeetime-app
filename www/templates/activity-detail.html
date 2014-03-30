@@ -4,19 +4,33 @@
   The ActivityCtrl pulls data from the Activity service (service.js)
   The Activity service returns an array of activity data
 -->
-<ion-view title="{{activity.name}}">
-  <ion-content has-header="true" padding="true">
-  <p>
-    <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" class="user-icon">
-    You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date | prettyDate }}.
-  </p>
-  <blockquote>
-    <p>{{ activity.message }}</p>
-    <cite>- {{ activity.user.name }}</cite>
-  </blockquote>
-  <div class="map">
-    <h2>Map on {{ activity.latlng }}</h2>
-    <img class="static-map" src="http://static-maps.pdx.esri.com/img.php?basemap=gray&width=400&height=240&zoom=14&latitude=45.5165&longitude=-122.6764">
-  </div>
+<ion-view title="Activity Detail">
+  <ion-content has-header="true" padding="false">
+
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="{{ activity.user.photo }}" class="user-icon">
+        <div ng-if="activity.amount > 0">
+          <h2>{{ activity.user.name }} bought you {{ activity.amount | absolute }} coffee{{ activity.amount | pluralizer }}</h2>
+        </div>
+        <div ng-if="activity.amount < 0">
+          <h2>You bought {{ activity.user.name }} {{ activity.amount | absolute }} coffee{{ activity.amount | pluralizer }}</h2>
+        </div>
+        <p>{{ activity.date | date:"MMMM d, y 'at' h:mm a" }}</p>
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" src="http://static-maps.pdx.esri.com/img.php?basemap=satellite&width=600&height=400&zoom=14&latitude={{ activity.latlng[1] }}&longitude={{ activity.latlng[0] }}">
+        <p class="padded trailer-0">
+          "{{ activity.message }}"
+        </p>
+        <p class="padded subtle italic">
+          - {{ activity.user.name }}
+        </p>
+      </div>
+
+    </div>
+
   </ion-content>
 </ion-view>
