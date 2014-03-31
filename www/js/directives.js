@@ -48,7 +48,7 @@ angular.module('app.directives', [])
   };
 })
 
-.directive('meColor', function(){
+.directive('bodyColor', function(){
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
@@ -69,63 +69,22 @@ angular.module('app.directives', [])
   };
 })
 
-.directive('activityBg', function(){
+.directive('colorizeOn', function(){
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
+      var cssProperty = iAttrs.colorizeProperty || "background";
       function setBackground() {
-        if (number > 0) {
-          iElement.css('background-color', $green);
-        } else if (number < 0) {
-          iElement.css('background-color', $red);
+        if (value > 0) {
+          iElement.css(cssProperty, $green);
+        } else if (value < 0) {
+          iElement.css(cssProperty, $red);
         } else {
-          iElement.css('background-color', $dark);
+          iElement.css(cssProperty, $dark);
         }
       }
-      scope.$watch('activity.amount', function(newValue, oldValue){
-        number = newValue;
-        setBackground();
-      });
-    }
-  };
-})
-
-.directive('transactionBg', function(){
-  return {
-    restrict: 'A',
-    link: function postLink(scope, iElement, iAttrs) {
-      function setBackground() {
-        if (number > 0) {
-          iElement.css('background-color', $green);
-        } else if (number < 0) {
-          iElement.css('background-color', $red);
-        } else {
-          iElement.css('background-color', $dark);
-        }
-      }
-      scope.$watch('number', function(newValue, oldValue){
-        number = newValue;
-        setBackground();
-      });
-    }
-  };
-})
-
-.directive('transactionColor', function(){
-  return {
-    restrict: 'A',
-    link: function postLink(scope, iElement, iAttrs) {
-      function setBackground() {
-        if (number > 0) {
-          iElement.css('color', $green);
-        } else if (number < 0) {
-          iElement.css('color', $red);
-        } else {
-          iElement.css('color', $dark);
-        }
-      }
-      scope.$watch('number', function(newValue, oldValue){
-        number = newValue;
+      scope.$watch(iAttrs.colorizeOn, function(newValue, oldValue){
+        value = newValue;
         setBackground();
       });
     }
