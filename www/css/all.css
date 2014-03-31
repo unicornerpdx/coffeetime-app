@@ -6441,8 +6441,8 @@ input[type="number"].transaction-number {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 90%;
-  margin: 1em auto;
-  font-size: 2em;
+  margin: 0.75em auto;
+  font-size: 1.75em;
   line-height: 1.25em;
   color: #333333; }
 
@@ -6453,7 +6453,7 @@ input[type="number"].transaction-number {
   box-sizing: border-box;
   height: 20vh;
   padding: 1.25em 1em;
-  margin: 1em auto 2em auto;
+  margin: 1em auto 1.5em auto;
   line-height: 1.25em;
   color: #afafaf;
   border: none;
