@@ -69,19 +69,18 @@ angular.module('app.directives', [])
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
-      cssProperty = iAttrs.colorizeProperty || "background-color";
-
+      var cssProperty = iAttrs.colorizeProperty || "background";
       function setBackground() {
-        if (number > 0) {
+        if (value > 0) {
           iElement.css(cssProperty, $green);
-        } else if (number < 0) {
+        } else if (value < 0) {
           iElement.css(cssProperty, $red);
         } else {
           iElement.css(cssProperty, $dark);
         }
       }
       scope.$watch(iAttrs.colorizeOn, function(newValue, oldValue){
-        number = newValue;
+        value = newValue;
         setBackground();
       });
     }
