@@ -85,6 +85,18 @@ angular.module('app.directives', [])
       });
     }
   };
+})
+
+.directive('staticMap', function(){
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      latitude: '@',
+      longitude: '@'
+    },
+    templateUrl: 'templates/static-map.html'
+  };
 });
 
 
