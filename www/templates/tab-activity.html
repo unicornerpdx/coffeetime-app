@@ -6,7 +6,7 @@
                 href="#/tab/activity/{{activity.id}}">
 
         <img src="{{activity.user.photo}}" alt="{{activity.user.username}}" class="user-icon-left">
-        <span class="debt-badge" activity-bg>{{activity.amount | absolute}}</span>
+        <span class="debt-badge" colorize-on="{{activity.amount}}" colorize-property="background">{{activity.amount | absolute}}</span>
 
         <div ng-if="activity.amount > 0">
           <p class="trailer-0">
