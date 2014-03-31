@@ -23,7 +23,7 @@ angular.module('starter.controllers', [])
 
 .controller('ExchangeCtrl', function($scope, Group) {
   Group.fetch().success(function(data) {
-    $scope.group = data;
+    $scope.group = data.users;
   });
 })
 
@@ -51,7 +51,16 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, Session, Group, Me){
   Me.fetch().success(function(data) {
-    $scope.user = data;
-    $scope.balance = data.user_balance;
+    $scope.me = data;
+  });
+})
+
+.controller('ActivityCtrl', function($scope, Group){
+  Group.fetch().success(function(data){
+    $scope.transactions = data.transactions;
+  });
+  Group.usersById().then(function(data){
+    console.log(data);
+    $scope.users = data;
   });
 });

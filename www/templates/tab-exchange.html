@@ -1,6 +1,9 @@
-<ion-view title="Exchange">
-  <ion-content class="has-header">
+<ion-view>
+  <ion-header-bar>
+    <h1 class="title">Exchange</h1>
+  </ion-header-bar>
 
+  <ion-content>
     <div class="item item-input-inset">
       <label class="item-input-wrapper">
         <input type="text" placeholder="Search" ng-model="query">
@@ -8,12 +11,12 @@
     </div>
 
     <ion-list>
-      <ion-item ng-repeat="user in group | filter:query | orderBy:'name'"
+      <ion-item ng-repeat="user in group | filter:query | orderBy:'display_name'"
                 class="item"
-                href="#/tab/exchange/{{user.id}}">
+                href="#/tab/exchange/{{user.user_id}}">
 
-        <img src="{{ user.photo }}" alt="{{ user.username }}" class="user-icon-left">
-        <span class="user-name"> {{user.name}} </span>
+        <img ng-src="{{ user.avatar_url }}" alt="{{ user.username }}" class="user-icon-left">
+        <span class="user-name"> {{user.display_name}} </span>
 
       </ion-item>
     </ion-list>

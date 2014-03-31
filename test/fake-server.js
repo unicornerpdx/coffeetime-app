@@ -16,7 +16,7 @@ var server = http.createServer(function (request, response) {
       "user_id": 123,
       "username": "JohnSmith",
       "display_name": "John Smith",
-      "avatar_url": "https://github.com/images/error/octocat_happy.gif"
+      "avatar_url": "http://placekitten.com/200/200"
     }));
   }
 
@@ -52,7 +52,19 @@ var server = http.createServer(function (request, response) {
           "user_id": 13,
           "username": "JohnSmith",
           "display_name": "John Smith",
-          "avatar_url": "https://github.com/images/error/octocat_happy.gif"
+          "avatar_url": "http://placekitten.com/200/200"
+        },
+        {
+          "user_id": 12,
+          "username": "JaneSmith",
+          "display_name": "Jane Smith",
+          "avatar_url": "http://placekitten.com/200/200"
+        },
+        {
+          "user_id": 11,
+          "username": "JoeBob",
+          "display_name": "JoeBob",
+          "avatar_url": "http://placekitten.com/200/200"
         }
       ],
       "transactions": [
@@ -76,7 +88,7 @@ var server = http.createServer(function (request, response) {
         "user_id": 13,
         "username": "JohnSmith",
         "display_name": "John Smith",
-        "avatar_url": "https://avatars2.githubusercontent.com/u/4943933?s=200",
+        "avatar_url": "http://placekitten.com/200/200",
         "user_balance": 10,
         "active": false
     }));

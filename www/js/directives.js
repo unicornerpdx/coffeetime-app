@@ -49,7 +49,7 @@ angular.module('app.directives', [])
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
-      function setColorClass() {
+      function setColorClass(amount) {
         if (amount > 0) {
           iElement.addClass('green').removeClass('red neutral');
         } else if (amount < 0) {
@@ -58,9 +58,8 @@ angular.module('app.directives', [])
           iElement.addClass('neutral').removeClass('red green');
         }
       }
-      scope.$watch('me.amount', function(newValue, oldValue){
-        amount = newValue;
-        setColorClass();
+      scope.$watch('me.user_balance', function(newValue, oldValue){
+        setColorClass(newValue);
       });
     }
   };

@@ -6345,8 +6345,8 @@ p.light-text {
 
 .user-icon, .user-icon-left {
   background: #fff;
-  width: 10vh;
-  height: 10vh;
+  width: 40px;
+  height: 40px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -6380,8 +6380,10 @@ p.light-text {
   padding-top: 5vh;
   font-weight: 700; }
 
-.user-icon {
-  margin-top: 2vh; }
+.me-user-icon {
+  margin-top: 2vh;
+  width: 10vh;
+  height: 10vh; }
 
 .item-input-inset {
   margin-top: 1px; }

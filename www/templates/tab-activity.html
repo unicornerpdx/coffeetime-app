@@ -1,24 +1,27 @@
 <ion-view title="Activity">
-  <ion-content class="has-header">
+  <ion-header-bar>
+    <h1 class="title">Activity</h1>
+  </ion-header-bar>
+  <ion-content>
     <ion-list>
-      <ion-item ng-repeat="activity in activities | orderBy:'-date'"
+      <ion-item ng-repeat="transaction in transactions | orderBy:'-date'"
                 class="item-text-wrap"
-                href="#/tab/activity/{{activity.id}}">
+                href="#/tab/transaction/{{transaction.id}}">
 
-        <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" class="user-icon-left">
+        <img ng-src="{{ users[transaction.from_user_id].avatar_url }}" alt="{{ users[transaction.from_user_id].display_name }}" class="user-icon-left">
 
-        <div ng-if="activity.amount > 0">
+        <div ng-if="transaction.amount > 0">
           <p class="trailer-0">
-            You bought {{ activity.user.name }} {{ activity.amount }} coffee{{activity.amount | pluralizer}}.
+            You bought {{ transaction.user.name }} {{ transaction.amount }} coffee{{transaction.amount | pluralizer}}.
           </p>
-          <p class="light-text">{{ activity.date | relativeDate }}</p>
+          <p class="light-text">{{ transaction.date | relativeDate }}</p>
         </div>
 
-        <div ng-if="activity.amount < 0">
+        <div ng-if="transaction.amount < 0">
           <p class="trailer-0">
-            {{ activity.user.name }} bought you {{ activity.amount | absolute }} coffee{{activity.amount | pluralizer}}.
+            {{ transaction.user.name }} bought you {{ transaction.amount | absolute }} coffee{{transaction.amount | pluralizer}}.
           </p>
-          <p class="light-text">{{ activity.date | relativeDate }}</p>
+          <p class="light-text">{{ transaction.date | relativeDate }}</p>
         </div>
 
       </ion-item>

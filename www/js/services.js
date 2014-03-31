@@ -62,6 +62,17 @@ angular.module('starter.services', [])
   return {
     fetch: function ( ) {
       return $http.get("http://localhost:8080/group/info");
+    },
+    usersById: function(){
+      return $http.get("http://localhost:8080/group/info").then(function(data){
+        var users = {};
+        for (var i = data.data.users.length - 1; i >= 0; i--) {
+          var user = data.data.users[i];
+          var id = user.user_id;
+          users[id] = user;
+        }
+        return users;
+      });
     }
   };
 });
