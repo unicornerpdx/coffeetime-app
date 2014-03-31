@@ -6,7 +6,7 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 
 var paths = {
-  sass: ['./www/scss/**/*.scss']
+  sass: ['./www/**/*.scss']
 };
 
 gulp.task('sass', function(done) {

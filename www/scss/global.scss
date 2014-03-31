@@ -40,12 +40,11 @@ body, .pane {
   @include box-shadow(0 0 6px rgba(0,0,0,.1));
 }
 
-// Colored Nav Bar Links
+// Tabs
 .red .tab-item.tab-item-active {
   color: $red;
 }
 
-// Colored Nav Bar Links
 .green .tab-item.tab-item-active {
   color: $green;
 }
@@ -74,11 +73,6 @@ p.trailer-0 {
 p.leader-0 {
   margin-top: 0;
 }
-
-// .item-complex.item-text-wrap.item-content {
-//   overflow-x: auto;
-//   white-space: normal;
-// }
 
 // Gravatar images
 %user-icon {
