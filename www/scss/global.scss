@@ -34,7 +34,7 @@ body, .pane {
   color: $white;
   font-size: 10px;
   text-align: center;
-  line-height: 18px;
+  line-height: 20px;
   background-color: $green;
   @include border-radius(20px);
   @include box-shadow(0 0 6px rgba(0,0,0,.1));
