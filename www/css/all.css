@@ -6333,7 +6333,7 @@ body, .pane {
   background: transparent;
   border: none; }
 
-.debt-badge {
+.debt-badge, .activity-marker {
   position: absolute;
   top: 10px;
   left: 6px;
@@ -6351,6 +6351,7 @@ body, .pane {
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+
 
 .red .tab-item.tab-item-active {
   color: #e66244; }
@@ -6468,3 +6469,19 @@ input.transaction-submit {
   border: none; }
   input.transaction-submit[disabled] {
     opacity: 0.1; }
+
+.full-map {
+  background-color: #f9f6f3;
+  position: relative; }
+  .full-map img {
+    display: inherit;
+    border-bottom: 1px solid #afafaf;
+    opacity: 0.4; }
+
+.activity-marker {
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -20px; }
+  .activity-marker.red {
+    background: #e66244; }

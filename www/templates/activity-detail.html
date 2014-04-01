@@ -12,17 +12,17 @@
       <div class="item item-avatar">
         <img src="{{activity.user.photo}}" class="user-icon">
         <span class="debt-badge" colorize-on="{{activity.amount}}" colorize-property="background">{{activity.amount | absolute}}</span>
-        <div ng-if="activity.amount < 0">
+        <div ng-if="isdebt">
           <h2>{{activity.user.name}} bought you {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
         </div>
-        <div ng-if="activity.amount > 0">
+        <div ng-if="!isdebt">
           <h2>You bought {{activity.user.name}} {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
         </div>
         <p>{{activity.date | date:"MMMM d, y 'at' h:mm a"}}</p>
       </div>
 
       <div class="item item-body">
-        <static-map latitude="45.5165" longitude="-122.6764"> </static-map>
+        <static-map latitude="{{ activity.latlng[1] }}" longitude="{{ activity.latlng[0] }}" amount="{{activity.amount | absolute}}" isdebt="{{ activity.isdebt }}"> </static-map>
         <p class="padded trailer-0">
           "{{activity.message}}"
         </p>

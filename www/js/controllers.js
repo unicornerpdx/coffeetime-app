@@ -29,5 +29,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ActivityDetailCtrl', function($scope, $stateParams, Activity) {
-  $scope.activity = Activity.get($stateParams.activityId);
+  var activity = Activity.get($stateParams.activityId);
+  activity.isdebt = activity.amount < 0 ? true : false;
+  $scope.activity = activity;
 });

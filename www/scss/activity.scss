@@ -1,0 +1,20 @@
+.full-map {
+  background-color: $cream;
+  position: relative;
+  img {
+    display: inherit;
+    border-bottom: 1px solid $light-gray;
+    opacity: 0.4;
+  }
+}
+
+.activity-marker {
+   @extend %badge;
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  &.red {
+    background: $red;
+  }
+}

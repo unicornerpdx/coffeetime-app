@@ -93,7 +93,9 @@ angular.module('app.directives', [])
     replace: false,
     scope: {
       latitude: '@',
-      longitude: '@'
+      longitude: '@',
+      amount:    '@',
+      isdebt: '@'
     },
     templateUrl: 'templates/static-map.html'
   };

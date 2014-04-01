@@ -24,7 +24,7 @@ body, .pane {
   border: none;
 }
 
-.debt-badge {
+%badge {
   position: absolute;
   top: 10px;
   left: 6px;
@@ -38,6 +38,10 @@ body, .pane {
   background-color: $green;
   @include border-radius(20px);
   @include box-shadow(0 0 6px rgba(0,0,0,.1));
+}
+
+.debt-badge {
+  @extend %badge;
 }
 
 // Tabs
