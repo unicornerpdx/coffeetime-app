@@ -36,8 +36,8 @@ input[type="number"].transaction-number {
 .transaction-statement {
   @include box-sizing(border-box);
   width: 90%;
-  margin: 1em auto;
-  font-size: 2em;
+  margin: .75em auto;
+  font-size: 1.75em;
   line-height: 1.25em;
   color: $dark-gray;
 }
@@ -47,7 +47,7 @@ input[type="number"].transaction-number {
   @include box-sizing(border-box);
   height: 20vh;
   padding: 1.25em 1em;
-  margin: 1em auto 2em auto;
+  margin: 1em auto 1.5em auto;
   line-height: 1.25em;
   color: $light-gray;
   border: none;

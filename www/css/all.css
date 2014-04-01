@@ -2843,9 +2843,7 @@ a.subdued {
     color: #f8f8f8; }
   @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .tabs {
-      padding-top: 2px;
-      border-top: none !important;
-      border-bottom: none !important;
+      background-image: none;
       background-position: top;
       background-size: 100% 1px;
       background-repeat: no-repeat; } }
@@ -6335,7 +6333,7 @@ body, .pane {
   background: transparent;
   border: none; }
 
-.debt-badge {
+.debt-badge, .activity-marker {
   position: absolute;
   top: 10px;
   left: 6px;
@@ -6345,7 +6343,7 @@ body, .pane {
   color: #fff;
   font-size: 10px;
   text-align: center;
-  line-height: 18px;
+  line-height: 20px;
   background-color: #55A33B;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -6353,6 +6351,7 @@ body, .pane {
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+
 
 .red .tab-item.tab-item-active {
   color: #CB4400; }
@@ -6399,7 +6398,7 @@ p.leader-0 {
 
 .me-status-screen {
   top: 0;
-  padding: 10px 0;
+  padding: 20px 0 10px 0;
   color: #fff;
   text-align: center; }
 
@@ -6450,8 +6449,8 @@ input[type="number"].transaction-number {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 90%;
-  margin: 1em auto;
-  font-size: 2em;
+  margin: 0.75em auto;
+  font-size: 1.75em;
   line-height: 1.25em;
   color: #333333; }
 
@@ -6462,7 +6461,7 @@ input[type="number"].transaction-number {
   box-sizing: border-box;
   height: 20vh;
   padding: 1.25em 1em;
-  margin: 1em auto 2em auto;
+  margin: 1em auto 1.5em auto;
   line-height: 1.25em;
   color: #afafaf;
   border: none;
@@ -6479,3 +6478,19 @@ input.transaction-submit {
   border: none; }
   input.transaction-submit[disabled] {
     opacity: 0.1; }
+
+.full-map {
+  background-color: #f9f6f3;
+  position: relative; }
+  .full-map img {
+    display: inherit;
+    border-bottom: 1px solid #afafaf;
+    opacity: 0.4; }
+
+.activity-marker {
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -20px; }
+  .activity-marker.red {
+    background: #CB4400; }
