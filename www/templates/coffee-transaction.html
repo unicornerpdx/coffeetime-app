@@ -17,11 +17,11 @@
         </div>
 
         <p class="transaction-statement" ng-if="number > 0">
-          {{user.name}} owes you <span colorize-on="number" colorize-property="color">{{number}}</span> coffee{{number | pluralizer}}
+          {{user.name}} owes you <span colorize-on="number" colorize-property="color">{{number}}</span>&nbsp;coffee{{number | pluralizer}}
         </p>
 
         <p class="transaction-statement" ng-if="number < 0">
-          You owe {{user.name}} <span colorize-on="number" colorize-property="color">{{ number | absolute }}</span> coffee{{number | pluralizer}}
+          You owe {{user.name}} <span colorize-on="number" colorize-property="color">{{ number | absolute }}</span>&nbsp;coffee{{number | pluralizer}}
         </p>
 
         <p class="transaction-statement" ng-if="number == 0">
