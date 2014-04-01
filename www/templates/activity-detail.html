@@ -23,7 +23,7 @@
 
       <div class="item item-body">
         <static-map latitude="{{ activity.latlng[1] }}" longitude="{{ activity.latlng[0] }}" amount="{{activity.amount | absolute}}" isdebt="{{ activity.isdebt }}"> </static-map>
-        <p class="padded trailer-0">
+        <p class="padded trailer-0" ng-if="activity.message">
           "{{activity.message}}"
         </p>
         <p class="padded subtle italic">
