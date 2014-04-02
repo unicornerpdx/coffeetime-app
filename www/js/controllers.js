@@ -8,7 +8,7 @@ angular.module('starter.controllers', [])
   });
 
   Me.fetch().success(function(data) {
-    $scope.user = data;
+    $scope.me = data;
     $scope.balance = data.user_balance;
   });
 })
@@ -18,6 +18,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('TabCtrl', function($scope, Me, $timeout) {
+
   $scope.me = Me.fetch();
 })
 
@@ -49,7 +50,8 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('AppCtrl', function($scope, Session, Group, Me){
+.controller('AppCtrl', function($scope, Session, Group, Me, $ionicSideMenuDelegate){
+  $ionicSideMenuDelegate.$getByHandle('side-menu').canDragContent(false);
   Me.fetch().success(function(data) {
     $scope.me = data;
   });
@@ -59,6 +61,7 @@ angular.module('starter.controllers', [])
   Group.fetch().success(function(data){
     $scope.transactions = data.transactions;
   });
+
   Group.usersById().then(function(data){
     console.log(data);
     $scope.users = data;
