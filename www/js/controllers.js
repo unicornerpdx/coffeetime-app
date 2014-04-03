@@ -9,7 +9,6 @@ angular.module('starter.controllers', [])
 
   Me.fetch().success(function(data) {
     $scope.me = data;
-    $scope.balance = data.user_balance;
   });
 })
 
@@ -31,9 +30,6 @@ angular.module('starter.controllers', [])
 .controller('TransactionCtrl', function($scope, $stateParams, Group) {
   $scope.user = Group.get($stateParams.userID);
   $scope.number = 0;
-  $scope.increment = function(number){
-    $scope.number = $scope.number + number;
-  };
 })
 
 .controller('GroupDetailCtrl', function($scope, Group) {
@@ -66,4 +62,10 @@ angular.module('starter.controllers', [])
     console.log(data);
     $scope.users = data;
   });
+})
+
+.controller('ActivityDetailCtrl', function($scope, $stateParams, Activity) {
+  var activity = Activity.get($stateParams.activityId);
+  activity.isdebt = activity.amount < 0 ? true : false;
+  $scope.activity = activity;
 });

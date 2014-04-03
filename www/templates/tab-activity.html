@@ -9,19 +9,20 @@
                 href="#/tab/transaction/{{transaction.id}}">
 
         <img ng-src="{{ users[transaction.from_user_id].avatar_url }}" alt="{{ users[transaction.from_user_id].display_name }}" class="user-icon-left">
+        <span class="debt-badge" colorize-on="{{transaction.amount}}" colorize-property="background">{{transaction.amount | absolute}}</span>
 
         <div ng-if="transaction.amount > 0">
           <p class="trailer-0">
-            You bought {{ transaction.user.name }} {{ transaction.amount }} coffee{{transaction.amount | pluralizer}}.
+            You bought {{ users[transaction.from_user_id].display_name }} {{ transaction.amount }} coffee{{transaction.amount | pluralizer}}.
+            <span class="light-text">{{ transaction.date | relativeDate }}</span>
           </p>
-          <p class="light-text">{{ transaction.date | relativeDate }}</p>
         </div>
 
         <div ng-if="transaction.amount < 0">
           <p class="trailer-0">
-            {{ transaction.user.name }} bought you {{ transaction.amount | absolute }} coffee{{transaction.amount | pluralizer}}.
+            {{ users[transaction.from_user_id].display_name }} bought you {{ transaction.amount | absolute }} coffee{{transaction.amount | pluralizer}}.
+            <span class="light-text">{{ transaction.date | relativeDate }}</span>
           </p>
-          <p class="light-text">{{ transaction.date | relativeDate }}</p>
         </div>
 
       </ion-item>

@@ -5,8 +5,13 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-input.no-style {
+// Ionic Overrides
+.item-avatar > img:first-child {
+  @include border-radius(50%);
+}
 
+.item-body {
+  padding: 0 0 15px 0;
 }
 
 // Project Wide SCSS
@@ -19,12 +24,31 @@ body, .pane {
   border: none;
 }
 
-// Colored Nav Bar Links
+%badge {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 2px;
+  color: $white;
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
+  background-color: $green;
+  @include border-radius(20px);
+  @include box-shadow(0 0 6px rgba(0,0,0,.1));
+}
+
+.debt-badge {
+  @extend %badge;
+}
+
+// Tabs
 .red .tab-item.tab-item-active {
   color: $red;
 }
 
-// Colored Nav Bar Links
 .green .tab-item.tab-item-active {
   color: $green;
 }
@@ -38,8 +62,20 @@ p.light-text {
   color: $light-gray;
 }
 
-.trailer-0 {
+p.large {
+  font-size: 1.25em;
+}
+
+p.padded {
+  padding: 0 15px;
+}
+
+p.trailer-0 {
   margin-bottom: 0;
+}
+
+p.leader-0 {
+  margin-top: 0;
 }
 
 // Gravatar images

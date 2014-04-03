@@ -1,7 +1,9 @@
-var $red   = '#e66244';
-var $green = '#5acf61';
-var $cream = '#e6e4e1';
-var $dark  = '#333333';
+var $red        = '#CB4400';
+var $lightred   = '#ED7264';
+var $green      = '#55A33B';
+var $lightgreen = '#98CC82';
+var $cream      = '#e6e4e1';
+var $dark       = '#333333';
 
 // Chroma Colorizer Directive
 angular.module('app.directives', [])
@@ -10,34 +12,35 @@ angular.module('app.directives', [])
   return {
     restrict: 'A',
     link: function(scope, iElement, iAttrs) {
-      var amount;
+      var balance;
       var min;
       var max;
-
-      var negascale = chroma.scale([$cream, $red], min, 'k-means');
-      var scale = chroma.scale([$cream, $green], max, 'k-means');
+      var scale = chroma.scale([$lightgreen, $green], max, 'k-means');
+      var negascale = chroma.scale([$red, $lightred], min, 'k-means');
 
       function recolor() {
-        if(amount > 0) {
+        if (balance === 0) {
+          iElement.css('background-color', $dark);
+        } else if(balance > 0) {
           scale.domain([0, max]);
-          iElement.css('background-color', scale.mode('lab')(amount));
+          iElement.css('background-color', scale.mode('lab')(balance));
         } else {
           negascale.domain([0, Math.abs(min)]);
-          iElement.css('background-color', negascale.mode('lab')(amount));
+          iElement.css('background-color', negascale.mode('lab')(balance));
         }
       }
 
-      scope.$watch("balance", function(newValue, oldValue){
-        amount = newValue;
+      scope.$watch(iAttrs.balance, function(newValue, oldValue){
+        balance = newValue;
         recolor();
       });
 
-      scope.$watch("maxDebt", function(newValue, oldValue){
+      scope.$watch(iAttrs.maxBalance, function(newValue, oldValue){
         max = Math.abs(newValue);
         recolor();
       });
 
-      scope.$watch("minDebt", function(newValue, oldValue){
+      scope.$watch(iAttrs.minBalance, function(newValue, oldValue){
         min = Math.abs(newValue);
         recolor();
       });
@@ -45,14 +48,14 @@ angular.module('app.directives', [])
   };
 })
 
-.directive('meColor', function(){
+.directive('bodyColor', function(){
   return {
     restrict: 'A',
     link: function postLink(scope, iElement, iAttrs) {
-      function setColorClass(amount) {
-        if (amount > 0) {
+      function setColorClass(balance) {
+        if (balance > 0) {
           iElement.addClass('green').removeClass('red neutral');
-        } else if (amount < 0) {
+        } else if (balance < 0) {
           iElement.addClass('red').removeClass('green neutral');
         } else {
           iElement.addClass('neutral').removeClass('red green');
@@ -65,43 +68,39 @@ angular.module('app.directives', [])
   };
 })
 
-.directive('transactionBg', function(){
+.directive('colorizeOn', function(){
   return {
     restrict: 'A',
-    link: function(scope, iElement, iAttrs) {
+    link: function postLink(scope, iElement, iAttrs) {
+      var cssProperty = iAttrs.colorizeProperty || "background";
 
-      function setBackground(number) {
-        if (number > 0) {
-          iElement.css('background-color', $green);
-        } else if (number < 0) {
-          iElement.css('background-color', $red);
+      function setBackground(value) {
+        if (value > 0) {
+          iElement.css(cssProperty, $green);
+        } else if (value < 0) {
+          iElement.css(cssProperty, $red);
         } else {
-          iElement.css('background-color', $dark);
+          iElement.css(cssProperty, $dark);
         }
       }
-      scope.$watch('number', function(newValue){
+
+      scope.$watch(iAttrs.colorizeOn, function(newValue, oldValue){
         setBackground(newValue);
       });
     }
   };
 })
 
-.directive('transactionColor', function(){
+.directive('staticMap', function(){
   return {
-    restrict: 'A',
-    link: function(scope, iElement, iAttrs) {
-      function setBackground(number) {
-        if (number > 0) {
-          iElement.css('color', $green);
-        } else if (number < 0) {
-          iElement.css('color', $red);
-        } else {
-          iElement.css('color', $dark);
-        }
-      }
-      scope.$watch('number', function(newValue){
-        setBackground(newValue);
-      });
-    }
+    restrict: 'E',
+    replace: false,
+    scope: {
+      latitude: '@',
+      longitude: '@',
+      balance:    '@',
+      isdebt: '@'
+    },
+    templateUrl: 'templates/static-map.html'
   };
 });

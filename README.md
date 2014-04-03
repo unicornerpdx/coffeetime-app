@@ -8,13 +8,13 @@ Coffee Scoreboard Ionic App
 First, you should probably have ionic:
 
 ```bash
-$ sudo npm install -g ionic
+$ npm install -g ionic
 ```
 
 Then install bower, if you don't already have it:
 
 ```
-$ sudo npm install -g bower
+$ npm install -g bower
 ```
 
 Next, you'll need gulp for compiling sass:
@@ -56,5 +56,3 @@ $ ionic emulate
 ```
 
 If that fails, try running ```ionic platform ios``` and running the above command again.
-
-

@@ -1,13 +1,17 @@
 .me-status-screen {
-  top: 0;
-  //color: $white;
+  color: $white;
   text-align: center;
 }
 
 .me-debt-number {
+  @extend %indebted;
   font-size: 50vh;
-  //color: $white;
-  @extend %knockout;
+  padding: 5vh 0;
+  width: 100%;
+  font-size: 50vh;
+  color: $white;
+  text-align: center;
+  line-height: 1;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -17,7 +21,9 @@
 }
 
 .me-user-icon {
-  margin-top: 2vh;
   width: 10vh;
   height: 10vh;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border: .75vh solid $cream;
 }

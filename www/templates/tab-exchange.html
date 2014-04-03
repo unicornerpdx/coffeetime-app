@@ -14,8 +14,7 @@
       <ion-item ng-repeat="user in group | filter:query | orderBy:'display_name'"
                 class="item"
                 href="#/tab/exchange/{{user.user_id}}">
-
-        <img ng-src="{{ user.avatar_url }}" alt="{{ user.username }}" class="user-icon-left">
+        <img ng-src="{{ user.avatar_url }}" alt="{{ user.display_name }}" class="user-icon-left">
         <span class="user-name"> {{user.display_name}} </span>
 
       </ion-item>

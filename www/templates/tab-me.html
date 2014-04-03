@@ -4,21 +4,19 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon white-text"></button>
   </ion-header-bar>
 
-  <ion-pane user-color>
-    <img class="user-icon me-user-icon" ng-src="{{ me.avatar_url }}" alt="{{ me.display_name }}">
-    <!--<input type="number", ng-model="balance">-->
-    <h1 class="me-debt-number white-text">{{ balance | absolute }}</h1>
+  <ion-pane class="padding me-status-screen" user-color balance="me.user_balance", max-balance="maxDebt" min-balance="minDebt">
+    <img class="user-icon me-user-icon" ng-src="{{ me.avatar_url }}" alt="{{me.display_name}}">
+    <h1 class="me-debt-number white-text">{{me.user_balance | absolute}}</h1>
 
-    <h4 class="white-text me-debt-description" >
-      <span ng-if="balance < 0">
-        You owe {{ balance | absolute }} coffee{{ balance | pluralizer }} to {{ group.organization_name }}
-      </span>
+    <h4 class="white-text me-debt-description">
+      <div ng-if="me.user_balance < 0">
+        You owe {{me.user_balance | absolute}} coffee{{me.user_balance | pluralizer}} to {{user.org}}
+      </div>
 
-      <span ng-if="balance > 0">
-        {{ group.organization_name }} owes you {{ balance }} coffee{{ balance | pluralizer }}.
-      </span>
-
-      <span ng-if="balance == 0">
+      <div ng-if="me.user_balance > 0">
+        {{ group.organization_name }} owes you {{me.user_balance}} coffee{{me.user_balance | pluralizer}}.
+      </div>
+      <div ng-if="me.user_balance == 0">
         You're all even!
       </span>
     </h4>

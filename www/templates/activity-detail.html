@@ -5,18 +5,32 @@
   The Activity service returns an array of activity data
 -->
 
-<ion-view title="{{activity.name}}">
-  <ion-content has-header="true" padding="true">
-  <p>
-    <img src="{{ activity.user.photo }}" alt="{{ activity.user.username }}" class="user-icon">
-    You bought {{ activity.user.name }} {{ activity.amount }} coffees on {{ activity.date }}.
-  </p>
-  <blockquote>
-    <p>{{ activity.message }}</p>
-    <cite>- {{ activity.user.name }}</cite>
-  </blockquote>
-  <div class="map">
-    <h2>Map on {{ activity.latlng }}</h2>
-  </div>
+<ion-view title="Activity Detail">
+  <ion-content has-header="true" padding="false">
+
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="{{activity.user.photo}}" class="user-icon">
+        <span class="debt-badge" colorize-on="{{activity.amount}}" colorize-property="background">{{activity.amount | absolute}}</span>
+        <div ng-if="isdebt">
+          <h2>{{activity.user.name}} bought you {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
+        </div>
+        <div ng-if="!isdebt">
+          <h2>You bought {{activity.user.name}} {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
+        </div>
+        <p>{{activity.date | date:"MMMM d, y 'at' h:mm a"}}</p>
+      </div>
+
+      <div class="item item-body">
+        <static-map latitude="{{ activity.latlng[1] }}" longitude="{{ activity.latlng[0] }}" balance="{{activity.balance | absolute}}" isdebt="{{ activity.isdebt }}"> </static-map>
+        <p class="padded trailer-0" ng-if="activity.message">
+          "{{activity.message}}"
+        </p>
+        <p class="padded subtle italic">
+          - {{activity.user.name}}
+        </p>
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>
