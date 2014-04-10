@@ -53,7 +53,7 @@
 
         <ion-content>
           <ion-list class="list">
-            <label ng-repeat="group in groups track by group.group_id | orderBy:group.group_id" class="item item-radio">
+            <label ng-repeat="group in groups track by group.group_id | orderBy:'group_id'" class="item item-radio">
               <input type="radio" ng-model="$parent.selectedGroup" ng-value="{{group.group_id}}" ng-change="changeGroups({{group.group_id}})">
               <div class="item-content">{{group.group_name}}</div>
               <i class="radio-icon ion-checkmark"></i>

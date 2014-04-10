@@ -1,3 +1,4 @@
+
 angular.module('starter.services', [])
 
 .factory('TinyStore', function(){
@@ -10,26 +11,14 @@ angular.module('starter.services', [])
 
 .factory('UUID', function(){
   return function() {
-    var d = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = ((d + Math.random()*16) % 16) || 0;
-      d = Math.floor(d/16);
-      return (c === 'x' ? r : (r && 0x7 || 0x8)).toString(16);
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+      return v.toString(16);
     });
-    return uuid;
   };
 })
 
-.factory('PushNotifications', function(){
-  var fakePush = {
-    register: function (success, error, opts) {
-      console.log("Registering For Push Notifications With", success, error, opts);
-    }
-  };
-  return (window.plugins) ? window.plugins.pushNotification : fakePush;
-})
-
-.factory('Session', function(Config, UUID, _, PushNotifications, $ionicPlatform, $http, $state, Cache){
+.factory('Session', function(Config, UUID, _, $ionicPlatform, $http, $state, Cache){
   if(!Cache.token()){
     $state.go('auth', {
       location: "replace"
@@ -41,7 +30,6 @@ angular.module('starter.services', [])
   }
 
   function updateTokens() {
-
     function pushError(){
       navigator.notification.alert('something undebuggable happened');
     }
@@ -52,6 +40,8 @@ angular.module('starter.services', [])
 
     function iosHandler(result){
       var uuid = Cache.uuid() || Cache.uuid(UUID());
+      console.log("iOS Push Token: " + result);
+      console.log("Device UUIS: " + uuid);
       $http.post(Config.server + "device/register", {
         uuid: uuid,
         token: result,
@@ -59,21 +49,23 @@ angular.module('starter.services', [])
       }).error(pushError);
     }
 
-    if($ionicPlatform.is('android')){
-      navigator.notification.alert("start registering");
-      PushNotifications.register(androidHandler, pushError, {
-        "senderID": "470253609765",
-        "ecb": "onNotificationGCM"
-      });
-    }
+    if(window.plugins && window.plugins.pushNotification) {
 
-    if($ionicPlatform.is('ios')){
-      PushNotifications.register(iosHandler, pushError, {
-        "badge":"true",
-        "sound":"true",
-        "alert":"true",
-        "ecb":"onNotificationAPN"
-      });
+      if($ionicPlatform.is('android')){
+        window.plugins.pushNotification.register(androidHandler, pushError, {
+          "senderID": "470253609765",
+          "ecb": "onNotificationGCM"
+        });
+      }
+
+      if($ionicPlatform.is('ios')){
+        window.plugins.pushNotification.register(iosHandler, pushError, {
+          "badge":"true",
+          "sound":"true",
+          "alert":"true",
+          "ecb":"onNotificationAPN"
+        });
+      }
     }
   }
 
@@ -120,7 +112,6 @@ angular.module('starter.services', [])
       }).then(function(response){
         var groups = _.sortBy(response.data.groups, 'group_id');
         Cache.groups(groups);
-
         if (groups.length) {
           Cache.currentGroupId(groups[0].group_id);
           $state.go('tab.me', {

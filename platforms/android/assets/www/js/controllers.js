@@ -10,10 +10,10 @@ angular.module('starter.controllers', [])
   $scope.me = Cache.me();
   $scope.group = Cache.getCurrentGroup();
 
-  $scope.$emit("balance.update");
+  $scope.$emit("groups.update");
 
   $scope.$on("group.changed", function(){
-    $scope.$emit("balance.update");
+    $scope.$emit("groups.update");
     $scope.group = Cache.getCurrentGroup();
   });
 
@@ -116,7 +116,7 @@ angular.module('starter.controllers', [])
   $scope.refreshing = false;
 
   $scope.getCachedState  = function () {
-   if(Cache.getCurrentGroup()){
+    if(Cache.getCurrentGroup()){
       $scope.lastUpdate = Cache.lastUpdate();
       $scope.user_balance = Cache.getCurrentGroup().user_balance;
       $scope.min_balance = Cache.getCurrentGroup().min_balance;
@@ -145,6 +145,8 @@ angular.module('starter.controllers', [])
   };
 
   $scope.updateGroups = function() {
+    console.log("updateGroups");
+    $scope.selectedGroup = Cache.currentGroupId();
     Groups.all().then(function(groups){
       $scope.groups = groups;
     });
@@ -165,7 +167,7 @@ angular.module('starter.controllers', [])
   $scope.refresh();
 
   $scope.$on('balance.update', $scope.refresh);
-  $scope.$on('menu.opened', $scope.updateGroups);
+  $scope.$on('groups.update', $scope.updateGroups);
 })
 
 .controller('ActivityCtrl', function($scope, Transactions, Cache){
