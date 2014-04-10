@@ -1,0 +1,40 @@
+<ion-view title="Exchange w/ {{nameForTransaction(transaction)}}" hide-back-button="false" hide-nav-bar="false">
+
+  <ion-nav-buttons side="left">
+    <a ui-sref="tab.activity" class="button-icon button back-button">
+      <i class="ion-android-arrow-back"></i> Back
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="list card">
+      <div class="item item-text-wrap item-avatar">
+        <img ng-src="{{ avatar_url }}" class="user-icon">
+        <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
+        <h2>{{transaction.summary}}</h2>
+        <p>{{transaction.date | date:"MMMM d, y 'at' h:mm a"}}</p>
+      </div>
+
+      <div class="item item-body">
+        <div ng-if="transaction.latitude && transaction.longitude">
+          <static-map latitude="{{ transaction.latitude }}" longitude="{{ transaction.longitude }}" zoom="18" width="600" height="400" balance="{{transaction.amount | absolute}}" isdebt="{{ isTransactionDebt() }}"> </static-map>
+        </div>
+
+        <div ng-if="transaction.note">
+          <p class="padded trailer-0">
+            "{{transaction.note}}"
+          </p>
+
+          <p class="padded subtle italic">
+            - {{tranactionCreator(transaction)}}
+          </p>
+        </div>
+
+        <p class="padded trailer-0" ng-if="!transaction.note">
+          Entered by {{tranactionCreator(transaction)}}
+        </p>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

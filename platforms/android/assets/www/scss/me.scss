@@ -1,0 +1,30 @@
+.me-status-screen {
+  color: $white;
+  text-align: center;
+}
+
+.me-debt-number {
+  @extend %indebted;
+  font-size: 45vh;
+  padding: 2vh 0 1vh;
+  width: 100%;
+  font-size: 50vh;
+  color: $white;
+  text-align: center;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.me-debt-description {
+  padding-top: 5vh;
+  font-weight: 700;
+}
+
+.me-user-icon {
+  width: 10vh;
+  height: 10vh;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid $cream;
+  margin-top: 2.5vh;
+}

@@ -1,0 +1,31 @@
+<ion-view hide-nav-bar="true">
+  <ion-header-bar class="bar bar-transparent">
+    <button class="button button-icon button-clear button-light" ng-click="openMenu()">
+      <i class="ion-person-stalker"></i>
+    </button>
+    <button class="button button-icon button-clear button-light" ng-click="refresh()">
+      <i  ng-class="{'ion-refresh':!refreshing, 'ion-refreshing':refreshing}" ></i>
+    </button>
+  </ion-header-bar>
+
+  <ion-pane class="padding me-status-screen" user-color balance="user_balance", max-balance="min_balance" min-balance="min_balance">
+    <img class="user-icon me-user-icon" ng-src="{{ me.avatar_url }}" alt="{{me.display_name}}">
+    <h1 class="me-debt-number white-text">{{user_balance | absolute}}</h1>
+
+    <h4 class="white-text me-debt-description">
+      <div ng-if="user_balance < 0">
+        You owe {{user_balance | absolute}} coffee{{user_balance | pluralizer}} to {{group.group_name}}
+      </div>
+
+      <div ng-if="user_balance > 0">
+        {{ group.group_name }} owes you {{user_balance}} coffee{{user_balance | pluralizer}}.
+      </div>
+      <div ng-if="user_balance == 0">
+        You're all even!
+      </span>
+    </h4>
+    <p ng-if="lastUpdate">
+      Last updated <span am-time-ago="lastUpdate"></span>
+    </p>
+  </ion-pane>
+</ion-view>

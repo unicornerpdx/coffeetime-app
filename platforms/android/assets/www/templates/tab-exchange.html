@@ -1,0 +1,24 @@
+<ion-view title="Exchange" hide-back-button="false" hide-nav-bar="false">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-light" ng-disabled="refreshing" ng-click="refresh()">
+      <i ng-class="{'ion-refresh':!refreshing, 'ion-refreshing':refreshing}"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Search" ng-model="query">
+    </label>
+    <ion-list>
+      <a ng-repeat="user in users | filter:query | otherUsers | orderBy:'display_name'"
+                class="item item-avatar"
+                ui-sref="tab.coffee-transaction({userId: user.user_id})">
+        <img ng-src="{{ user.avatar_url }}" alt="{{ user.display_name }}" class="user-icon-left">
+        <span user-debt-badge="user.user_balance" class="debt-badge">{{user.user_balance | absolute}}</span>
+        <p class="user-name">{{user.display_name}}</p>
+      </a>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

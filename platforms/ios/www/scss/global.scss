@@ -1,0 +1,129 @@
+// Our Reset Stuff
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Ionic Overrides
+.item-avatar > img:first-child ,.item-avatar .item-content > img:first-child{
+  @include border-radius(50%);
+}
+
+.has-footer.has-tabs {
+  bottom: 44px; // hack to fix the fact the ionic thinks we have a footer everywhere because there is a footer in the side menu
+}
+
+.transaction-view .list {
+  padding-top: 0;
+}
+
+.transaction-view .item-input-inset {
+  margin-top: 0px;
+}
+
+.item-body {
+  padding: 0 0 15px 0;
+}
+
+// Project Wide SCSS
+body, .pane {
+  background: $cream;
+}
+
+.bar.bar-transparent {
+  background: transparent;
+  border: none;
+  .button.button-clear {
+    font-size: 22px;
+    padding: .5rem 1rem;
+  }
+  .button.button-light.button-clear {
+    color: white;
+  }
+}
+
+%badge {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 2px;
+  color: $white;
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
+  background-color: $green;
+  @include border-radius(20px);
+  @include box-shadow(0 0 6px rgba(0,0,0,.1));
+}
+
+.debt-badge {
+  @extend %badge;
+}
+
+// Tabs
+.red .tab-item.tab-item-active {
+  color: $red;
+}
+
+.green .tab-item.tab-item-active {
+  color: $green;
+}
+
+// Helpers
+.white-text {
+  color: $white;
+}
+
+.light-text {
+  color: $light-gray;
+}
+
+p.large {
+  font-size: 1.25em;
+}
+
+p.padded {
+  padding: 0 15px;
+}
+
+p.trailer-0 {
+  margin-bottom: 0;
+}
+
+p.leader-0 {
+  margin-top: 0;
+}
+
+// Gravatar images
+%user-icon {
+  background: $white;
+  width: 40px;
+  height: 40px;
+  @include border-radius(50%);
+  @include box-shadow(0 0 10px rgba(0,0,0,.25));
+}
+
+.user-icon {
+  @extend %user-icon;
+}
+
+.user-icon-left {
+  @extend %user-icon;
+  float: left;
+}
+
+.user-name {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+// Transparent Bar
+.bar.bar-transparent {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #fff;
+}

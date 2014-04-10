@@ -1,0 +1,19 @@
+<ion-view title="Activity" hide-back-button="false" hide-nav-bar="false">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-light" ng-disabled="refreshing" ng-click="refresh()">
+      <i ng-class="{'ion-refresh':!refreshing, 'ion-refreshing':refreshing}"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <ion-list>
+      <a ng-repeat="transaction in transactions track by transaction.transaction_id | orderBy:'-date'"
+                class="item item-text-wrap item-avatar"
+                ui-sref="tab.activity-detail({transactionId: transaction.transaction_id})">
+        <img ng-src="{{ avatarForTransaction(transaction) }}" alt="{{ nameForTransaction(transaction) }}" class="user-icon-left">
+        <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
+        <p class="trailer-0">{{transaction.summary}} <span class="light-text"  am-time-ago="transaction.date"></span></p>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>

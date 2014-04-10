@@ -1,0 +1,76 @@
+.item-input-inset {
+  margin-top: 1px;
+}
+
+%transaction-button {
+  position: absolute;
+  top: 0;
+  padding: 40px 50px;
+  @extend %knockout;
+  font-size: 68px;
+  color: $white;
+  background: transparent;
+  border: none;
+}
+
+.transaction-button-left {
+  @extend %transaction-button;
+  left: 0
+}
+
+.transaction-button-right {
+  @extend %transaction-button;
+  right: 0;
+}
+
+.transaction-number, input[type="number"].transaction-number {
+  width: 100%;
+  display: block;
+  height: auto;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
+  @extend %knockout;
+  font-size: 124px;
+  text-align: center;
+  color: $white;
+  background-color: transparent;
+}
+
+.transaction-statement {
+  @include box-sizing(border-box);
+  width: 90%;
+  margin: .75em auto;
+  font-size: 1.75em;
+  line-height: 1.25em;
+  color: $dark-gray;
+}
+
+.transaction-message {
+  @include box-sizing(border-box);
+  height: 3em;
+  line-height: 1.25em;
+  border: none;
+  background-size: contain;
+  resize: none;
+  overflow-y: hidden;
+}
+
+input.transaction-submit {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: $white;
+  border: none;
+  &[disabled]{
+    opacity: 0.1;
+  }
+}
+
+.transaction-view {
+  top: 44px;
+}
+
+.transaction-number {
+  position: relative;
+}
