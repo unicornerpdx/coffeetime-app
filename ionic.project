@@ -1,7 +1,7 @@
 {
   "name": "Coffee",
   "email": "",
-  "app_id": "",
+  "app_id": "io.coffeetime.app",
   "package_name": "",
   "ios_certificate": "",
   "ios_certificate_password": "",

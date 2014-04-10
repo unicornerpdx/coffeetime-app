@@ -1,4 +1,4 @@
-.me-debt-number, .transaction-button-left, .transaction-button-right, input[type="number"].transaction-number {
+.transaction-button-left, .transaction-button-right, .transaction-number, input[type="number"].transaction-number {
   font-family: 'Knockout 26 A', 'Knockout 26 B';
   font-weight: 400;
   font-style: normal; }
@@ -2558,14 +2558,14 @@ a.subdued {
     font-size: 13px;
     font-weight: 400;
     line-height: 32px; }
+    .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
+      vertical-align: top;
+      font-size: 32px;
+      line-height: 32px; }
     .bar .button.button-icon:before, .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {
       padding-right: 2px;
       padding-left: 2px;
       font-size: 20px;
-      line-height: 32px; }
-    .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
-      vertical-align: top;
-      font-size: 32px;
       line-height: 32px; }
     .bar .button.button-clear {
       font-size: 17px;
@@ -6318,10 +6318,19 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-appearance: none;
   margin: 0; }
 
-.item-avatar > img:first-child {
+.item-avatar > img:first-child, .item-avatar .item-content > img:first-child {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%; }
+
+.has-footer.has-tabs {
+  bottom: 44px; }
+
+.transaction-view .list {
+  padding-top: 0; }
+
+.transaction-view .item-input-inset {
+  margin-top: 0px; }
 
 .item-body {
   padding: 0 0 15px 0; }
@@ -6329,9 +6338,14 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 body, .pane {
   background: #f9f6f3; }
 
-.bar-transparent {
+.bar.bar-transparent {
   background: transparent;
   border: none; }
+  .bar.bar-transparent .button.button-clear {
+    font-size: 22px;
+    padding: 0.5rem 1rem; }
+  .bar.bar-transparent .button.button-light.button-clear {
+    color: white; }
 
 .debt-badge, .activity-marker {
   position: absolute;
@@ -6362,7 +6376,7 @@ body, .pane {
 .white-text {
   color: #fff; }
 
-p.light-text {
+.light-text {
   color: #afafaf; }
 
 p.large {
@@ -6378,15 +6392,15 @@ p.leader-0 {
   margin-top: 0; }
 
 .user-icon, .user-icon-left {
+  background: #fff;
   width: 40px;
   height: 40px;
-  margin-right: 1em;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
 
 
 .user-icon-left {
@@ -6395,6 +6409,12 @@ p.leader-0 {
 .user-name {
   display: inline-block;
   margin-top: 10px; }
+
+.bar.bar-transparent {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #fff; }
 
 @font-face {
   font-family: 'indebted';
@@ -6407,7 +6427,7 @@ p.leader-0 {
   font-weight: normal;
   font-style: normal; }
 
-.me-debt-number, .transaction-button-left, .transaction-button-right, input[type="number"].transaction-number {
+.transaction-button-left, .transaction-button-right, .transaction-number, input[type="number"].transaction-number, .me-debt-number {
   font-family: 'Indebted';
   speak: none;
   font-style: normal;
@@ -6422,26 +6442,30 @@ p.leader-0 {
 
 
 .me-status-screen {
-  top: 0;
-  padding: 20px 0 10px 0;
   color: #fff;
   text-align: center; }
 
 .me-debt-number {
-  position: absolute;
+  font-size: 45vh;
+  padding: 2vh 0 1vh;
   width: 100%;
-  top: 50vh;
-  margin-top: -30vh;
   font-size: 50vh;
   color: #fff;
   text-align: center;
-  line-height: 1; }
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
 
 .me-debt-description {
-  position: absolute;
-  bottom: 62px;
-  width: 100%;
-  text-align: center; }
+  padding-top: 5vh;
+  font-weight: 700; }
+
+.me-user-icon {
+  width: 10vh;
+  height: 10vh;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid #f9f6f3;
+  margin-top: 2.5vh; }
 
 .item-input-inset {
   margin-top: 1px; }
@@ -6449,8 +6473,8 @@ p.leader-0 {
 .transaction-button-left, .transaction-button-right {
   position: absolute;
   top: 0;
-  padding: 36px 64px;
-  font-size: 64px;
+  padding: 40px 50px;
+  font-size: 68px;
   color: #fff;
   background: transparent;
   border: none; }
@@ -6461,9 +6485,12 @@ p.leader-0 {
 .transaction-button-right {
   right: 0; }
 
-input[type="number"].transaction-number {
+.transaction-number, input[type="number"].transaction-number {
+  width: 100%;
+  display: block;
   height: auto;
-  padding-bottom: 12px;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
   font-size: 124px;
   text-align: center;
   color: #fff;
@@ -6480,15 +6507,11 @@ input[type="number"].transaction-number {
   color: #333333; }
 
 .transaction-message {
-  width: 90%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  height: 20vh;
-  padding: 1.25em 1em;
-  margin: 1em auto 1.5em auto;
+  height: 3em;
   line-height: 1.25em;
-  color: #afafaf;
   border: none;
   background-size: contain;
   resize: none;
@@ -6504,18 +6527,29 @@ input.transaction-submit {
   input.transaction-submit[disabled] {
     opacity: 0.1; }
 
+.transaction-view {
+  top: 44px; }
+
+.transaction-number {
+  position: relative; }
+
 .full-map {
   background-color: #f9f6f3;
   position: relative; }
   .full-map img {
     display: inherit;
-    border-bottom: 1px solid #afafaf;
-    opacity: 0.4; }
+    border-bottom: 1px solid #ddd; }
 
 .activity-marker {
+  min-width: 16px;
+  height: 16px;
+  line-height: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
   top: 50%;
   left: 50%;
-  margin-left: -20px;
-  margin-top: -20px; }
+  margin-left: -16px;
+  margin-top: -16px; }
   .activity-marker.red {
     background: #CB4400; }

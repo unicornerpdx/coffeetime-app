@@ -1,0 +1,60 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Color
+$red:                             #CB4400;
+$lightred:                        #ED7264;
+$green:                           #55A33B;
+$lightgreen:                      #98CC82;
+$dark-gray:                       #333333 !default;
+$light-gray:                      #afafaf !default;
+$lightest-gray:                   #efefef !default;
+$white:                           #fff    !default;
+$cream:                           #f9f6f3 !default;
+
+// Ionic colors
+$light:                           $white !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        $green !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       $red    !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+
+// Fonts
+$font-family-sans-serif:          'Clear Sans', monospace !default;
+$font-family-light-sans-serif:    'Clear Sans', monospace !default;
+$font-family-serif:               Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$font-family-condensed:           'Knockout 26 A', 'Knockout 26 B';
+
+// Knockout
+%knockout { font-family: 'Knockout 26 A', 'Knockout 26 B'; font-weight: 400; font-style: normal; }
+
+$font-family-base:                $font-family-sans-serif !default;
+$font-size-base:                  14px !default;
+$font-size-large:                 18px !default;
+$font-size-small:                 11px !default;
+
+$line-height-base:                1.428571429 !default; // 20/14
+$line-height-computed:            floor($font-size-base * $line-height-base) !default; // ~20px
+$line-height-large:               1.33 !default;
+$line-height-small:               1.5 !default;
+
+$headings-font-family:            $font-family-base !default;
+$headings-font-weight:            500 !default;
+$headings-line-height:            1.2 !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// App Specific Styles
+@import "global";
+@import "indebted";
+
+// Tab Specific Styles
+@import "me";
+@import "exchange";
+@import "activity";
