@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
 .controller('MeCtrl', function($scope, Cache, Balance, $ionicSideMenuDelegate, $ionicNavBarDelegate) {
+  $scope.getCachedState();
+
   $ionicNavBarDelegate.$getByHandle('nav-bar').showBar(false);
 
   var menu = $ionicSideMenuDelegate.$getByHandle('menu');
@@ -115,7 +117,7 @@ angular.module('starter.controllers', [])
   $scope.groups = Cache.groups();
   $scope.refreshing = false;
 
-  $scope.getCachedState  = function () {
+  $scope.getCachedState = function () {
     if(Cache.getCurrentGroup()){
       $scope.lastUpdate = Cache.lastUpdate();
       $scope.user_balance = Cache.getCurrentGroup().user_balance;

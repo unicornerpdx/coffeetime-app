@@ -52,6 +52,7 @@ angular.module('starter.services', [])
     if(window.plugins && window.plugins.pushNotification) {
 
       if($ionicPlatform.is('android')){
+        navigator.notification.alert('registering for push');
         window.plugins.pushNotification.register(androidHandler, pushError, {
           "senderID": "470253609765",
           "ecb": "onNotificationGCM"
@@ -71,15 +72,16 @@ angular.module('starter.services', [])
 
   return {
     registerAndroidToken: function (regid) {
+      navigator.notification.alert('registering token');
       var uuid = Cache.uuid() || Cache.uuid(UUID());
       $http.post(Config.server + "device/register", {
         uuid: uuid,
         token: regid,
         token_type: 'gcm'
       }).error(function (argument) {
-        navigator.notification.alert('something undebuggable happened');
+        navigator.notification.alert('device/register error');
       }).success(function (data) {
-        navigator.notification.alert('registration okx');
+        navigator.notification.alert('registration ok');
       });
     },
     sendPushTokens: function(){
