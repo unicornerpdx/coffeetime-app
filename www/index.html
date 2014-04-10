@@ -17,8 +17,13 @@
     <!-- ionic js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <script src="lib/moment.min.js"></script>
+
     <!-- chroma js -->
     <script src="lib/chroma.min.js"></script>
+    <script src="lib/tinystore.js"></script>
+    <script src="lib/lodash.js"></script>
+    <script src="lib/angular-moment.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -29,51 +34,38 @@
     <script src="js/services.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
-
   </head>
 
-  <body ng-app="starter" animation="slide-left-right-ios7"  body-color>
-
-    <ion-side-menus>
+  <body ng-app="starter" animation="slide-left-right-ios7" ng-controller="AppCtrl">
+    <ion-side-menus delegate-handle="menu">
       <!-- Center content -->
-      <ion-side-menu-content  class="padding me-status-screen" ng-controller="AppCtrl"  drag-content="false">
-        <ion-nav-view></ion-nav-view>
+      <ion-side-menu-content  class="padding" drag-content="false" body-color="user_balance">
+        <ion-nav-bar delegate-handle="nav-bar" class="bar-dark"></ion-nav-bar>
+        <ion-nav-view class="slide-left-right"></ion-nav-view>
       </ion-side-menu-content>
 
       <!-- Left menu -->
-      <ion-side-menu side="left">
-
-        <ion-header-bar class="bar-light">
+      <ion-side-menu side="left" width="260">
+        <ion-header-bar class="bar-dark">
+           <button class="button button-icon ion-plus"></button>
           <h1 class="title">Groups</h1>
         </ion-header-bar>
 
         <ion-content>
           <ion-list class="list">
-            <label class="item item-radio">
-              <input type="radio" name="group">
-              <div class="item-content">
-              Group 1
-              </div>
+            <label ng-repeat="group in groups track by group.group_id | orderBy:group.group_id" class="item item-radio">
+              <input type="radio" ng-model="$parent.selectedGroup" ng-value="{{group.group_id}}" ng-change="changeGroups({{group.group_id}})">
+              <div class="item-content">{{group.group_name}}</div>
               <i class="radio-icon ion-checkmark"></i>
             </label>
-
-            <label class="item item-radio">
-              <input type="radio" name="group">
-              <div class="item-content">
-              Group 1
-              </div>
-              <i class="radio-icon ion-checkmark"></i>
-            </label>
-
           </ion-list>
         </ion-content>
 
-        <ion-footer-bar align-title="left" class="bar-light">
+        <ion-footer-bar align-title="left" class="bar-stable">
           <div class="buttons">
-            <button class="button icon-ion-log-out"><i class="icon ion-log-out"></i>Sign Out</button>
+            <button ng-click="signOut()" class="button icon-ion-log-out"><i class="icon ion-log-out"></i>Sign Out</button>
           </div>
         </ion-footer-bar>
-
       </ion-side-menu>
 
     </ion-side-menus>

@@ -8,7 +8,61 @@ var $dark       = '#333333';
 // Chroma Colorizer Directive
 angular.module('app.directives', [])
 
-.directive('userColor', function(Me, Group){
+.directive('transactionButton', function($interval){
+  return {
+    restrict: 'A',
+    link: function(scope, iElement, iAttrs){
+      var timer;
+
+      iElement.on("touchstart", function(){
+        timer = $interval(function(){
+          scope.$eval(iAttrs.transactionButton);
+        }, 200);
+      });
+
+      iElement.on("touchend", function(){
+        $interval.cancel(timer);
+        scope.$eval(iAttrs.transactionButton);
+      });
+    }
+  };
+})
+
+.directive('colorDebtBadge', function(Cache){
+  return {
+    restrict: "A",
+    link: function(scope, iElement, iAttrs){
+      if (Cache.me().user_id === scope.transaction.from_user_id) {
+        iElement.css("background-color", $green);
+      } else {
+        iElement.css("background-color", $red);
+      }
+    }
+  };
+})
+
+.directive('userDebtBadge', function(Cache){
+  return {
+    restrict: "A",
+    link: function(scope, iElement, iAttrs){
+      function recolor(amount){
+        if (amount > 0) {
+          iElement.css("background-color", $green);
+        } else if (amount < 0) {
+          iElement.css("background-color", $red);
+        } else {
+          iElement.css("background-color", $dark);
+        }
+      }
+
+      scope.$watch(iAttrs.userDebtBadge, function(newValue){
+        recolor(newValue);
+      });
+    }
+  };
+})
+
+.directive('userColor', function(){
   return {
     restrict: 'A',
     link: function(scope, iElement, iAttrs) {
@@ -61,7 +115,7 @@ angular.module('app.directives', [])
           iElement.addClass('neutral').removeClass('red green');
         }
       }
-      scope.$watch('me.user_balance', function(newValue, oldValue){
+      scope.$watch(iAttrs.bodyColor, function(newValue, oldValue){
         setColorClass(newValue);
       });
     }
@@ -99,7 +153,10 @@ angular.module('app.directives', [])
       latitude: '@',
       longitude: '@',
       balance:    '@',
-      isdebt: '@'
+      isdebt: '@',
+      zoom: '@',
+      width: '@',
+      height: '@'
     },
     templateUrl: 'templates/static-map.html'
   };

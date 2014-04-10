@@ -5,8 +5,8 @@
 
 .me-debt-number {
   @extend %indebted;
-  font-size: 50vh;
-  padding: 5vh 0;
+  font-size: 45vh;
+  padding: 2vh 0 1vh;
   width: 100%;
   font-size: 50vh;
   color: $white;
@@ -25,5 +25,6 @@
   height: 10vh;
   text-align: center;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  border: .75vh solid $cream;
+  border: 3px solid $cream;
+  margin-top: 2.5vh;
 }

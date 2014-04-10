@@ -6,8 +6,20 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 // Ionic Overrides
-.item-avatar > img:first-child {
+.item-avatar > img:first-child ,.item-avatar .item-content > img:first-child{
   @include border-radius(50%);
+}
+
+.has-footer.has-tabs {
+  bottom: 44px; // hack to fix the fact the ionic thinks we have a footer everywhere because there is a footer in the side menu
+}
+
+.transaction-view .list {
+  padding-top: 0;
+}
+
+.transaction-view .item-input-inset {
+  margin-top: 0px;
 }
 
 .item-body {
@@ -19,9 +31,16 @@ body, .pane {
   background: $cream;
 }
 
-.bar-transparent {
+.bar.bar-transparent {
   background: transparent;
   border: none;
+  .button.button-clear {
+    font-size: 22px;
+    padding: .5rem 1rem;
+  }
+  .button.button-light.button-clear {
+    color: white;
+  }
 }
 
 %badge {
@@ -58,7 +77,7 @@ body, .pane {
   color: $white;
 }
 
-p.light-text {
+.light-text {
   color: $light-gray;
 }
 

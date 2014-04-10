@@ -1,4 +1,4 @@
 <div class="full-map">
-  <img class="full-image" ng-src="http://static-maps.pdx.esri.com/img.php?basemap=stamen-toner&attribution=none&width=600&height=400&zoom=15&latitude={{latitude}}&longitude={{longitude}}">
-  <span ng-class="{'activity-marker': true, red: {{isdebt}}}">{{amount}}</span>
+  <img class="full-image" width="{{width/2}}" height="{{height/2}}" ng-src="http://static-maps.pdx.esri.com/img.php?basemap=topo&attribution=none&width={{width}}&height={{height}}&zoom={{zoom}}&latitude={{latitude}}&longitude={{longitude}}">
+  <span ng-class="{'activity-marker': true, red: !isdebt}">{{amount}}</span>
 </div>

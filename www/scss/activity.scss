@@ -3,17 +3,20 @@
   position: relative;
   img {
     display: inherit;
-    border-bottom: 1px solid $light-gray;
-    opacity: 0.4;
+    border-bottom: 1px solid #ddd;
   }
 }
 
 .activity-marker {
-   @extend %badge;
+  @extend %badge;
+  min-width: 16px;
+  height: 16px;
+  line-height: 16px;
+  @include border-radius(16px);
   top: 50%;
   left: 50%;
-  margin-left: -20px;
-  margin-top: -20px;
+  margin-left: -16px;
+  margin-top: -16px;
   &.red {
     background: $red;
   }

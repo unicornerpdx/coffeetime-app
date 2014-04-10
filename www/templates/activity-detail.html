@@ -1,36 +1,40 @@
-<!--
-  This template loads for the 'tab.activity-detail' state (app.js)
-  'activities' is a $scope variable created in the ActivityCtrl controller (controllers.js)
-  The ActivityCtrl pulls data from the Activity service (service.js)
-  The Activity service returns an array of activity data
--->
+<ion-view title="Exchange w/ {{nameForTransaction(transaction)}}" hide-back-button="false" hide-nav-bar="false">
 
-<ion-view title="Activity Detail">
-  <ion-content has-header="true" padding="false">
+  <ion-nav-buttons side="left">
+    <a ui-sref="tab.activity" class="button-icon button back-button">
+      <i class="ion-android-arrow-back"></i> Back
+    </a>
+  </ion-nav-buttons>
 
+  <ion-content>
     <div class="list card">
-      <div class="item item-avatar">
-        <img src="{{activity.user.photo}}" class="user-icon">
-        <span class="debt-badge" colorize-on="{{activity.amount}}" colorize-property="background">{{activity.amount | absolute}}</span>
-        <div ng-if="isdebt">
-          <h2>{{activity.user.name}} bought you {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
-        </div>
-        <div ng-if="!isdebt">
-          <h2>You bought {{activity.user.name}} {{activity.amount | absolute}} coffee{{activity.amount | pluralizer}}</h2>
-        </div>
-        <p>{{activity.date | date:"MMMM d, y 'at' h:mm a"}}</p>
+      <div class="item item-text-wrap item-avatar">
+        <img ng-src="{{ avatar_url }}" class="user-icon">
+        <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
+        <h2>{{transaction.summary}}</h2>
+        <p>{{transaction.date | date:"MMMM d, y 'at' h:mm a"}}</p>
       </div>
 
       <div class="item item-body">
-        <static-map latitude="{{ activity.latlng[1] }}" longitude="{{ activity.latlng[0] }}" balance="{{activity.balance | absolute}}" isdebt="{{ activity.isdebt }}"> </static-map>
-        <p class="padded trailer-0" ng-if="activity.message">
-          "{{activity.message}}"
-        </p>
-        <p class="padded subtle italic">
-          - {{activity.user.name}}
-        </p>
-      </div>
+        <div ng-if="transaction.latitude && transaction.longitude">
+          <static-map latitude="{{ transaction.latitude }}" longitude="{{ transaction.longitude }}" zoom="18" width="600" height="400" balance="{{transaction.amount | absolute}}" isdebt="{{ isTransactionDebt() }}"> </static-map>
+        </div>
 
+        <div ng-if="transaction.note">
+          <p class="padded trailer-0">
+            "{{transaction.note}}"
+          </p>
+
+          <p class="padded subtle italic">
+            - {{tranactionCreator(transaction)}}
+          </p>
+        </div>
+
+        <p class="padded trailer-0" ng-if="!transaction.note">
+          Entered by {{tranactionCreator(transaction)}}
+        </p>
+
+      </div>
     </div>
   </ion-content>
 </ion-view>

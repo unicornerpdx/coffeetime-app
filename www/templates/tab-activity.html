@@ -1,31 +1,19 @@
-<ion-view title="Activity">
-  <ion-header-bar>
-    <h1 class="title">Activity</h1>
-  </ion-header-bar>
+<ion-view title="Activity" hide-back-button="false" hide-nav-bar="false">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-light" ng-disabled="refreshing" ng-click="refresh()">
+      <i ng-class="{'ion-refresh':!refreshing, 'ion-refreshing':refreshing}"></i>
+    </button>
+  </ion-nav-buttons>
+
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="transaction in transactions | orderBy:'-date'"
-                class="item-text-wrap"
-                href="#/tab/transaction/{{transaction.id}}">
-
-        <img ng-src="{{ users[transaction.from_user_id].avatar_url }}" alt="{{ users[transaction.from_user_id].display_name }}" class="user-icon-left">
-        <span class="debt-badge" colorize-on="{{transaction.amount}}" colorize-property="background">{{transaction.amount | absolute}}</span>
-
-        <div ng-if="transaction.amount > 0">
-          <p class="trailer-0">
-            You bought {{ users[transaction.from_user_id].display_name }} {{ transaction.amount }} coffee{{transaction.amount | pluralizer}}.
-            <span class="light-text">{{ transaction.date | relativeDate }}</span>
-          </p>
-        </div>
-
-        <div ng-if="transaction.amount < 0">
-          <p class="trailer-0">
-            {{ users[transaction.from_user_id].display_name }} bought you {{ transaction.amount | absolute }} coffee{{transaction.amount | pluralizer}}.
-            <span class="light-text">{{ transaction.date | relativeDate }}</span>
-          </p>
-        </div>
-
-      </ion-item>
+      <a ng-repeat="transaction in transactions track by transaction.transaction_id | orderBy:'-date'"
+                class="item item-text-wrap item-avatar"
+                ui-sref="tab.activity-detail({transactionId: transaction.transaction_id})">
+        <img ng-src="{{ avatarForTransaction(transaction) }}" alt="{{ nameForTransaction(transaction) }}" class="user-icon-left">
+        <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
+        <p class="trailer-0">{{transaction.summary}} <span class="light-text"  am-time-ago="transaction.date"></span></p>
+      </a>
     </ion-list>
   </ion-content>
 </ion-view>

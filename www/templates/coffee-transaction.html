@@ -1,38 +1,56 @@
-<!--
-  This template loads for the 'tab.coffee-transaction' state (app.js)
-  'user' is a $scope variable created in the GroupCtrl controller (controllers.js)
-  The GroupCtrl pulls data from the Group service (service.js)
-  The Group service returns an array of user data
--->
-<ion-view title="{{user.name}}">
+<ion-view title="{{ user.display_name }}" hide-back-button="false" hide-nav-bar="false">
 
-    <ion-content has-header="true" padding="false" class="transaction-view">
+  <ion-nav-buttons side="left">
+    <a ui-sref="tab.exchange" class="button-icon button back-button">
+      <i class="ion-android-arrow-back"></i> Back
+    </a>
+  </ion-nav-buttons>
 
-      <form ng-submit="add()" >
+  <ion-nav-buttons side="right">
+    <div class="button button-clear button-icon">
+      <i ng-show="disabled" class="ion-loading-d"></i>
+    </div>
+  </ion-nav-buttons>
 
-        <div colorize-on="number" colorize-property="background">
-          <input class="transaction-number" type="number" placeholder="0" ng-model="number">
-          <button ng-click='number=number-1' class="transaction-button-left">-</button>
-          <button ng-click='number=number+1' class="transaction-button-right">+</button>
+  <ion-content has-header="true" padding="false" class="transaction-view">
+    <form ng-submit="createTransaction()" ng-disabled="disabled">
+
+      <div colorize-on="amount" colorize-property="background">
+        <span class="transaction-number">{{amount | absolute}}</span>
+        <a transaction-button="deincrement()" class="transaction-button-left" ng-hide="typing">–</a>
+        <a transaction-button="increment()" class="transaction-button-right" ng-hide="typing">+</a>
+      </div>
+
+      <p class="transaction-statement" ng-if="amount > 0">
+        {{user.display_name}} owes you <span colorize-on="amount" colorize-property="color">{{amount}}</span>&nbsp;coffee{{amount | pluralizer}}
+      </p>
+
+      <p class="transaction-statement" ng-if="amount < 0">
+        You owe {{user.display_name}} <span colorize-on="amount" colorize-property="color">{{ amount | absolute }}</span>&nbsp;coffee{{amount | pluralizer}}
+      </p>
+
+      <p class="transaction-statement" ng-if="amount == 0">
+        You and {{user.display_name}} are even stevens.
+      </p>
+
+      <div class="list list-inset">
+        <label class="item item-input-inset">
+          <textarea class="transaction-message" ng-model="$parent.note" placeholder="Attach a note"></textarea>
+        </label>
+        <div class="item item-toggle">
+          Attach Location
+          <label class="toggle toggle-calm">
+            <input type="checkbox" ng-model="$parent.send_location">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
         </div>
+      </div>
+      <div class="padding-horizontal padding-bottom">
+        <input class="button button-block transaction-submit" type="submit" value="Confirm" ng-disabled="amount == 0 || disabled" colorize-on="amount" colorize-property="background" />
+      </div>
+    </form>
 
-        <p class="transaction-statement" ng-if="number > 0">
-          {{user.name}} owes you <span colorize-on="number" colorize-property="color">{{number}}</span>&nbsp;coffee{{number | pluralizer}}
-        </p>
-
-        <p class="transaction-statement" ng-if="number < 0">
-          You owe {{user.name}} <span colorize-on="number" colorize-property="color">{{ number | absolute }}</span>&nbsp;coffee{{number | pluralizer}}
-        </p>
-
-        <p class="transaction-statement" ng-if="number == 0">
-          You and {{user.name}} are even stevens.
-        </p>
-
-        <textarea class="transaction-message" placeholder="Leave a message"></textarea>
-        <input class="button transaction-submit" type="submit" value="Confirm" ng-disabled="number == 0" colorize-on="number" colorize-property="background" />
-
-      </form>
-
-    </ion-content>
-  </form>
+  </ion-content>
 </ion-view>
