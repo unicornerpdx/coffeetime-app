@@ -2558,14 +2558,14 @@ a.subdued {
     font-size: 13px;
     font-weight: 400;
     line-height: 32px; }
-    .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
-      vertical-align: top;
-      font-size: 32px;
-      line-height: 32px; }
     .bar .button.button-icon:before, .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {
       padding-right: 2px;
       padding-left: 2px;
       font-size: 20px;
+      line-height: 32px; }
+    .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
+      vertical-align: top;
+      font-size: 32px;
       line-height: 32px; }
     .bar .button.button-clear {
       font-size: 17px;
@@ -6343,7 +6343,7 @@ body, .pane {
   border: none; }
   .bar.bar-transparent .button.button-clear {
     font-size: 22px;
-    padding: 0.5rem 1rem; }
+    margin: 1rem; }
   .bar.bar-transparent .button.button-light.button-clear {
     color: white; }
 
@@ -6466,6 +6466,11 @@ p.leader-0 {
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   border: 3px solid #f9f6f3;
   margin-top: 2.5vh; }
+
+.platform-android .me-user-icon {
+  margin-top: 1vh; }
+.platform-android .bar.bar-transparent .button.button-light.button-clear {
+  margin-top: 4.5vh; }
 
 .item-input-inset {
   margin-top: 1px; }

@@ -18,7 +18,6 @@ function handleOpenURL(url){
 }
 
 function onNotificationGCM(e){
-  navigator.notification.alert(e.event);
   console.log(e);
   switch( e.event ){
   case 'registered':
@@ -29,6 +28,16 @@ function onNotificationGCM(e){
     break;
 
   case 'message':
+    if (e.foreground){
+      // foreground
+    } else {
+      // from notifcations
+      if ( e.coldstart ){
+        // cold start
+      } else {
+        // warm start
+      }
+    }
     console.log('msg', e.payload.message);
     break;
 

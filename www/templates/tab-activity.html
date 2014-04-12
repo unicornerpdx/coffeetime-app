@@ -12,7 +12,7 @@
                 ui-sref="tab.activity-detail({transactionId: transaction.transaction_id})">
         <img ng-src="{{ avatarForTransaction(transaction) }}" alt="{{ nameForTransaction(transaction) }}" class="user-icon-left">
         <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
-        <p class="trailer-0">{{transaction.summary}} <span class="light-text"  am-time-ago="transaction.date"></span></p>
+        <p class="trailer-0">{{transaction.summary}}<br><span class="light-text"  am-time-ago="transaction.date"></span></p>
       </a>
     </ion-list>
   </ion-content>

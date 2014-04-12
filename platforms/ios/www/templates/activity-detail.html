@@ -1,4 +1,4 @@
-<ion-view title="Exchange w/ {{nameForTransaction(transaction)}}" hide-back-button="false" hide-nav-bar="false">
+<ion-view title="{{nameForTransaction(transaction)}}" hide-back-button="false" hide-nav-bar="false">
 
   <ion-nav-buttons side="left">
     <a ui-sref="tab.activity" class="button-icon button back-button">
@@ -7,7 +7,7 @@
   </ion-nav-buttons>
 
   <ion-content>
-    <div class="list card">
+    <div ng-if="transaction" class="list card">
       <div class="item item-text-wrap item-avatar">
         <img ng-src="{{ avatar_url }}" class="user-icon">
         <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
