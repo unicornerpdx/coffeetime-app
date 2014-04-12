@@ -18,18 +18,26 @@ function handleOpenURL(url){
 }
 
 function onNotificationGCM(e){
-  navigator.notification.alert(e.event);
   console.log(e);
   switch( e.event ){
   case 'registered':
     console.log("regID = " + e.regid);
-    navigator.notification.alert("regID = " + e.regid);
     angular.element(document.body).injector().invoke(function(Session){
       Session.registerAndroidToken(e.regid);
     });
     break;
 
   case 'message':
+    if (e.foreground){
+      // foreground
+    } else {
+      // from notifcations
+      if ( e.coldstart ){
+        // cold start
+      } else {
+        // warm start
+      }
+    }
     console.log('msg', e.payload.message);
     break;
 
@@ -70,12 +78,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 .run(function(Session, Cache, $ionicPlatform){
   $ionicPlatform.ready(function() {
-    navigator.notification.alert('platform ready');
     window.StatusBar.styleLightContent();
 
     // Register for push here if user is logged in.
     if(Cache.me()){
-      navigator.notification.alert('sending push tokens');
       Session.sendPushTokens();
     }
   });

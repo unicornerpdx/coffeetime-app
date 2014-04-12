@@ -210,29 +210,44 @@ angular.module('starter.controllers', [])
   $scope.refresh();
 })
 
-.controller('ActivityDetailCtrl', function($scope, $stateParams, Cache, Transactions) {
-
-  $scope.transaction = Cache.getTransaction(parseInt($stateParams.transactionId, 10));
+.controller('ActivityDetailCtrl', function($scope, _, $stateParams, Cache, Transactions) {
 
   $scope.isTransactionDebt = function(){
     return Cache.me().user_id === $scope.transaction.to_user_id;
   };
 
   $scope.nameForTransaction = function(transaction){
-    if(Cache.me().user_id === transaction.from_user_id){
-      return Cache.getUser(transaction.to_user_id).display_name;
+    if(transaction){
+      if(Cache.me().user_id === transaction.from_user_id){
+        return "Exchange w/ " + Cache.getUser(transaction.to_user_id).display_name;
+      }
+      if(Cache.me().user_id === transaction.to_user_id){
+        return "Exchange w/ " + Cache.getUser(transaction.from_user_id).display_name;
+      }
     }
-    if(Cache.me().user_id === transaction.to_user_id){
-      return Cache.getUser(transaction.from_user_id).display_name;
-    }
+    return "Exchange";
   };
 
   $scope.tranactionCreator = function(transaction){
     return Cache.getUser(transaction.from_user_id).display_name;
   };
 
-  $scope.from_user = Cache.getUser($scope.transaction.from_user_id);
-  $scope.to_user = Cache.getUser($scope.transaction.to_user_id);
-  $scope.avatar_url = (Cache.me().user_id === $scope.transaction.to_user_id) ? $scope.from_user.avatar_url : $scope.from_user.avatar_url;
+  $scope.transactionId = parseInt($stateParams.transactionId, 10);
+  $scope.transaction = Cache.getTransaction($scope.transactionId);
 
+  if($scope.transaction) {
+    $scope.from_user = Cache.getUser($scope.transaction.from_user_id);
+    $scope.to_user = Cache.getUser($scope.transaction.to_user_id);
+    $scope.avatar_url = (Cache.me().user_id === $scope.transaction.to_user_id) ? $scope.from_user.avatar_url : $scope.from_user.avatar_url;
+  }
+
+  if(!$scope.transaction){
+    Transactions.info($scope.transactionId).then(function(response){
+      console.log(response);
+      $scope.transaction = response.data.transactions[0];
+      $scope.from_user = _.find(response.data.users,  { 'user_id': $scope.transaction.from_user_id });
+      $scope.to_user = _.find(response.data.users,  { 'user_id': $scope.transaction.to_user_id });
+      $scope.avatar_url = (Cache.me().user_id === $scope.transaction.to_user_id) ? $scope.from_user.avatar_url : $scope.from_user.avatar_url;
+    });
+  }
 });

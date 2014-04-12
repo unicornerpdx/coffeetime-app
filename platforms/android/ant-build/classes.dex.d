@@ -1,6 +1,12 @@
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes.dex : \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/borismus/webintent/WebIntent.class \
+/Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/ionicframework/starter/BuildConfig.class \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/ionicframework/starter/HelloCordova.class \
+/Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/ionicframework/starter/R$attr.class \
+/Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/ionicframework/starter/R$drawable.class \
+/Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/ionicframework/starter/R$string.class \
+/Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/ionicframework/starter/R$xml.class \
+/Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/ionicframework/starter/R.class \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/plugin/gcm/CordovaGCMBroadcastReceiver.class \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/plugin/gcm/GCMIntentService.class \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/com/plugin/gcm/PushHandlerActivity.class \

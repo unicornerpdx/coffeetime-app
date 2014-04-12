@@ -28,3 +28,12 @@
   border: 3px solid $cream;
   margin-top: 2.5vh;
 }
+
+.platform-android {
+  .me-user-icon {
+    margin-top: 1vh;
+  }
+  .bar.bar-transparent .button.button-light.button-clear {
+    margin-top: 4.5vh
+  }
+}

@@ -28,6 +28,16 @@ function onNotificationGCM(e){
     break;
 
   case 'message':
+    if (e.foreground){
+      // foreground
+    } else {
+      // from notifcations
+      if ( e.coldstart ){
+        // cold start
+      } else {
+        // warm start
+      }
+    }
     console.log('msg', e.payload.message);
     break;
 

@@ -31,11 +31,11 @@ angular.module('starter.services', [])
 
   function updateTokens() {
     function pushError(){
-      navigator.notification.alert('something undebuggable happened');
+
     }
 
     function androidHandler(result){
-      navigator.notification.alert('result = ' + result);
+
     }
 
     function iosHandler(result){
@@ -52,7 +52,7 @@ angular.module('starter.services', [])
     if(window.plugins && window.plugins.pushNotification) {
 
       if($ionicPlatform.is('android')){
-        navigator.notification.alert('registering for push');
+
         window.plugins.pushNotification.register(androidHandler, pushError, {
           "senderID": "470253609765",
           "ecb": "onNotificationGCM"
@@ -72,16 +72,16 @@ angular.module('starter.services', [])
 
   return {
     registerAndroidToken: function (regid) {
-      navigator.notification.alert('registering token');
+
       var uuid = Cache.uuid() || Cache.uuid(UUID());
       $http.post(Config.server + "device/register", {
         uuid: uuid,
         token: regid,
         token_type: 'gcm'
       }).error(function (argument) {
-        navigator.notification.alert('device/register error');
+
       }).success(function (data) {
-        navigator.notification.alert('registration ok');
+
       });
     },
     sendPushTokens: function(){
@@ -265,6 +265,13 @@ angular.module('starter.services', [])
       return Groups.current().then(function(response){
         Cache.update(response.data);
         return response.data.transactions;
+      });
+    },
+    info: function(id){
+      return $http.get(Config.server + 'transaction/info', {
+        params: {
+          transaction_id: id
+        }
       });
     },
     create: function(params){

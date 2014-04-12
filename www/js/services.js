@@ -267,6 +267,13 @@ angular.module('starter.services', [])
         return response.data.transactions;
       });
     },
+    info: function(id){
+      return $http.get(Config.server + 'transaction/info', {
+        params: {
+          transaction_id: id
+        }
+      });
+    },
     create: function(params){
       var data = {};
 
