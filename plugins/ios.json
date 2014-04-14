@@ -15,12 +15,13 @@
                 "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>": 1,
                 "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>": 1,
                 "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"StatusBar\" /></feature>": 1,
-                "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>": 1
+                "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>": 1,
+                "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>": 1
             }
         },
         "framework": {
             "CoreGraphics.framework": {
-                "false": 1
+                "false": 2
             },
             "AudioToolbox.framework": {
                 "true": 1
@@ -50,6 +51,9 @@
             "PACKAGE_NAME": "io.coffeetime.app"
         },
         "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "io.coffeetime.app"
+        },
+        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "io.coffeetime.app"
         }
     },

@@ -76,8 +76,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   server: "https://api.coffeetime.io/1/"
 })
 
+
+
 .run(function(Session, Cache, $ionicPlatform){
   $ionicPlatform.ready(function() {
+    navigator.splashscreen.hide();
+
     window.StatusBar.styleLightContent();
 
     // Register for push here if user is logged in.

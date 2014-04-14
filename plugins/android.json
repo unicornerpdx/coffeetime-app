@@ -11,7 +11,8 @@
                 "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>": 1,
                 "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.GeoBroker\" /></feature>": 1,
                 "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>": 1,
-                "<feature name=\"WebIntent\"><param name=\"android-package\" value=\"com.borismus.webintent.WebIntent\" /></feature>": 1
+                "<feature name=\"WebIntent\"><param name=\"android-package\" value=\"com.borismus.webintent.WebIntent\" /></feature>": 1,
+                "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /></feature>": 1
             }
         },
         "AndroidManifest.xml": {
@@ -58,6 +59,9 @@
             "PACKAGE_NAME": "com.ionicframework.starter"
         },
         "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "io.coffeetime.app"
+        },
+        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "io.coffeetime.app"
         }
     },
