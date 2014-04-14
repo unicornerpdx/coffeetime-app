@@ -228,6 +228,15 @@ angular.module('starter.services', [])
 
 .factory('Groups', function($http, Config, Session, Cache){
   return {
+    create: function(id, name){
+      return $http.post(Config.server + 'group.create', {
+        github_team_id: id,
+        name: name
+      }).then(function(response){
+        Cache.update(response.data);
+        return response;
+      });
+    },
     all: function(){
       return $http.get(Config.server + 'group/list').then(function(response){
         Cache.groups(response.data.groups);
@@ -319,6 +328,14 @@ angular.module('starter.services', [])
           min_balance: response.data.min_balance
         };
       });
+    }
+  };
+})
+
+.factory('Teams', function($http, Config){
+  return {
+    fetch: function(){
+      return $http.get(Config.server + "/team/list");
     }
   };
 });

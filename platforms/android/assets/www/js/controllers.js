@@ -34,11 +34,33 @@ angular.module('starter.controllers', [])
   $scope.refreshing = false;
 
   $scope.refresh = function() {
-    console.log("refresh");
     $scope.refreshing = true;
     Users.all().then(function(users) {
       $scope.refreshing = false;
       $scope.users = users;
+    });
+  };
+
+  $scope.refresh();
+})
+
+.controller('TeamCtrl', function($scope, $state, Teams, Groups, _) {
+  $scope.teamsByOrg = [];
+  $scope.refreshing = false;
+
+  $scope.refresh = function() {
+    $scope.refreshing = true;
+    Teams.fetch().success(function(data){
+      $scope.refreshing = false;
+      $scope.orgs = _.chain(data.teams).pluck("org").uniq().value();
+      $scope.teamsByOrg = _.groupBy(data.teams, "org");
+    });
+  };
+
+  $scope.createGroup = function(id, name){
+    Groups.create(id, name);
+    Groups.create(id, name).then(function(){
+      $state.go('tab.me');
     });
   };
 
@@ -105,9 +127,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AuthCtrl', function($scope, Session, $state) {
-  console.log('AuthCtrl');
   $scope.startAuth = function(){
-    console.log('startAuth');
     window.open("https://api.coffeetime.io/1/auth", "_system");
   };
 })
@@ -149,7 +169,6 @@ angular.module('starter.controllers', [])
   };
 
   $scope.updateGroups = function() {
-    console.log("updateGroups");
     $scope.selectedGroup = Cache.currentGroupId();
     Groups.all().then(function(groups){
       $scope.groups = groups;
@@ -245,7 +264,6 @@ angular.module('starter.controllers', [])
 
   if(!$scope.transaction){
     Transactions.info($scope.transactionId).then(function(response){
-      console.log(response);
       $scope.transaction = response.data.transactions[0];
       $scope.from_user = _.find(response.data.users,  { 'user_id': $scope.transaction.from_user_id });
       $scope.to_user = _.find(response.data.users,  { 'user_id': $scope.transaction.to_user_id });

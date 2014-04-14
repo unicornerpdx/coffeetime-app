@@ -273,4 +273,5 @@
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/templates/tab-exchange.html \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/templates/tab-me.html \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/templates/tabs.html \
+/Users/patricklocal/code/coffee-web/platforms/android/assets/www/templates/teams.html \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/AndroidManifest.xml \
