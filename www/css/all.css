@@ -6335,6 +6335,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .item-body {
   padding: 0 0 15px 0; }
 
+.bar .button.button-small.button-clear .icon:before {
+  font-size: 23px; }
+
 body, .pane {
   background: #f9f6f3; }
 
@@ -6533,10 +6536,19 @@ input.transaction-submit {
     opacity: 0.1; }
 
 .transaction-view {
-  top: 44px; }
+  top: 44px;
+  height: auto;
+  position: absolute;
+  bottom: 0; }
 
 .transaction-number {
   position: relative; }
+
+.transaction-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .full-map {
   background-color: #f9f6f3;

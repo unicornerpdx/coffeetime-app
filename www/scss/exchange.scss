@@ -69,8 +69,18 @@ input.transaction-submit {
 
 .transaction-view {
   top: 44px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
 }
 
 .transaction-number {
   position: relative;
+}
+
+.transaction-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
