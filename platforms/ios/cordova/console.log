@@ -18,3 +18,12 @@
 2014-04-08 10:35:19.814 CoffeeTime[98219:70b] [CDVTimer][TotalPluginStartup] 6.224990ms
 2014-04-08 10:35:19.840 CoffeeTime[98219:70b] Resetting plugins due to page load.
 2014-04-08 10:35:19.962 CoffeeTime[98219:70b] Finished load of: file:///Users/patricklocal/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/0E787AC6-5137-47C2-B4B2-7A8713C48B25/CoffeeTime.app/www/index.html#/auth
+2014-04-14 14:52:57.924 CoffeeTime[5759:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-14 14:52:57.964 CoffeeTime[5759:70b] Unlimited access to network resources
+2014-04-14 14:52:58.127 CoffeeTime[5759:70b] [CDVTimer][statusbar] 41.071951ms
+2014-04-14 14:52:58.128 CoffeeTime[5759:70b] [CDVTimer][TotalPluginStartup] 41.608989ms
+2014-04-14 14:52:58.133 CoffeeTime[5759:70b] active
+2014-04-14 14:52:58.192 CoffeeTime[5759:70b] Resetting plugins due to page load.
+2014-04-14 14:52:58.398 CoffeeTime[5759:70b] Finished load of: file:///Users/patricklocal/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/0E787AC6-5137-47C2-B4B2-7A8713C48B25/CoffeeTime.app/www/index.html#/auth
+2014-04-14 14:53:00.026 CoffeeTime[5759:70b] THREAD WARNING: ['InAppBrowser'] took '161.445312' ms. Plugin should use a background thread.
+2014-04-14 14:53:30.487 CoffeeTime[5759:70b] active

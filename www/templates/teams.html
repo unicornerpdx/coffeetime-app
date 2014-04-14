@@ -1,0 +1,26 @@
+<ion-view title="Teams" hide-back-button="false" hide-nav-bar="false">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-light" ng-disabled="refreshing" ng-click="refresh()">
+      <i ng-class="{'ion-refresh':!refreshing, 'ion-refreshing':refreshing}"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="left">
+    <a ui-sref="tab.me" class="button-icon button back-button">
+      <i class="ion-android-arrow-back"></i> Back
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <ion-list>
+      <div ng-repeat="org in orgs">
+       <div class="item item-divider">
+          {{org}}
+        </div>
+        <ion-item ng-click="createGroup(team.github_id, team.name)" ng-repeat="team in teamsByOrg[org] track by team.github_id | orderBy:'name'" class="item">
+          <p>{{team.name}} <span class="light-text">{{team.members}} People</span></small></p>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
