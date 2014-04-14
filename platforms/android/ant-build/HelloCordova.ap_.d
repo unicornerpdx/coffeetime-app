@@ -43,6 +43,8 @@
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/fonts/indebted.ttf \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/fonts/indebted.woff \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/img/CoffeeTime.svg \
+/Users/patricklocal/code/coffee-web/platforms/android/assets/www/img/credit.svg \
+/Users/patricklocal/code/coffee-web/platforms/android/assets/www/img/github.svg \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/img/ionic.png \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/img/quotes-background.png \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/js/app.js \
@@ -261,6 +263,7 @@
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/res/icons/ios/iTunesArtwork@2x.png \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/scss/activity.scss \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/scss/all.scss \
+/Users/patricklocal/code/coffee-web/platforms/android/assets/www/scss/auth.scss \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/scss/exchange.scss \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/scss/global.scss \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/scss/indebted.scss \

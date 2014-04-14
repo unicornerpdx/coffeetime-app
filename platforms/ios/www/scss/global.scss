@@ -31,6 +31,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 // Project Wide SCSS
+body {
+  background: #333;
+}
 body, .pane {
   background: $cream;
 }
@@ -130,4 +133,24 @@ p.leader-0 {
   background-color: transparent;
   background-image: none;
   color: #fff;
+}
+
+// Button
+.btn {
+  display: inline-block;
+  min-width: 4rem;
+  padding: .75em 1em;
+  background-color: transparent;
+  color: $white;
+  @include border-radius(3px);
+  border: 1px solid $white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.75em;
+  cursor: pointer;
+  @include transition(background-color 75ms linear, color 75ms linear);
+  &:hover {
+    background-color: $white;
+    color: $dark-gray;
+  }
 }

@@ -6338,6 +6338,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .bar .button.button-small.button-clear .icon:before {
   font-size: 23px; }
 
+body {
+  background: #333; }
+
 body, .pane {
   background: #f9f6f3; }
 
@@ -6468,15 +6471,10 @@ p.leader-0 {
 .auth {
   background-color: #333333; }
 
-.auth-title {
-  color: #fff;
-  text-align: center;
-  padding-top: 2.5vh; }
-
 .github-logo {
   margin: auto;
   text-align: center;
-  padding: 15vh 0 5vh 0; }
+  padding: 25vh 0 5vh 0; }
 
 .auth-button {
   color: #fff;

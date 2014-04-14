@@ -31,6 +31,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 // Project Wide SCSS
+body {
+  background: #333;
+}
 body, .pane {
   background: $cream;
 }

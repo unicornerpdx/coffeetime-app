@@ -229,9 +229,10 @@ angular.module('starter.services', [])
 .factory('Groups', function($http, Config, Session, Cache){
   return {
     create: function(id, name){
-      return $http.post(Config.server + 'group.create', {
+      return $http.post(Config.server + 'group/create', {
         github_team_id: id,
-        name: name
+        name: name,
+        timezone_offset: new Date().getTimezoneOffset() * -60
       }).then(function(response){
         Cache.update(response.data);
         return response;

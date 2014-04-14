@@ -1,6 +1,10 @@
 <ion-view hide-nav-bar="true">
-  <ion-pane>
-    <h1>Auth</h1>
-    <a ng-click="startAuth()">Sign In w/ GitHub</a>
+  <ion-pane class="auth">
+    <figure class="github-logo">
+      <img ng-click="startAuth()" src="img/github.svg" alt="Github">
+    </figure>
+    <p class="auth-button">
+      <a ng-click="startAuth()" class="btn">Sign In with GitHub</a>
+    </p>
   </ion-pane>
 </ion-view>
