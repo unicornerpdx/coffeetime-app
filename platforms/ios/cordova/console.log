@@ -27,3 +27,4 @@
 2014-04-14 14:52:58.398 CoffeeTime[5759:70b] Finished load of: file:///Users/patricklocal/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/0E787AC6-5137-47C2-B4B2-7A8713C48B25/CoffeeTime.app/www/index.html#/auth
 2014-04-14 14:53:00.026 CoffeeTime[5759:70b] THREAD WARNING: ['InAppBrowser'] took '161.445312' ms. Plugin should use a background thread.
 2014-04-14 14:53:30.487 CoffeeTime[5759:70b] active
+Terminating in response to SpringBoard's termination.

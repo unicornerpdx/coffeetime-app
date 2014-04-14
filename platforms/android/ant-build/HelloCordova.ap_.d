@@ -215,6 +215,7 @@
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.geolocation \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.plugins.StatusBar \
+/Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.statusbar \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js \
@@ -233,6 +234,8 @@
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.plugins.StatusBar/www \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.plugins.StatusBar/www/StatusBar.js \
+/Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www \
+/Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www/splashscreen.js \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www/statusbar.js \
 /Users/patricklocal/code/coffee-web/platforms/android/assets/www/res/icons \

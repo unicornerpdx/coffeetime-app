@@ -49,6 +49,7 @@
 		BF3D43296E994BE9B3CC03CE /* StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CABFBDDAB14D7B8C1DADAB /* StatusBar.m */; };
 		2CEC075E813F4A9491DEFA44 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926A69D75BE45B59E227FF8 /* AppDelegate+notification.m */; };
 		E25DAEE02457441A9ECBB668 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F0ADA6B90B4FF5BBA45EEB /* PushPlugin.m */; };
+		0341B1DF8F7E4B87846FC38A /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9B0C445A943219CBE97E4 /* CDVSplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,8 @@
 		36F0ADA6B90B4FF5BBA45EEB /* PushPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PushPlugin.m"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		7E8DAC719B674E02A648DC2E /* AppDelegate+notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+notification.h"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		C7378E7C6F8E4549AE7063DE /* PushPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PushPlugin.h"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		5BF9B0C445A943219CBE97E4 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		AA561F18BB9E43AB9B009EE7 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +277,8 @@
 				36F0ADA6B90B4FF5BBA45EEB /* PushPlugin.m */,
 				7E8DAC719B674E02A648DC2E /* AppDelegate+notification.h */,
 				C7378E7C6F8E4549AE7063DE /* PushPlugin.h */,
+				5BF9B0C445A943219CBE97E4 /* CDVSplashScreen.m */,
+				AA561F18BB9E43AB9B009EE7 /* CDVSplashScreen.h */,
 			);
 			name = Plugins;
 			path = CoffeeTime/Plugins;
@@ -478,6 +483,7 @@
 				BF3D43296E994BE9B3CC03CE /* StatusBar.m in Sources */,
 				2CEC075E813F4A9491DEFA44 /* AppDelegate+notification.m in Sources */,
 				E25DAEE02457441A9ECBB668 /* PushPlugin.m in Sources */,
+				0341B1DF8F7E4B87846FC38A /* CDVSplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,6 +58,7 @@
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser.class \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowserDialog.class \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
+/Users/patricklocal/code/coffee-web/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen.class \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/dexedLibs/classes-5f186fc520e3b78eec842fa5ddfcd3d0.jar \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/dexedLibs/gcm-2e2a42b6607cc8b7e5605043757adad7.jar \
 /Users/patricklocal/code/coffee-web/platforms/android/ant-build/dexedLibs/android-support-v13-ca53cc951922d5fc6784e819df5f0a1c.jar \

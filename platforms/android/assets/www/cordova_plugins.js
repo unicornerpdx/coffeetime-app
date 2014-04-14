@@ -76,6 +76,13 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -88,7 +95,8 @@ module.exports.metadata =
     "org.apache.cordova.dialogs": "0.2.6",
     "org.apache.cordova.geolocation": "0.3.6",
     "org.apache.cordova.plugins.StatusBar": "0.1.0",
-    "com.phonegap.plugins.PushPlugin": "2.2.0"
+    "com.phonegap.plugins.PushPlugin": "2.2.0",
+    "org.apache.cordova.splashscreen": "0.2.7"
 }
 // BOTTOM OF METADATA
 });
