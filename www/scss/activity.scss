@@ -1,3 +1,12 @@
+.no-transactions {
+  text-align: center;
+  padding-top: 64px;
+  color: $light-gray;
+  h3 {
+    color: $light-gray;
+  }
+}
+
 .full-map {
   background-color: $cream;
   position: relative;

@@ -6416,6 +6416,27 @@ p.leader-0 {
   background-image: none;
   color: #fff; }
 
+.btn {
+  display: inline-block;
+  min-width: 4rem;
+  padding: 0.75em 1em;
+  background-color: transparent;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.75em;
+  cursor: pointer;
+  -webkit-transition: background-color 75ms linear, color 75ms linear;
+  -moz-transition: background-color 75ms linear, color 75ms linear;
+  transition: background-color 75ms linear, color 75ms linear; }
+  .btn:hover {
+    background-color: #fff;
+    color: #333333; }
+
 @font-face {
   font-family: 'indebted';
   src: url('../fonts/indebted.eot'); }
@@ -6441,6 +6462,24 @@ p.leader-0 {
   -moz-osx-font-smoothing: grayscale; }
 
 
+.auth {
+  background-color: #333333; }
+
+.auth-title {
+  color: #fff;
+  text-align: center;
+  padding-top: 2.5vh; }
+
+.github-logo {
+  margin: auto;
+  text-align: center;
+  padding: 15vh 0 5vh 0; }
+
+.auth-button {
+  color: #fff;
+  text-align: center;
+  font-size: 1.25rem; }
+
 .me-status-screen {
   color: #fff;
   text-align: center; }
@@ -6456,7 +6495,7 @@ p.leader-0 {
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
 
 .me-debt-description {
-  padding-top: 5vh;
+  padding-top: 2.5vh;
   font-weight: 700; }
 
 .me-user-icon {
@@ -6537,6 +6576,13 @@ input.transaction-submit {
 
 .transaction-number {
   position: relative; }
+
+.no-transactions {
+  text-align: center;
+  padding-top: 64px;
+  color: #afafaf; }
+  .no-transactions h3 {
+    color: #afafaf; }
 
 .full-map {
   background-color: #f9f6f3;
