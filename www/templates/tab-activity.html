@@ -9,7 +9,7 @@
     <ion-list>
       <a ng-repeat="transaction in transactions track by transaction.transaction_id | orderBy:'-date'"
                 class="item item-text-wrap item-avatar"
-                ui-sref="tab.activity-detail({transactionId: transaction.transaction_id})">
+                ui-sref="activity-detail({transactionId: transaction.transaction_id})">
         <img ng-src="{{ avatarForTransaction(transaction) }}" alt="{{ nameForTransaction(transaction) }}" class="user-icon-left">
         <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
         <p class="trailer-0">{{transaction.summary}}<br><span class="light-text"  am-time-ago="transaction.date"></span></p>
