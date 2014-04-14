@@ -10,7 +10,7 @@
       <section ng-if='transactions.length==0' class="no-transactions">
         <img src="img/credit.svg" alt="Coffee Credit Card">
         <h3>No transactions yet.</h3>
-        <p ng-if='transactions.length==0'>Use the Exchange tab to start saddling your friends with crippling, caffiene based debt.</p>
+        <p ng-if='transactions.length==0'>Use the "Exchange" tab to start saddling your friends with crippling, caffeine-based debt.</p>
       </section>
       <a ng-repeat="transaction in transactions track by transaction.transaction_id | orderBy:'-date'"
                 class="item item-text-wrap item-avatar"
