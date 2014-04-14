@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
   $scope.refresh();
 })
 
-.controller('TeamCtrl', function($scope, $state, Teams, Groups, _) {
+.controller('TeamCtrl', function($scope, $state, Teams, Groups, Cache, _) {
   $scope.teamsByOrg = [];
   $scope.refreshing = false;
 
@@ -59,7 +59,8 @@ angular.module('starter.controllers', [])
 
   $scope.createGroup = function(id, name){
     Groups.create(id, name);
-    Groups.create(id, name).then(function(){
+    Groups.create(id, name).then(function(response){
+      Cache.currentGroupId(response.data.group_id);
       $state.go('tab.me');
     });
   };
