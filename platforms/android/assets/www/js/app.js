@@ -115,8 +115,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl: "templates/tabs.html"
     })
 
-    // Each tab has its own nav history stack:
-
     .state('tab.me', {
       url: '/me',
       views: {
@@ -136,15 +134,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('tab.coffee-transaction', {
-      url: '/exchange/:userId',
-      views: {
-        'tab-exchange': {
-          templateUrl: 'templates/coffee-transaction.html',
-          controller: 'TransactionCtrl'
-        }
-      }
-    })
 
     .state('tab.activity', {
       url: '/activity',
@@ -155,14 +144,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('tab.activity-detail', {
+
+    .state('activity-detail', {
       url: '/activity/:transactionId',
-      views: {
-        'tab-activity': {
-          templateUrl: 'templates/activity-detail.html',
-          controller: 'ActivityDetailCtrl'
-        }
-      }
+      templateUrl: 'templates/activity-detail.html',
+      controller: 'ActivityDetailCtrl'
+    })
+
+    .state('coffee-transaction', {
+      url: '/exchange/:userId',
+      templateUrl: 'templates/coffee-transaction.html',
+      controller: 'TransactionCtrl'
     })
 
     .state('auth', {

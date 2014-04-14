@@ -105,7 +105,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AuthCtrl', function($scope, Session, $state) {
+  console.log('AuthCtrl');
   $scope.startAuth = function(){
+    console.log('startAuth');
     window.open("https://api.coffeetime.io/1/auth", "_system");
   };
 })
