@@ -3,20 +3,48 @@
   Each tab's child <ion-nav-view> directive will have its own
   navigation history that also transitions its views in and out.
 -->
+<ion-side-menus delegate-handle="menu">
+  <!-- Center content -->
+  <ion-side-menu-content  class="padding" drag-content="false" body-color="user_balance">
+    <ion-tabs class="tabs-icon-top">
+      <!-- Me Tab -->
+      <ion-tab title="Me" icon="icon ion-speedometer" href="#/tab/me">
+        <ion-nav-view name="tab-me"></ion-nav-view>
+      </ion-tab>
 
-<ion-tabs class="tabs-icon-top">
-  <!-- Me Tab -->
-  <ion-tab title="Me" icon="icon ion-speedometer" href="#/tab/me">
-    <ion-nav-view name="tab-me"></ion-nav-view>
-  </ion-tab>
+      <!-- Exchange Tab -->
+      <ion-tab title="Exchange" icon="icon ion-coffee" href="#/tab/exchange">
+        <ion-nav-view name="tab-exchange"></ion-nav-view>
+      </ion-tab>
 
-  <!-- Exchange Tab -->
-  <ion-tab title="Exchange" icon="icon ion-coffee" href="#/tab/exchange">
-    <ion-nav-view name="tab-exchange"></ion-nav-view>
-  </ion-tab>
+      <!-- Activity Tab -->
+      <ion-tab title="Activity" icon="icon ion-radio-waves" href="#/tab/activity">
+        <ion-nav-view name="tab-activity"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-side-menu-content>
 
-  <!-- Activity Tab -->
-  <ion-tab title="Activity" icon="icon ion-radio-waves" href="#/tab/activity">
-    <ion-nav-view name="tab-activity"></ion-nav-view>
-  </ion-tab>
-</ion-tabs>
+  <!-- Left menu -->
+  <ion-side-menu side="left" width="260">
+    <ion-header-bar class="bar-dark">
+       <button class="button button-icon ion-plus"></button>
+      <h1 class="title">Groups</h1>
+    </ion-header-bar>
+
+    <ion-content>
+      <ion-list class="list">
+        <label ng-repeat="group in groups track by group.group_id | orderBy:'group_id'" class="item item-radio">
+          <input type="radio" ng-model="$parent.selectedGroup" ng-value="{{group.group_id}}" ng-change="changeGroups({{group.group_id}})">
+          <div class="item-content">{{group.group_name}}</div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+      </ion-list>
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="bar-stable">
+      <div class="buttons">
+        <button ng-click="signOut()" class="button icon-ion-log-out"><i class="icon ion-log-out"></i>Sign Out</button>
+      </div>
+    </ion-footer-bar>
+  </ion-side-menu>
+</ion-side-menus>

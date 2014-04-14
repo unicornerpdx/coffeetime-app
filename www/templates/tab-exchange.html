@@ -13,7 +13,7 @@
     <ion-list>
       <a ng-repeat="user in users | filter:query | otherUsers | orderBy:'display_name'"
                 class="item item-avatar"
-                ui-sref="tab.coffee-transaction({userId: user.user_id})">
+                ui-sref="coffee-transaction({userId: user.user_id})">
         <img ng-src="{{ user.avatar_url }}" alt="{{ user.display_name }}" class="user-icon-left">
         <span user-debt-badge="user.user_balance" class="debt-badge">{{user.user_balance | absolute}}</span>
         <p class="user-name">{{user.display_name}}</p>
