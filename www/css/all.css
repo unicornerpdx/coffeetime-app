@@ -6489,6 +6489,8 @@ p.leader-0 {
   padding: 2vh 0 1vh;
   width: 100%;
   font-size: 50vh;
+  margin-left: -15px;
+  display: inline-block;
   color: #fff;
   text-align: center;
   line-height: 1;
