@@ -161,6 +161,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/auth',
       templateUrl: 'templates/auth.html',
       controller: 'AuthCtrl'
+    })
+
+    .state('teams', {
+      url: '/teams',
+      templateUrl: 'templates/teams.html',
+      controller: 'TeamCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback

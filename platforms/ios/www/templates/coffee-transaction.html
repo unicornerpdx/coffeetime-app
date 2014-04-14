@@ -32,7 +32,6 @@
       <p class="transaction-statement" ng-if="amount == 0">
         You and {{user.display_name}} are even stevens.
       </p>
-
       <div class="list list-inset">
         <label class="item item-input-inset">
           <textarea class="transaction-message" ng-model="$parent.note" placeholder="Attach a note"></textarea>
@@ -51,6 +50,5 @@
         <input class="button button-block transaction-submit" type="submit" value="Confirm" ng-disabled="amount == 0 || disabled" colorize-on="amount" colorize-property="background" />
       </div>
     </form>
-
   </ion-content>
 </ion-view>

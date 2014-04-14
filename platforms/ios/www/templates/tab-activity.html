@@ -7,13 +7,19 @@
 
   <ion-content>
     <ion-list>
+      <section ng-if='transactions.length==0' class="no-transactions">
+        <img src="img/credit.svg" alt="Coffee Credit Card">
+        <h3>No transactions yet.</h3>
+        <p ng-if='transactions.length==0'>Use the Exchange tab to start saddling your friends with crippling, caffiene based debt.</p>
+      </section>
       <a ng-repeat="transaction in transactions track by transaction.transaction_id | orderBy:'-date'"
                 class="item item-text-wrap item-avatar"
-                ui-sref="tab.activity-detail({transactionId: transaction.transaction_id})">
+                ui-sref="activity-detail({transactionId: transaction.transaction_id})">
         <img ng-src="{{ avatarForTransaction(transaction) }}" alt="{{ nameForTransaction(transaction) }}" class="user-icon-left">
         <span color-debt-badge class="debt-badge">{{transaction.amount | absolute}}</span>
         <p class="trailer-0">{{transaction.summary}}<br><span class="light-text"  am-time-ago="transaction.date"></span></p>
       </a>
     </ion-list>
+
   </ion-content>
 </ion-view>
