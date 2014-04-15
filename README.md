@@ -1,7 +1,7 @@
-Coffee Scoreboard Ionic App
-=====================
+CoffeeTime Ionic App
+====================
 
-[Ionic](http://ionicframework.com/) app for keeping score of coffee debt in an organization.
+CoffeeTime is an [Ionic](http://ionicframework.com/) app for keeping score of coffee debt in an organization.
 
 ## Install Dependencies
 
@@ -56,3 +56,4 @@ $ ionic emulate
 ```
 
 If that fails, try running ```ionic platform ios``` and running the above command again.
+
