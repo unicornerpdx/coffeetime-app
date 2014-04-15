@@ -8,5 +8,5 @@
 -keep class com.plugin.gcm.PushHandlerActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:6
--keep class io.coffeetime.app.CoffeeTime { <init>(...); }
+-keep class io.coffeetime.app.HelloCordova { <init>(...); }
 
