@@ -160,4 +160,19 @@ angular.module('app.directives', [])
     },
     templateUrl: 'templates/static-map.html'
   };
+})
+
+.directive('readyClass', function($ionicPlatform){
+  return {
+    restrict: 'A',
+    replace: false,
+    link: function(scope, element, attrs){
+      if(!window.cordova){
+        element.addClass('ready');
+      }
+      $ionicPlatform.ready(function() {
+        element.addClass('ready');
+      });
+    }
+  };
 });

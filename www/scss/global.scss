@@ -30,11 +30,12 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 23px;
 }
 
-// Project Wide SCSS
-body {
-  background: #333;
+body, .pane, .view {
+  // background: #333;
+  background: $cream;
 }
-body, .pane {
+
+body.ready, .ready .pane, .ready .view {
   background: $cream;
 }
 
