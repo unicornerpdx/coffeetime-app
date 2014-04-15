@@ -79,6 +79,7 @@ angular.module('starter.controllers', [])
 
   $scope.sendTransaction = function(params){
     Transactions.create(params).then(function(response){
+      $scope.$emit('balance.update');
       $state.go('tab.me');
       $scope.disabled = false;
     });
@@ -177,6 +178,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.refresh = function() {
+    $scope.getCachedState();
     $scope.refreshing = true;
     Balance.fetch().then(function(balance) {
       $scope.lastUpdate = Cache.lastUpdate(new Date());
@@ -235,7 +237,8 @@ angular.module('starter.controllers', [])
 .controller('ActivityDetailCtrl', function($scope, _, $stateParams, Cache, Transactions) {
 
   $scope.isTransactionDebt = function(){
-    return Cache.me().user_id === $scope.transaction.to_user_id;
+    console.log(Cache.me().user_id, $scope.transaction.to_user_id);
+    return Cache.me().user_id === $scope.transaction.from_user_id;
   };
 
   $scope.nameForTransaction = function(transaction){
@@ -251,7 +254,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.tranactionCreator = function(transaction){
-    return Cache.getUser(transaction.from_user_id).display_name;
+    return Cache.getUser(transaction.created_by).display_name;
   };
 
   $scope.transactionId = parseInt($stateParams.transactionId, 10);

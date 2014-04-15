@@ -16,7 +16,7 @@
 
       <div class="item item-body">
         <div ng-if="transaction.latitude && transaction.longitude">
-          <static-map latitude="{{ transaction.latitude }}" longitude="{{ transaction.longitude }}" zoom="18" width="600" height="400" balance="{{transaction.amount | absolute}}" isdebt="{{ isTransactionDebt() }}"> </static-map>
+          <static-map latitude="{{ transaction.latitude }}" longitude="{{ transaction.longitude }}" zoom="18" width="600" height="400" balance="{{transaction.amount | absolute}}" isdebt="{{ isTransactionDebt(transaction) }}"> </static-map>
         </div>
 
         <div ng-if="transaction.note">
