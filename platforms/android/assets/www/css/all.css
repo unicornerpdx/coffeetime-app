@@ -6338,10 +6338,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .bar .button.button-small.button-clear .icon:before {
   font-size: 23px; }
 
-body {
-  background: #333; }
+body, .pane, .view {
+  background: #f9f6f3; }
 
-body, .pane {
+body.ready, .ready .pane, .ready .view {
   background: #f9f6f3; }
 
 .bar.bar-transparent {
@@ -6549,7 +6549,7 @@ p.leader-0 {
   box-sizing: border-box;
   width: 90%;
   margin: 0.75em auto;
-  font-size: 1.75em;
+  font-size: 2em;
   line-height: 1.25em;
   color: #333333; }
 

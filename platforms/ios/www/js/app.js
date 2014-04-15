@@ -76,8 +76,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   server: "https://api.coffeetime.io/1/"
 })
 
-
-
 .run(function(Session, Cache, $ionicPlatform){
   $ionicPlatform.ready(function() {
     navigator.splashscreen.hide();
@@ -172,11 +170,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl: 'templates/teams.html',
       controller: 'TeamCtrl'
     });
+})
 
-  // if none of the above states are matched, use this as the fallback
-  if(store.get("token")){
-    $urlRouterProvider.otherwise('/me');
+.run(function($state, Cache){
+    // if none of the above states are matched, use this as the fallback
+  if(Cache.token()){
+    $state.go('tab.me');
   } else {
-    $urlRouterProvider.otherwise('/auth');
+    $state.go('auth');
   }
 });

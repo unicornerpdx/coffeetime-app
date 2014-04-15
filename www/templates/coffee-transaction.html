@@ -17,16 +17,16 @@
 
       <div colorize-on="amount" colorize-property="background">
         <span class="transaction-number">{{amount | absolute}}</span>
-        <a transaction-button="deincrement()" class="transaction-button-left" ng-hide="typing">–</a>
-        <a transaction-button="increment()" class="transaction-button-right" ng-hide="typing">+</a>
+        <a transaction-button="increment()" class="transaction-button-left" ng-hide="typing">–</a>
+        <a transaction-button="deincrement()" class="transaction-button-right" ng-hide="typing">+</a>
       </div>
 
-      <p class="transaction-statement" ng-if="amount > 0">
-        {{user.display_name}} owes you <span colorize-on="amount" colorize-property="color">{{amount}}</span>&nbsp;coffee{{amount | pluralizer}}
+      <p class="transaction-statement" ng-if="amount < 0">
+        {{user.display_name}} bought you <span colorize-on="amount" colorize-property="color">{{amount | absolute}}</span>&nbsp;coffee{{amount | pluralizer}}
       </p>
 
-      <p class="transaction-statement" ng-if="amount < 0">
-        You owe {{user.display_name}} <span colorize-on="amount" colorize-property="color">{{ amount | absolute }}</span>&nbsp;coffee{{amount | pluralizer}}
+      <p class="transaction-statement" ng-if="amount > 0">
+        You bought {{user.display_name}} <span colorize-on="amount" colorize-property="color">{{ amount | absolute }}</span>&nbsp;coffee{{amount | pluralizer}}
       </p>
 
       <p class="transaction-statement" ng-if="amount == 0">

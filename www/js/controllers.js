@@ -58,9 +58,9 @@ angular.module('starter.controllers', [])
   };
 
   $scope.createGroup = function(id, name){
-    Groups.create(id, name);
     Groups.create(id, name).then(function(response){
       Cache.currentGroupId(response.data.group_id);
+      $scope.$emit('balance.update');
       $state.go('tab.me');
     });
   };
