@@ -22,6 +22,8 @@ angular.module('starter.controllers', [])
   $scope.openMenu = function(){
     menu.toggleLeft();
 
+    $scope.$emit("groups.update");
+
     if(!menu.isOpenLeft()){
       $scope.$emit("menu.opened");
     }
@@ -54,15 +56,24 @@ angular.module('starter.controllers', [])
       $scope.refreshing = false;
       $scope.orgs = _.chain(data.teams).pluck("org").uniq().value();
       $scope.teamsByOrg = _.groupBy(data.teams, "org");
+      $scope.teamsById = _.indexBy(data.teams, "github_id");
+
     });
   };
 
-  $scope.createGroup = function(id, name){
-    Groups.create(id, name).then(function(response){
-      Cache.currentGroupId(response.data.group_id);
-      $scope.$emit('balance.update');
-      $state.go('tab.me');
-    });
+  $scope.createGroup = function(id){
+    var name = $scope.teamsById[id].name;
+    var members = $scope.teamsById[id].members;
+    navigator.notification.confirm("This will create a new group with all " + members + " members of the " + name + " Github team.", function(index){
+      if(index === 2){
+        Groups.create(id, name).then(function(response){
+          Cache.currentGroupId(response.data.group_id);
+          $scope.$emit('balance.update');
+          $state.go('tab.me');
+        });
+      }
+    }, "Are you sure?", ["Cancel", "Continue"]);
+
   };
 
   $scope.refresh();
